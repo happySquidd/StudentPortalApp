@@ -1,6 +1,4 @@
-﻿using StudentPortalApp.Views;
-
-namespace StudentPortalApp
+﻿namespace StudentPortalApp
 {
     public partial class App : Application
     {
@@ -11,9 +9,7 @@ namespace StudentPortalApp
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            var gadgetList = new GadgetList();
-            var tabPage = new NavigationPage(gadgetList);
-            return new Window(tabPage);
+            return new Window(new AppShell());
         }
     }
 }

@@ -57,3 +57,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.GadgetList.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\GadgetList.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\GadgetList.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/NewPage1.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.NewPage1.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\NewPage1.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\NewPage1.xaml
