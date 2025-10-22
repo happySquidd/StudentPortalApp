@@ -28,18 +28,6 @@ build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/AppShell.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.AppShell.xaml
-build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
-build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
-
-[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/MainPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.MainPage.xaml
-build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
-build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
-
 [C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Resources.Styles.Colors.xaml
@@ -52,14 +40,38 @@ build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Resources
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/GadgetList.xaml]
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/AddAssignment.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.GadgetList.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\GadgetList.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\GadgetList.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.AddAssignment.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddAssignment.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddAssignment.xaml
 
-[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/NewPage1.xaml]
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/AddCourse.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.NewPage1.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\NewPage1.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\NewPage1.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.AddCourse.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddCourse.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddCourse.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/AddTerm.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.AddTerm.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddTerm.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddTerm.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/ViewAssignements.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.ViewAssignements.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ViewAssignements.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ViewAssignements.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/ViewCourse.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.ViewCourse.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ViewCourse.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ViewCourse.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/ViewTerms.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.ViewTerms.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ViewTerms.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ViewTerms.xaml

@@ -1,8 +1,8 @@
 namespace StudentPortalApp.Views;
 
-public partial class NewPage1 : ContentPage
+public partial class AddCourse : ContentPage
 {
-	public NewPage1()
+	public AddCourse()
 	{
 		InitializeComponent();
 	}

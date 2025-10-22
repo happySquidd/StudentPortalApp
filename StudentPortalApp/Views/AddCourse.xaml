@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StudentPortalApp.Views.NewPage1"
-             Title="Blue">
+             x:Class="StudentPortalApp.Views.AddCourse"
+             Title="AddCourse">
     <VerticalStackLayout>
         <Label 
-            Text="Blue page"
-            BackgroundColor="Blue"
+            Text="Add course page"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>

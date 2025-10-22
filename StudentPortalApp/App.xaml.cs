@@ -1,4 +1,6 @@
-﻿namespace StudentPortalApp
+﻿using StudentPortalApp.Views;
+
+namespace StudentPortalApp
 {
     public partial class App : Application
     {
@@ -9,7 +11,9 @@
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            var TermsPage = new TermsPage();
+            var TermPage = new NavigationPage(TermsPage);
+            return new Window(TermPage);
         }
     }
 }

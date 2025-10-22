@@ -1,8 +1,8 @@
 namespace StudentPortalApp.Views;
 
-public partial class GadgetList : ContentPage
+public partial class ViewCourse : ContentPage
 {
-	public GadgetList()
+	public ViewCourse()
 	{
 		InitializeComponent();
 	}
