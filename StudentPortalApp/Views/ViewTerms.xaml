@@ -37,7 +37,7 @@
                            HorizontalOptions="Start" />
                         <DatePicker Grid.Column="1"/>
                     </Grid>
-                    <Button Text="View term" />
+                    <Button Text="View term" Clicked="ViewTerm"/>
                     <Grid ColumnDefinitions="*, *, *" ColumnSpacing="3">
                         <Button Text="Edit name" Grid.Column="0"/>
                         <Button Text="Delete name" Grid.Column="1"/>
@@ -74,7 +74,7 @@
                                HorizontalOptions="Start" />
                         <DatePicker Grid.Column="1"/>
                     </Grid>
-                    <Button Text="View term" />
+                    <Button Text="View term" Clicked="ViewTerm"/>
                     <Grid ColumnDefinitions="*, *, *" ColumnSpacing="3">
                         <Button Text="Edit name" Grid.Column="0"/>
                         <Button Text="Delete name" Grid.Column="1"/>
@@ -111,7 +111,7 @@
                                HorizontalOptions="Start" />
                         <DatePicker Grid.Column="1"/>
                     </Grid>
-                    <Button Text="View term" />
+                    <Button Text="View term" Clicked="ViewTerm"/>
                     <Grid ColumnDefinitions="*, *, *" ColumnSpacing="3">
                         <Button Text="Edit name" Grid.Column="0"/>
                         <Button Text="Delete name" Grid.Column="1"/>

@@ -9,9 +9,9 @@ public partial class TermsPage : ContentPage
 		InitializeComponent();
 	}
 
-    private async void AddTerm_Clicked(object sender, EventArgs e)
+    private async void ViewTerm(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new AddTerm());
+        await Navigation.PushAsync(new TermWindow());
     }
 
     private void ClearDb_Clicked(object sender, EventArgs e)
