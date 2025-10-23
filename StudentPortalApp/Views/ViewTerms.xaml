@@ -2,11 +2,124 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StudentPortalApp.Views.TermsPage"
-             Title="My terms"
-             Shell.TitleColor="Black">
+             Title="My terms">
 
-    <VerticalStackLayout>
-        <Label Text="My Terms"/>
-        
-    </VerticalStackLayout>
+    <ScrollView>
+
+        <VerticalStackLayout Spacing="15"
+                             Padding="20">
+
+            <Border BackgroundColor="LightSteelBlue"
+                    Padding="15">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="6" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Term 1"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                    <Grid VerticalOptions="Center"
+                          ColumnDefinitions="0.7*, 0.3*">
+                        <Label Grid.Column="0"
+                               Text="Select the start date for the term"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start" />
+                        
+                        <DatePicker Grid.Column="1" />
+                    </Grid>
+                    <Grid ColumnDefinitions="0.7*, 0.3*"
+                          VerticalOptions="Center"
+                          Margin="0,0,0,20">
+                        <Label Grid.Column="0"
+                           Text="Select the end date for the term"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start" />
+                        <DatePicker Grid.Column="1"/>
+                    </Grid>
+                    <Button Text="View term" />
+                    <Grid ColumnDefinitions="*, *, *" ColumnSpacing="3">
+                        <Button Text="Edit name" Grid.Column="0"/>
+                        <Button Text="Delete name" Grid.Column="1"/>
+                        <Button Text="Delete Term" Grid.Column="2"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border BackgroundColor="LightSteelBlue"
+                    Padding="15">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="6" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Term 2"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                    <Grid VerticalOptions="Center"
+                          ColumnDefinitions="0.7*, 0.3*">
+                        <Label Grid.Column="0"
+                               Text="Select the start date for the term"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start" />
+
+                        <DatePicker Grid.Column="1" />
+                    </Grid>
+                    <Grid ColumnDefinitions="0.7*, 0.3*"
+                          VerticalOptions="Center"
+                          Margin="0,0,0,20">
+                        <Label Grid.Column="0"
+                               Text="Select the end date for the term"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start" />
+                        <DatePicker Grid.Column="1"/>
+                    </Grid>
+                    <Button Text="View term" />
+                    <Grid ColumnDefinitions="*, *, *" ColumnSpacing="3">
+                        <Button Text="Edit name" Grid.Column="0"/>
+                        <Button Text="Delete name" Grid.Column="1"/>
+                        <Button Text="Delete Term" Grid.Column="2"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border BackgroundColor="LightSteelBlue"
+                    Padding="15">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="6" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Term 3"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                    <Grid VerticalOptions="Center"
+                          ColumnDefinitions="0.7*, 0.3*">
+                        <Label Grid.Column="0"
+                               Text="Select the start date for the term"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start" />
+
+                        <DatePicker Grid.Column="1" />
+                    </Grid>
+                    <Grid ColumnDefinitions="0.7*, 0.3*"
+                          VerticalOptions="Center"
+                          Margin="0,0,0,20">
+                        <Label Grid.Column="0"
+                               Text="Select the end date for the term"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start" />
+                        <DatePicker Grid.Column="1"/>
+                    </Grid>
+                    <Button Text="View term" />
+                    <Grid ColumnDefinitions="*, *, *" ColumnSpacing="3">
+                        <Button Text="Edit name" Grid.Column="0"/>
+                        <Button Text="Delete name" Grid.Column="1"/>
+                        <Button Text="Delete Term" Grid.Column="2"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
