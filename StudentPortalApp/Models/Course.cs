@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StudentPortalApp.Models
 {
-    internal class Course
+    public class Course
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

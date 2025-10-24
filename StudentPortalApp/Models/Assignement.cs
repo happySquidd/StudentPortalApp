@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentPortalApp.Models
 {
-    internal class Assignement
+    public class Assignement
     {
     }
 }

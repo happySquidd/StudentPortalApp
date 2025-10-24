@@ -48,10 +48,11 @@ namespace StudentPortalApp.Services
             }
         }
 
-        public static async Task GetTerms()
+        public static async Task<List<Term>> GetTerms()
         {
             await Init();
             var terms = await _db.Table<Term>().ToListAsync();
+            return terms;
         }
 
         public static async Task UpdateTerm(int id, string name, string startTime, string endTime)
