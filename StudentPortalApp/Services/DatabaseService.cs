@@ -141,5 +141,154 @@ namespace StudentPortalApp.Services
         }
 
         #endregion
+
+        #region DemoData
+        public static async void LoadSampleData()
+        {
+            await Init();
+
+            Term term1 = new Term
+            {
+                Name = "Fall 2025",
+                StartTime = new DateTime(2025, 10, 19),
+                EndTime = new DateTime(2026, 4, 19),
+            };
+
+            await _db.InsertAsync(term1);
+
+            Course course1 = new Course
+            {
+                Name = "Introduction to C#",
+                StartTime = new DateTime(2025, 10, 19),
+                EndTime = new DateTime(2026, 11, 19),
+                Status = "In Progress",
+                InstructorName = "John Doe",
+                InstructorPhone = "555-1234",
+                InstructorEmail = "email@gmail.com",
+                Notes = "Here are my notes",
+                StartNotification = true,
+                EndNotification = false,
+                DueDate = "2025-11-19",
+                TermId = term1.Id,
+            };
+
+            await _db.InsertAsync(course1);
+
+            Course course2 = new Course
+            {
+                Name = "Database Systems",
+                StartTime = new DateTime(2025, 11, 19),
+                EndTime = new DateTime(2026, 12, 19),
+                Status = "Not started",
+                InstructorName = "Jane Smith",
+                InstructorPhone = "555-5678",
+                InstructorEmail = "email@gmail.com",
+                Notes = "Sample notes",
+                StartNotification = false,
+                EndNotification = true,
+                DueDate = "2025-12-19",
+                TermId = term1.Id,
+            };
+
+            await _db.InsertAsync(course2);
+
+            Course course3 = new Course
+            {
+                Name = "Mobile App Development",
+                StartTime = new DateTime(2025, 12, 19),
+                EndTime = new DateTime(2026, 1, 19),
+                Status = "Not started",
+                InstructorName = "Alice Johnson",
+                InstructorPhone = "555-9012",
+                InstructorEmail = "gmail@gmail.com",
+                Notes = "Some notes here",
+                StartNotification = true,
+                EndNotification = true,
+                DueDate = "2026-01-19",
+                TermId = term1.Id,
+            };
+            await _db.InsertAsync(course3);
+
+            Course course4 = new Course
+            {
+                Name = "Web Development",
+                StartTime = new DateTime(2026, 1, 19),
+                EndTime = new DateTime(2026, 2, 19),
+                Status = "Not started",
+                InstructorName = "Bob Brown",
+                InstructorPhone = "555-3456",
+                InstructorEmail = "email@gmail.com",
+                Notes = "Web dev class",
+                StartNotification = false,
+                EndNotification = true,
+                DueDate = "2026-02-19",
+                TermId = term1.Id,
+            };
+            await _db.InsertAsync(course4);
+
+            Course course5 = new Course
+            {
+                Name = "Data Structures",
+                StartTime = new DateTime(2026, 2, 19),
+                EndTime = new DateTime(2026, 3, 19),
+                Status = "Not started",
+                InstructorName = "Charlie Davis",
+                InstructorPhone = "555-7890",
+                InstructorEmail = "email@gmal.com",
+                Notes = "Data structures class",
+                StartNotification = true,
+                EndNotification = true,
+                DueDate = "2026-03-19",
+                TermId = term1.Id,
+            };
+            await _db.InsertAsync(course5);
+
+            Course course6 = new Course
+            {
+                Name = "Operating Systems",
+                StartTime = new DateTime(2026, 3, 19),
+                EndTime = new DateTime(2026, 4, 19),
+                Status = "Not started",
+                InstructorName = "Diana Evans",
+                InstructorPhone = "555-2345",
+                InstructorEmail = "gmail@gmail.com",
+                Notes = "OS class notes",
+                StartNotification = false,
+                EndNotification = false,
+                DueDate = "2026-04-19",
+                TermId = term1.Id,
+            };
+            await _db.InsertAsync(course6);
+
+            Term term2 = new Term
+            {
+                Name = "Spring 2026",
+                StartTime = new DateTime(2026, 4, 19),
+                EndTime = new DateTime(2026, 10, 19),
+            };
+            await _db.InsertAsync(term2);
+
+            Term term3 = new Term
+            {
+                Name = "Summer 2026",
+                StartTime = new DateTime(2026, 10, 19),
+                EndTime = new DateTime(2027, 4, 19),
+            };
+            await _db.InsertAsync(term3);
+
+        }
+
+        public static async Task ClearSampleData()
+        {
+            await Init();
+            await _db.DropTableAsync<Term>();
+            await _db.DropTableAsync<Course>();
+            _db = null;
+
+            Settings.ClearSettings();
+        }
+
+        #endregion
     }
 }
+
