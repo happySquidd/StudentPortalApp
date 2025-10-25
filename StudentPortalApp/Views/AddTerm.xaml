@@ -4,15 +4,15 @@
              x:Class="StudentPortalApp.Views.AddTerm"
              Title="Add Term">
     <VerticalStackLayout VerticalOptions="Center"
-                         HorizontalOptions="Center">
+                             HorizontalOptions="Center">
         <Border x:Name="AddTermPopup"
-                Stroke="Black"
-                StrokeThickness="1"
-                BackgroundColor="LightSteelBlue"
-                Padding="15"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                WidthRequest="300">
+                    Stroke="Black"
+                    StrokeThickness="1"
+                    BackgroundColor="LightSteelBlue"
+                    Padding="15"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="300">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="6" />
             </Border.StrokeShape>
