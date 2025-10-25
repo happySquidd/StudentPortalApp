@@ -44,9 +44,9 @@
                                 </Grid>
                                 <Button Text="View term" Clicked="ViewTerm"/>
                                 <Grid ColumnDefinitions="*, *, *" ColumnSpacing="3">
-                                    <Button Text="Edit name" Grid.Column="0"/>
-                                    <Button Text="Delete name" Grid.Column="1"/>
-                                    <Button Text="Delete Term" Grid.Column="2"/>
+                                    <Button Text="Edit name" Grid.Column="0" Pressed="EditName"/>
+                                    <Button Text="Delete name" Grid.Column="1" Pressed="DeleteName"/>
+                                    <Button Text="Delete Term" Grid.Column="2" Pressed="DeleteTerm"/>
                                 </Grid>
                             </VerticalStackLayout>
                         </Border>

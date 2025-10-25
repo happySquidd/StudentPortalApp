@@ -44,4 +44,35 @@ public partial class TermsPage : ContentPage
         await Navigation.PushAsync(new TermWindow());
     }
 
+    private async void EditName(object sender, EventArgs e)
+    {
+        //var term = sender as Term;
+        if (true)
+        {
+            string result = await DisplayPromptAsync(
+                title: "Edit Term Name", 
+                message: "Enter new term name:", 
+                accept: "Save",
+                cancel: "Cancel"
+                //initialValue: term.Name
+            );
+
+            if (!string.IsNullOrWhiteSpace(result))
+            {
+                //term.Name = result;
+                //await DatabaseService.UpdateTerm(id: term.Id, name: term.Name, startTime: term.StartTime.ToString(), endTime: term.EndTime.ToString());
+                //await LoadData();
+            }
+        }
+    }
+    private async void DeleteTerm(object sender, EventArgs e)
+    {
+        //
+    }
+
+    private async void DeleteName(object sender, EventArgs e)
+    {
+
+    }
+
 }
