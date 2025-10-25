@@ -35,7 +35,8 @@ public partial class TermsPage : ContentPage
 
     private async void AddTerm(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new TermWindow());
+        await DatabaseService.AddTerm(name: "New Term", startTime: DateTime.Now, endTime: DateTime.Now.AddMonths(6));
+        await LoadData();
     }
 
     private async void ViewTerm(object sender, EventArgs e)

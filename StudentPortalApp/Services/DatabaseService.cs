@@ -26,14 +26,14 @@ namespace StudentPortalApp.Services
         }
 
         #region Terms region
-        public static async Task AddTerm(string name, string startTime, string endTime)
+        public static async Task AddTerm(string name, DateTime startTime, DateTime endTime)
         {
             await Init();
             var term = new Term
             {
                 Name = name,
-                StartTime = DateTime.Parse(startTime),
-                EndTime = DateTime.Parse(endTime)
+                StartTime = startTime,
+                EndTime = endTime
             };
             await _db.InsertAsync(term);
         }
