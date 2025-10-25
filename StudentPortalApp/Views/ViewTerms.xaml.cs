@@ -90,7 +90,24 @@ public partial class TermsPage : ContentPage
 
     private async void DeleteName(object sender, EventArgs e)
     {
+        // get the term to get its year
+        var button = (Button)sender;
+        var term = button.BindingContext as Term;
 
+        if (term != null)
+        {
+            bool confirm = await DisplayAlert(
+                title: "Confirm",
+                message: "Are you sure you want to reset this term name?",
+                accept: "Yes",
+                cancel: "No");
+            if (confirm)
+            {
+                string year = term.StartTime.Year.ToString();
+                await DatabaseService.UpdateTerm(id: term.Id, name: (year + " Term"), startTime: term.StartTime.ToString(), endTime: term.EndTime.ToString());
+                await LoadData();
+            }
+        }
     }
 
 }
