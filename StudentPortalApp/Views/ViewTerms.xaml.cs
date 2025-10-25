@@ -46,28 +46,46 @@ public partial class TermsPage : ContentPage
 
     private async void EditName(object sender, EventArgs e)
     {
-        //var term = sender as Term;
-        if (true)
+        // get the term to update its name
+        var button = (Button)sender;
+        var term = button.BindingContext as Term;
+        if (term != null)
         {
             string result = await DisplayPromptAsync(
                 title: "Edit Term Name", 
                 message: "Enter new term name:", 
                 accept: "Save",
-                cancel: "Cancel"
-                //initialValue: term.Name
+                cancel: "Cancel",
+                initialValue: term.Name
             );
 
             if (!string.IsNullOrWhiteSpace(result))
             {
-                //term.Name = result;
-                //await DatabaseService.UpdateTerm(id: term.Id, name: term.Name, startTime: term.StartTime.ToString(), endTime: term.EndTime.ToString());
-                //await LoadData();
+                term.Name = result;
+                await DatabaseService.UpdateTerm(id: term.Id, name: term.Name, startTime: term.StartTime.ToString(), endTime: term.EndTime.ToString());
+                await LoadData();
             }
         }
     }
     private async void DeleteTerm(object sender, EventArgs e)
     {
-        //
+        // get the term to pull id
+        var button = (Button)sender;
+        var term = button.BindingContext as Term;
+        if (term != null)
+        {
+            bool confirm = await DisplayAlert(
+                title: "Confirm Delete",
+                message: "Are you sure you want to delete this term?",
+                accept: "Yes",
+                cancel: "No");
+            if (confirm)
+            {
+                int Id = term.Id;
+                await DatabaseService.RemoveTerm(Id);
+                await LoadData();
+            }
+        }
     }
 
     private async void DeleteName(object sender, EventArgs e)

@@ -271,7 +271,7 @@ namespace StudentPortalApp.Services
 
             Term term3 = new Term
             {
-                Name = "Summer 2026",
+                Name = "Fall 2026",
                 StartTime = new DateTime(2026, 10, 19),
                 EndTime = new DateTime(2027, 4, 19),
             };
