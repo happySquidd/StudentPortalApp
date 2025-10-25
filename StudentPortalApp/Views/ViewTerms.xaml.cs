@@ -33,6 +33,11 @@ public partial class TermsPage : ContentPage
         }
     }
 
+    private async void AddTerm(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new TermWindow());
+    }
+
     private async void ViewTerm(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new TermWindow());
