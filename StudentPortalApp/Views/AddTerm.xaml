@@ -2,11 +2,29 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StudentPortalApp.Views.AddTerm"
-             Title="AddTerm">
-    <VerticalStackLayout>
-        <Label 
-            Text="Add term page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             Title="Add Term">
+    <VerticalStackLayout VerticalOptions="Center"
+                         HorizontalOptions="Center">
+        <Border x:Name="AddTermPopup"
+                Stroke="Black"
+                StrokeThickness="1"
+                BackgroundColor="LightSteelBlue"
+                Padding="15"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="300">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="6" />
+            </Border.StrokeShape>
+
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Add new term" FontAttributes="Bold"/>
+                <Entry x:Name="NewTermName" Placeholder="Term name" PlaceholderColor="BlueViolet"/>
+                <DatePicker x:Name="NewTermStartDate" Date="01/01/2025"/>
+                <DatePicker x:Name="NewTermEndDate" Date="07/01/2025"/>
+                <Button Text="Add Term" Clicked="ConfirmAddTerm"/>
+                <Button Text="Cancel" Clicked="ClosePopup" />
+            </VerticalStackLayout>
+        </Border>
     </VerticalStackLayout>
 </ContentPage>
