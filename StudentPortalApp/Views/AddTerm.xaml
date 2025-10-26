@@ -18,10 +18,38 @@
             </Border.StrokeShape>
 
             <VerticalStackLayout Spacing="15">
-                <Label Text="Add new term" FontAttributes="Bold"/>
-                <Entry x:Name="NewTermName" Placeholder="Term name" PlaceholderColor="BlueViolet"/>
-                <DatePicker x:Name="NewTermStartDate" Date="01/01/2025"/>
-                <DatePicker x:Name="NewTermEndDate" Date="07/01/2025"/>
+                <Label Text="Add a new term" 
+                       FontAttributes="Bold" 
+                       FontSize="20"/>
+                <Grid ColumnDefinitions=".30*,.70*"
+                      RowDefinitions="*,*,*">
+                    <Label Grid.Column="0"
+                           Grid.Row="0"
+                           Text="Term name:"
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Column="1"
+                           Grid.Row="0"
+                           x:Name="NewTermName" 
+                           Placeholder="Term name" 
+                           PlaceholderColor="BlueViolet"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="1"
+                           Text="Start Date:"
+                           VerticalOptions="Center"/>
+                    <DatePicker Grid.Column="1"
+                                Grid.Row="1"
+                                x:Name="NewTermStartDate"
+                                Date="01/01/2025"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="2"
+                           Text="End Date:"
+                           VerticalOptions="Center"/>
+                    <DatePicker Grid.Column="1" 
+                                Grid.Row="2" 
+                                x:Name="NewTermEndDate"
+                                Date="07/01/2025"/>
+                </Grid>
+                
                 <Button Text="Add Term" Clicked="ConfirmAddTerm"/>
                 <Button Text="Cancel" Clicked="ClosePopup" />
             </VerticalStackLayout>
