@@ -12,7 +12,7 @@
                     Padding="15"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
-                    WidthRequest="300">
+                    WidthRequest="350">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="6" />
             </Border.StrokeShape>

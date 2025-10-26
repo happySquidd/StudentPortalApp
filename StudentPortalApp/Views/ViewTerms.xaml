@@ -23,33 +23,44 @@
                             </Border.StrokeShape>
 
                             <VerticalStackLayout Spacing="5">
-                                <Label Text="{Binding Name}"
-                                    FontSize="20"
-                                    FontAttributes="Bold" />
+                                <Grid ColumnDefinitions="*, *, *"
+                                      VerticalOptions="Center">
+                                    <Label Text="{Binding Name}"
+                                           Grid.Column="0"
+                                           VerticalOptions="Center"
+                                           FontSize="20"
+                                           FontAttributes="Bold" />
+                                    <Button Text="Edit term"
+                                            Grid.Column="2"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Fill"
+                                            MinimumHeightRequest="-1"
+                                            HeightRequest="35"
+                                            Padding="10,0"
+                                            BackgroundColor="DodgerBlue"
+                                            Clicked="EditTerm"/>
+                                </Grid>
                                 <Grid VerticalOptions="Center"
                                     ColumnDefinitions="0.7*, 0.3*">
                                     <Label Grid.Column="0"
-                                        Text="Select the start date for the term"
-                                        VerticalOptions="Center"
-                                        HorizontalOptions="Start" />
+                                           Text="Start date for the term"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Start" />
 
-                                    <DatePicker Grid.Column="1" Date="{Binding StartTime}"/>
+                                    <Label Grid.Column="1" 
+                                           Text="{Binding StartTime}"/>
                                 </Grid>
                                 <Grid ColumnDefinitions="0.7*, 0.3*"
-                                    VerticalOptions="Center"
-                                    Margin="0,0,0,20">
+                                      VerticalOptions="Center"
+                                      Margin="0,0,0,20">
                                     <Label Grid.Column="0"
-                                        Text="Select the end date for the term"
-                                        VerticalOptions="Center"
-                                        HorizontalOptions="Start" />
-                                    <DatePicker Grid.Column="1" Date="{Binding EndTime}"/>
+                                           Text="End date for the term"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Start" />
+                                    <Label Grid.Column="1" 
+                                                Text="{Binding EndTime}"/>
                                 </Grid>
-                                <Button Text="View term" Clicked="ViewTerm"/>
-                                <Grid ColumnDefinitions="*, *, *" ColumnSpacing="3">
-                                    <Button Text="Edit name" Grid.Column="0" Clicked="EditName"/>
-                                    <Button Text="Delete name" Grid.Column="1" Clicked="DeleteName"/>
-                                    <Button Text="Delete Term" Grid.Column="2" Clicked="DeleteTerm"/>
-                                </Grid>
+                                <Button Text="View courses" Clicked="ViewTerm"/>
                             </VerticalStackLayout>
                         </Border>
 
