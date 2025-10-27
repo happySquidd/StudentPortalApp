@@ -41,7 +41,12 @@ public partial class TermsPage : ContentPage
 
     private async void ViewTerm(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new TermWindow());
+        var button = (Button)sender;
+        var term = button.BindingContext as Term;
+        if (term != null)
+        {
+            await Navigation.PushAsync(new TermWindow(term));
+        }
     }
 
     private async void EditTerm(object sender, EventArgs e)

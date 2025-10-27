@@ -2,486 +2,122 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StudentPortalApp.Views.TermWindow"
-             Title="TermWindow">
+             Title="Term courses">
     <ScrollView>
 
-        <VerticalStackLayout Spacing="15"
+        <VerticalStackLayout Spacing="20"
                              Padding="20">
+            
+            <CollectionView ItemsSource="{Binding Courses}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
 
-            <Border BackgroundColor="LightGray"
-                    Padding="15">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="6" />
-                </Border.StrokeShape>
-                <VerticalStackLayout Spacing="5">
-
-                    <Grid ColumnDefinitions="*, *, *"
-                          VerticalOptions="Center">
-                        <Label Text="Course 1"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               Grid.Column="0"/>
-
-                        <Border Grid.Column="2"
-                                BackgroundColor="PaleGreen"
-                                Padding="10, 5"
-                                HorizontalOptions="Center">
+                        <Border BackgroundColor="LightGray"
+                                Padding="15"
+                                Stroke="Black"
+                                StrokeThickness="1"
+                                Margin="0,0,0,15">
                             <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="6"/>
+                                <RoundRectangle CornerRadius="6" />
                             </Border.StrokeShape>
+                            <VerticalStackLayout Spacing="5">
 
-                            <Label Text="Completed"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"
-                                   FontSize="17"/>
+                                <Grid ColumnDefinitions=".75*, .40*"
+                                      VerticalOptions="Center">
+                                    <Label Text="{Binding Name}"
+                                           FontSize="20"
+                                           FontAttributes="Bold"
+                                           Grid.Column="0"/>
+
+                                    <Border Grid.Column="1"
+                                            BackgroundColor="PaleGreen"
+                                            Padding="10, 5"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="6"/>
+                                        </Border.StrokeShape>
+
+                                        <Label Text="{Binding Status}"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="End"
+                                               FontSize="17"/>
+                                    </Border>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="*, *"
+                                      VerticalOptions="Center">
+                                    <Label Grid.Column="0"
+                                           Text=""
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Start" />
+
+                                    <Grid Grid.Column="1"
+                                          ColumnDefinitions="*, *"
+                                          VerticalOptions="Center">
+                                        <Label Grid.Column="0"
+                                               Text="Start:"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="End"/>
+                                        <Label Grid.Column="1"
+                                               Text="{Binding StartTime}"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center"
+                                               BackgroundColor="SlateGray"
+                                               TextColor="Khaki"/>
+                                    </Grid>
+                                </Grid>
+                                <Grid ColumnDefinitions="*, *"
+                                      VerticalOptions="Center"
+                                      Padding="0, 0, 0, 7">
+                                    <Label Grid.Column="0"
+                                           Text=""
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Start" />
+
+                                    <Grid Grid.Column="1"
+                                          ColumnDefinitions="*, *"
+                                          VerticalOptions="Center">
+                                        <Label Grid.Column="0"
+                                               Text="End:"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="End"/>
+                                        <Label Grid.Column="1"
+                                               Text="{Binding EndTime}"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center"
+                                               BackgroundColor="SlateGray"
+                                               TextColor="Khaki"/>
+                                    </Grid>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="*,*"
+                                      ColumnSpacing="5">
+                                    <Button Grid.Column="0"
+                                            Text="View course" 
+                                            BackgroundColor="MediumBlue"/>
+                                    <Button Grid.Column="1" 
+                                            Text="Delete course" 
+                                            BackgroundColor="DarkRed" Clicked="DeleteCourse"/>
+                                    
+                                </Grid>
+                            </VerticalStackLayout>
                         </Border>
-                    </Grid>
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-                    <Grid ColumnDefinitions="*, *"
-                          VerticalOptions="Center">
-                        <Label Grid.Column="0"
-                               Text=""
-                               VerticalOptions="Center"
-                               HorizontalOptions="Start" />
+            <Label x:Name="NoCoursesLabel"
+                    IsVisible="False"
+                    Text="No courses found. You can add courses with the button below"
+                    FontSize="20"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
 
-                        <Grid Grid.Column="1"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center">
-                            <Label Grid.Column="0"
-                                   Text="Start:"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"/>
-                            <Label Grid.Column="1"
-                                   Text=" 5/19/2025 "
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="Center"
-                                   BackgroundColor="SlateGray"
-                                   TextColor="Khaki"/>
-                        </Grid>
-                    </Grid>
-                    <Grid ColumnDefinitions="*, *"
-                          VerticalOptions="Center"
-                          Padding="0, 0, 0, 7">
-                        <Label Grid.Column="0"
-                                Text=""
-                                VerticalOptions="Center"
-                                HorizontalOptions="Start" />
-
-                        <Grid Grid.Column="1"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center">
-                            <Label Grid.Column="0"
-                                   Text="End:"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"/>
-                            <Label Grid.Column="1"
-                                   Text=" 6/19/2025 "
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="Center"
-                                   BackgroundColor="SlateGray"
-                                   TextColor="Khaki"/>
-                        </Grid>
-                    </Grid>
-
-                    <Button Text="View course" BackgroundColor="MediumBlue"/>
-                </VerticalStackLayout>
-            </Border>
-
-
-            <Border BackgroundColor="LightGray"
-                    Padding="15">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="6" />
-                </Border.StrokeShape>
-                <VerticalStackLayout Spacing="5">
-
-                    <Grid ColumnDefinitions="*, *, *"
-                          VerticalOptions="Center">
-                        <Label Text="Course 2"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               Grid.Column="0"/>
-
-                        <Border Grid.Column="2"
-                                BackgroundColor="PaleGreen"
-                                Padding="10, 5"
-                                HorizontalOptions="Center">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="6"/>
-                            </Border.StrokeShape>
-
-                            <Label Text="Completed"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"
-                                   FontSize="17"/>
-                        </Border>
-                    </Grid>
-
-                    <Grid ColumnDefinitions="*, *"
-                          VerticalOptions="Center">
-                        <Label Grid.Column="0"
-                               Text=""
-                               VerticalOptions="Center"
-                               HorizontalOptions="Start" />
-
-                        <Grid Grid.Column="1"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center">
-                            <Label Grid.Column="0"
-                                   Text="Start:"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"/>
-                            <Label Grid.Column="1"
-                                   Text=" 5/19/2025 "
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="Center"
-                                   BackgroundColor="SlateGray"
-                                   TextColor="Khaki"/>
-                        </Grid>
-                    </Grid>
-                    <Grid ColumnDefinitions="*, *"
-                          VerticalOptions="Center"
-                          Padding="0, 0, 0, 7">
-                        <Label Grid.Column="0"
-                                Text=""
-                                VerticalOptions="Center"
-                                HorizontalOptions="Start" />
-
-                        <Grid Grid.Column="1"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center">
-                            <Label Grid.Column="0"
-                                   Text="End:"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"/>
-                            <Label Grid.Column="1"
-                                   Text=" 6/19/2025 "
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="Center"
-                                   BackgroundColor="SlateGray"
-                                   TextColor="Khaki"/>
-                        </Grid>
-                    </Grid>
-
-                    <Button Text="View course" BackgroundColor="MediumBlue"/>
-                </VerticalStackLayout>
-            </Border>
-
-            <Border BackgroundColor="LightGray"
-                    Padding="15">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="6" />
-                </Border.StrokeShape>
-                <VerticalStackLayout Spacing="5">
-
-                    <Grid ColumnDefinitions="*, *, *"
-                          VerticalOptions="Center">
-                        <Label Text="Course 3"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               Grid.Column="0"/>
-
-                        <Border Grid.Column="2"
-                                BackgroundColor="LightYellow"
-                                Padding="10, 5"
-                                HorizontalOptions="Center">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="6"/>
-                            </Border.StrokeShape>
-
-                            <Label Text="In progress"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"
-                                   FontSize="17"/>
-                        </Border>
-                    </Grid>
-
-                    <Grid ColumnDefinitions="*, *"
-                          VerticalOptions="Center">
-                        <Label Grid.Column="0"
-                               Text=""
-                               VerticalOptions="Center"
-                               HorizontalOptions="Start" />
-
-                        <Grid Grid.Column="1"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center">
-                            <Label Grid.Column="0"
-                                   Text="Start:"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"/>
-                            <Label Grid.Column="1"
-                                   Text=" 5/19/2025 "
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="Center"
-                                   BackgroundColor="SlateGray"
-                                   TextColor="Khaki"/>
-                        </Grid>
-                    </Grid>
-                    <Grid ColumnDefinitions="*, *"
-                          VerticalOptions="Center"
-                          Padding="0, 0, 0, 7">
-                        <Label Grid.Column="0"
-                               Text=""
-                               VerticalOptions="Center"
-                               HorizontalOptions="Start" />
-
-                        <Grid Grid.Column="1"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center">
-                            <Label Grid.Column="0"
-                                   Text="End:"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"/>
-                            <Label Grid.Column="1"
-                                   Text=" 6/19/2025 "
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="Center"
-                                   BackgroundColor="SlateGray"
-                                   TextColor="Khaki"/>
-                        </Grid>
-                    </Grid>
-
-                    <Button Text="View course" BackgroundColor="MediumBlue"/>
-                </VerticalStackLayout>
-            </Border>
-
-            <Border BackgroundColor="LightGray"
-                    Padding="15">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="6" />
-                </Border.StrokeShape>
-                <VerticalStackLayout Spacing="5">
-
-                    <Grid ColumnDefinitions="*, *, *"
-                          VerticalOptions="Center">
-                        <Label Text="Course 4"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               Grid.Column="0"/>
-
-                        <Border Grid.Column="2"
-                                BackgroundColor="LightSkyBlue"
-                                Padding="10, 5"
-                                HorizontalOptions="Center">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="6"/>
-                            </Border.StrokeShape>
-
-                            <Label Text="Not started"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"
-                                   FontSize="17"/>
-                        </Border>
-                    </Grid>
-
-                    <Grid ColumnDefinitions="*, *"
-                          VerticalOptions="Center">
-                        <Label Grid.Column="0"
-                               Text=""
-                               VerticalOptions="Center"
-                               HorizontalOptions="Start" />
-
-                        <Grid Grid.Column="1"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center">
-                            <Label Grid.Column="0"
-                                   Text="Start:"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"/>
-                            <Label Grid.Column="1"
-                                   Text=" 5/19/2025 "
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="Center"
-                                   BackgroundColor="SlateGray"
-                                   TextColor="Khaki"/>
-                        </Grid>
-                    </Grid>
-                    <Grid ColumnDefinitions="*, *"
-                          VerticalOptions="Center"
-                          Padding="0, 0, 0, 7">
-                        <Label Grid.Column="0"
-                               Text=""
-                               VerticalOptions="Center"
-                               HorizontalOptions="Start" />
-
-                        <Grid Grid.Column="1"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center">
-                            <Label Grid.Column="0"
-                                   Text="End:"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"/>
-                            <Label Grid.Column="1"
-                                   Text=" 6/19/2025 "
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="Center"
-                                   BackgroundColor="SlateGray"
-                                   TextColor="Khaki"/>
-                        </Grid>
-                    </Grid>
-
-                    <Button Text="View course" BackgroundColor="MediumBlue"/>
-                </VerticalStackLayout>
-            </Border>
-
-            <Border BackgroundColor="LightGray"
-                    Padding="15">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="6" />
-                </Border.StrokeShape>
-                <VerticalStackLayout Spacing="5">
-
-                    <Grid ColumnDefinitions="*, *, *"
-                          VerticalOptions="Center">
-                        <Label Text="Course 5"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               Grid.Column="0"/>
-
-                        <Border Grid.Column="2"
-                                BackgroundColor="LightSkyBlue"
-                                Padding="10, 5"
-                                HorizontalOptions="Center">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="6"/>
-                            </Border.StrokeShape>
-
-                            <Label Text="Not started"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"
-                                   FontSize="17"/>
-                        </Border>
-                    </Grid>
-
-                    <Grid ColumnDefinitions="*, *"
-                          VerticalOptions="Center">
-                        <Label Grid.Column="0"
-                               Text=""
-                               VerticalOptions="Center"
-                               HorizontalOptions="Start" />
-
-                        <Grid Grid.Column="1"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center">
-                            <Label Grid.Column="0"
-                                   Text="Start:"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"/>
-                            <Label Grid.Column="1"
-                                   Text=" 5/19/2025 "
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="Center"
-                                   BackgroundColor="SlateGray"
-                                   TextColor="Khaki"/>
-                        </Grid>
-                    </Grid>
-                    <Grid ColumnDefinitions="*, *"
-                          VerticalOptions="Center"
-                          Padding="0, 0, 0, 7">
-                        <Label Grid.Column="0"
-                               Text=""
-                               VerticalOptions="Center"
-                               HorizontalOptions="Start" />
-
-                        <Grid Grid.Column="1"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center">
-                            <Label Grid.Column="0"
-                                   Text="End:"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"/>
-                            <Label Grid.Column="1"
-                                   Text=" 6/19/2025 "
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="Center"
-                                   BackgroundColor="SlateGray"
-                                   TextColor="Khaki"/>
-                        </Grid>
-                    </Grid>
-
-                    <Button Text="View course" BackgroundColor="MediumBlue"/>
-                </VerticalStackLayout>
-            </Border>
-
-            <Border BackgroundColor="LightGray"
-                    Padding="15">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="6" />
-                </Border.StrokeShape>
-                <VerticalStackLayout Spacing="5">
-
-                    <Grid ColumnDefinitions="*, *, *"
-                          VerticalOptions="Center">
-                        <Label Text="Course 6"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               Grid.Column="0"/>
-
-                        <Border Grid.Column="2"
-                                BackgroundColor="LightSkyBlue"
-                                Padding="10, 5"
-                                HorizontalOptions="Center">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="6"/>
-                            </Border.StrokeShape>
-
-                            <Label Text="Not started"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"
-                                   FontSize="17"/>
-                        </Border>
-                    </Grid>
-
-                    <Grid ColumnDefinitions="*, *"
-                          VerticalOptions="Center">
-                        <Label Grid.Column="0"
-                               Text=""
-                               VerticalOptions="Center"
-                               HorizontalOptions="Start" />
-
-                        <Grid Grid.Column="1"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center">
-                            <Label Grid.Column="0"
-                                   Text="Start:"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"/>
-                            <Label Grid.Column="1"
-                                   Text=" 5/19/2025 "
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="Center"
-                                   BackgroundColor="SlateGray"
-                                   TextColor="Khaki"/>
-                        </Grid>
-                    </Grid>
-                    <Grid ColumnDefinitions="*, *"
-                          VerticalOptions="Center"
-                          Padding="0, 0, 0, 7">
-                        <Label Grid.Column="0"
-                               Text=""
-                               VerticalOptions="Center"
-                               HorizontalOptions="Start" />
-
-                        <Grid Grid.Column="1"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center">
-                            <Label Grid.Column="0"
-                                   Text="End:"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="End"/>
-                            <Label Grid.Column="1"
-                                   Text=" 6/19/2025 "
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="Center"
-                                   BackgroundColor="SlateGray"
-                                   TextColor="Khaki"/>
-                        </Grid>
-                    </Grid>
-
-                    <Button Text="View course" BackgroundColor="MediumBlue"/>
-                </VerticalStackLayout>
-            </Border>
+            <Button Text="Add Course"
+                    Margin="0,0,0,10"
+                    Pressed="AddCourse"/>
 
         </VerticalStackLayout>
     </ScrollView>

@@ -105,16 +105,18 @@ namespace StudentPortalApp.Services
             }
         }
 
-        public static async Task GetCourses()
+        public static async Task<List<Course>> GetCourses()
         {
             await Init();
             var courses = await _db.Table<Course>().ToListAsync();
+            return courses;
         }
 
-        public static async Task GetCoursesByTerm(int termId)
+        public static async Task<List<Course>> GetCoursesByTerm(int termId)
         {
             await Init();
             var courses = await _db.Table<Course>().Where(c => c.TermId == termId).ToListAsync();
+            return courses;
         }
 
         public static async Task UpdateCourse(int id, int termId, string name, string startTime, string endTime, string status,

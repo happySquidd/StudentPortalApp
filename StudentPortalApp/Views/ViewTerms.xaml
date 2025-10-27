@@ -7,7 +7,7 @@
     <ScrollView>
 
         <VerticalStackLayout Padding="15"
-                            Spacing="15">
+                             Spacing="15">
 
             <CollectionView ItemsSource="{Binding Terms}">
                 <CollectionView.ItemTemplate>
