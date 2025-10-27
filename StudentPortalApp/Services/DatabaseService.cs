@@ -146,7 +146,7 @@ namespace StudentPortalApp.Services
         #endregion
 
         #region DemoData
-        public static async void LoadSampleData()
+        public static async Task LoadSampleData()
         {
             await Init();
 

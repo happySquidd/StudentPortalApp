@@ -3,6 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StudentPortalApp.Views.TermsPage"
              Title="My terms">
+    <NavigationPage.TitleView>
+        <Label Text="My terms"
+               TextColor="Black"
+               VerticalOptions="Center"
+               FontSize="24"/>
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Load sample data"
+                     Clicked="LoadSampleData"/>
+        <ToolbarItem Text="Clear all data"
+                     Clicked="ClearSampleData"/>
+    </ContentPage.ToolbarItems>
 
     <ScrollView>
 

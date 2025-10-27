@@ -59,5 +59,15 @@ public partial class TermsPage : ContentPage
         }
     }
 
+    private async void LoadSampleData(object sender, EventArgs e)
+    {
+        await DatabaseService.LoadSampleData();
+        await LoadData();
+    }
 
+    private async void ClearSampleData(object sender, EventArgs e)
+    {
+        await DatabaseService.ClearSampleData();
+        await LoadData();
+    }
 }
