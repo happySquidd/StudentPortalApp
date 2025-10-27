@@ -5,14 +5,13 @@
              Title="Term courses">
     <ScrollView>
 
-        <VerticalStackLayout Spacing="20"
-                             Padding="20">
+        <VerticalStackLayout Padding="20">
             
             <CollectionView ItemsSource="{Binding Courses}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
 
-                        <Border BackgroundColor="LightGray"
+                        <Border BackgroundColor="LightSteelBlue"
                                 Padding="15"
                                 Stroke="Black"
                                 StrokeThickness="1"
@@ -20,7 +19,7 @@
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="6" />
                             </Border.StrokeShape>
-                            <VerticalStackLayout Spacing="5">
+                            <VerticalStackLayout Spacing="15">
 
                                 <Grid ColumnDefinitions=".75*, .40*"
                                       VerticalOptions="Center">
@@ -47,47 +46,35 @@
 
                                 <Grid ColumnDefinitions="*, *"
                                       VerticalOptions="Center">
-                                    <Label Grid.Column="0"
-                                           Text=""
-                                           VerticalOptions="Center"
-                                           HorizontalOptions="Start" />
-
-                                    <Grid Grid.Column="1"
-                                          ColumnDefinitions="*, *"
+                                    
+                                    <Grid Grid.Column="0"
+                                          ColumnDefinitions=".3*, .7*"
                                           VerticalOptions="Center">
                                         <Label Grid.Column="0"
                                                Text="Start:"
                                                VerticalOptions="Center"
-                                               HorizontalOptions="End"/>
+                                               HorizontalOptions="Start"/>
                                         <Label Grid.Column="1"
-                                               Text="{Binding StartTime}"
+                                               Text="{Binding StartTime, StringFormat='{0:d}'}"
                                                VerticalOptions="Center"
-                                               HorizontalOptions="Center"
-                                               BackgroundColor="SlateGray"
-                                               TextColor="Khaki"/>
+                                               HorizontalOptions="Start"/>
                                     </Grid>
                                 </Grid>
                                 <Grid ColumnDefinitions="*, *"
                                       VerticalOptions="Center"
                                       Padding="0, 0, 0, 7">
-                                    <Label Grid.Column="0"
-                                           Text=""
-                                           VerticalOptions="Center"
-                                           HorizontalOptions="Start" />
 
-                                    <Grid Grid.Column="1"
-                                          ColumnDefinitions="*, *"
+                                    <Grid Grid.Column="0"
+                                          ColumnDefinitions=".3*, .7*"
                                           VerticalOptions="Center">
                                         <Label Grid.Column="0"
                                                Text="End:"
                                                VerticalOptions="Center"
-                                               HorizontalOptions="End"/>
+                                               HorizontalOptions="Start"/>
                                         <Label Grid.Column="1"
-                                               Text="{Binding EndTime}"
+                                               Text="{Binding EndTime, StringFormat='{0:d}'}"
                                                VerticalOptions="Center"
-                                               HorizontalOptions="Center"
-                                               BackgroundColor="SlateGray"
-                                               TextColor="Khaki"/>
+                                               HorizontalOptions="Start"/>
                                     </Grid>
                                 </Grid>
 
@@ -95,7 +82,7 @@
                                       ColumnSpacing="5">
                                     <Button Grid.Column="0"
                                             Text="View course" 
-                                            BackgroundColor="MediumBlue"/>
+                                            BackgroundColor="MidnightBlue"/>
                                     <Button Grid.Column="1" 
                                             Text="Delete course" 
                                             BackgroundColor="DarkRed" Clicked="DeleteCourse"/>

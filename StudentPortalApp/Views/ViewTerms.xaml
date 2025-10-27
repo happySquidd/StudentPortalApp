@@ -34,9 +34,10 @@
                                 <RoundRectangle CornerRadius="6" />
                             </Border.StrokeShape>
 
-                            <VerticalStackLayout Spacing="5">
+                            <VerticalStackLayout Spacing="15">
                                 <Grid ColumnDefinitions="*, *, *"
-                                      VerticalOptions="Center">
+                                      VerticalOptions="Center"
+                                      Margin="0,0,0,10">
                                     <Label Text="{Binding Name}"
                                            Grid.Column="0"
                                            VerticalOptions="Center"
@@ -53,14 +54,14 @@
                                             Clicked="EditTerm"/>
                                 </Grid>
                                 <Grid VerticalOptions="Center"
-                                    ColumnDefinitions="0.7*, 0.3*">
+                                      ColumnDefinitions="0.7*, 0.3*">
                                     <Label Grid.Column="0"
                                            Text="Start date for the term"
                                            VerticalOptions="Center"
                                            HorizontalOptions="Start" />
 
                                     <Label Grid.Column="1" 
-                                           Text="{Binding StartTime}"/>
+                                           Text="{Binding StartTime, StringFormat='{0:d}'}"/>
                                 </Grid>
                                 <Grid ColumnDefinitions="0.7*, 0.3*"
                                       VerticalOptions="Center"
@@ -70,7 +71,7 @@
                                            VerticalOptions="Center"
                                            HorizontalOptions="Start" />
                                     <Label Grid.Column="1" 
-                                                Text="{Binding EndTime}"/>
+                                                Text="{Binding EndTime, StringFormat='{0:d}'}"/>
                                 </Grid>
                                 <Button Text="View courses" Clicked="ViewTerm"/>
                             </VerticalStackLayout>
