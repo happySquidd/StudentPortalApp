@@ -61,6 +61,21 @@ public partial class TermWindow : ContentPage
 
 	private async void DeleteCourse(object sender, EventArgs e)
 	{
-
-	}
+		var button = (Button)sender;
+		var course = button.BindingContext as Course;
+        if (course != null) 
+        {
+			int courseId = course.Id;
+			var answer = await DisplayAlert(
+				title: "Confirm Delete",
+				message: "Are you sure you want to delete this course?",
+				cancel: "Cancel",
+				accept: "Yes");
+			if (answer)
+			{
+				await DatabaseService.RemoveCourse(courseId);
+				await LoadData(termId);
+			}
+        }
+    }
 }
