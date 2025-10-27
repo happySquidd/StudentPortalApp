@@ -40,8 +40,13 @@ public partial class TermWindow : ContentPage
 		}
 	}
 
-	private async Task AddCourse(object sender, EventArgs e)
+	private void AddCourse(object sender, EventArgs e)
 	{
 		Courses.Add(new Course { Name = "New Course" , StartTime = DateTime.Now, EndTime = DateTime.Now, Status = "Not started"});
+	}
+
+	private async void DeleteCourse(object sender, EventArgs e)
+	{
+
 	}
 }
