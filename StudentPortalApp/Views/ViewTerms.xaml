@@ -61,7 +61,8 @@
                                            HorizontalOptions="Start" />
 
                                     <Label Grid.Column="1" 
-                                           Text="{Binding StartTime, StringFormat='{0:d}'}"/>
+                                           Text="{Binding StartTime, StringFormat='{0:d}'}"
+                                           HorizontalOptions="Start"/>
                                 </Grid>
                                 <Grid ColumnDefinitions="0.7*, 0.3*"
                                       VerticalOptions="Center"
@@ -71,7 +72,8 @@
                                            VerticalOptions="Center"
                                            HorizontalOptions="Start" />
                                     <Label Grid.Column="1" 
-                                                Text="{Binding EndTime, StringFormat='{0:d}'}"/>
+                                           Text="{Binding EndTime, StringFormat='{0:d}'}"
+                                           HorizontalOptions="Start"/>
                                 </Grid>
                                 <Button Text="View courses" Clicked="ViewTerm"/>
                             </VerticalStackLayout>
