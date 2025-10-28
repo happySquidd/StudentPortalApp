@@ -87,7 +87,20 @@
                                Grid.Row="6"
                                x:Name="InstEmail"
                                Placeholder="Empty"
-                               PlaceholderColor="BlueViolet"/>
+                               PlaceholderColor="BlueViolet"
+                               Margin="0,0,0,10"/>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,*"
+                          VerticalOptions="Center"
+                          HorizontalOptions="Fill"
+                          ColumnSpacing="5">
+                        <Button Grid.Column="0"
+                                Text="Save"
+                                Clicked="SaveClick"/>
+                        <Button Grid.Column="1"
+                                Text="Cancel" 
+                                Clicked="CancelClick"/>
                     </Grid>
                 </VerticalStackLayout>
 
