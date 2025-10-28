@@ -2,11 +2,110 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StudentPortalApp.Views.AddCourse"
-             Title="AddCourse">
-    <VerticalStackLayout>
-        <Label 
-            Text="Add course page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Add course">
+    <ScrollView>
+
+        <VerticalStackLayout Padding="40">
+            <Border Stroke="Black"
+                    StrokeThickness="1"
+                    BackgroundColor="LightSteelBlue"
+                    Padding="15"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="6" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Edit course"
+                           FontSize="20"
+                           FontAttributes="Bold"/>
+
+                    <Grid ColumnDefinitions=".40*,.60*"
+                          RowDefinitions="*,*,*,*,*,*,*">
+                        <Label Grid.Column="0"
+                               Grid.Row="0"
+                               Text="Course title:"
+                               VerticalOptions="Center"/>
+                        <Entry Grid.Column="1"
+                               Grid.Row="0"
+                               x:Name="CourseName" 
+                               Placeholder="Course name" 
+                               PlaceholderColor="BlueViolet"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="1"
+                               Text="Start Date:"
+                               VerticalOptions="Center"/>
+                        <DatePicker Grid.Column="1"
+                                    Grid.Row="1"
+                                    x:Name="CourseStart"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="2"
+                               Text="End Date:"
+                               VerticalOptions="Center"/>
+                        <DatePicker Grid.Column="1" 
+                                    Grid.Row="2" 
+                                    x:Name="CourseEnd"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="3"
+                               Text="Status:"
+                               VerticalOptions="Center"/>
+                        <Picker Grid.Column="1"
+                                Grid.Row="3"
+                                x:Name="CourseStatus">
+                            <Picker.Items>
+                                <x:String>Planned</x:String>
+                                <x:String>In Progress</x:String>
+                                <x:String>Completed</x:String>
+                                <x:String>Dropped</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Label Grid.Column="0"
+                               Grid.Row="4"
+                               Text="Instructor name:"
+                               VerticalOptions="Center"/>
+                        <Entry Grid.Column="1"
+                               Grid.Row="4"
+                               x:Name="InstName"
+                               Placeholder="Instructor's Name"
+                               PlaceholderColor="BlueViolet"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="5"
+                               Text="Instructor's phone:"
+                               VerticalOptions="Center"/>
+                        <Entry Grid.Column="1"
+                               Grid.Row="5"
+                               x:Name="InstPhone"
+                               Placeholder="Phone"
+                               PlaceholderColor="BlueViolet"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="6"
+                               Text="Instructor's email:"
+                               VerticalOptions="Center"/>
+                        <Entry Grid.Column="1"
+                               Grid.Row="6"
+                               x:Name="InstEmail"
+                               Placeholder="Empty"
+                               PlaceholderColor="BlueViolet"
+                               Margin="0,0,0,10"/>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,*"
+                          VerticalOptions="Center"
+                          HorizontalOptions="Fill"
+                          ColumnSpacing="5">
+                        <Button Grid.Column="0"
+                            Text="Add"
+                            Clicked="SaveClick"/>
+                        <Button Grid.Column="1"
+                            Text="Cancel" 
+                            Clicked="CancelClick"/>
+                    </Grid>
+                </VerticalStackLayout>
+
+            </Border>
+        </VerticalStackLayout>
+
+    </ScrollView>
 </ContentPage>

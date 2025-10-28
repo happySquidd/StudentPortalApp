@@ -36,27 +36,16 @@ public partial class TermWindow : ContentPage
 		if (coursesList.Count == 0)
 		{
 			NoCoursesLabel.IsVisible = true;
-			
+		}
+		else
+		{
+			NoCoursesLabel.IsVisible = false;
 		}
 	}
 
 	private async void AddCourse(object sender, EventArgs e)
 	{
-		await DatabaseService.AddCourse(
-			termId: termId,
-			name: "New Course",
-			startTime: DateTime.Now.ToString(),
-			endTime: DateTime.Now.ToString(),
-			status: "Not started",
-			instructorName: "Unknown",
-			instructorPhone: "",
-			instructorEmail: "",
-			notes: "",
-			startNotification: false,
-			endNotification: false,
-			dueDate: ""
-			);
-		await LoadData(termId);
+		await Navigation.PushAsync(new AddCourse(termId));
 	}
 
 	private async void DeleteCourse(object sender, EventArgs e)

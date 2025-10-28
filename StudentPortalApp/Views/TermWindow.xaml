@@ -102,11 +102,12 @@
             </CollectionView>
 
             <Label x:Name="NoCoursesLabel"
-                    IsVisible="False"
-                    Text="No courses found. You can add courses with the button below"
-                    FontSize="20"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"/>
+                   IsVisible="False"
+                   Text="No courses found. You can add courses with the button below"
+                   FontSize="20"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20"/>
 
             <Button Text="Add Course"
                     Margin="0,0,0,10"
