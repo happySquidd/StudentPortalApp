@@ -54,6 +54,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.Add
 build_metadata.AdditionalFiles.TargetPath = Views\AddTerm.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AddTerm.xaml
 
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/EditCourse.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.EditCourse.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EditCourse.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EditCourse.xaml
+
 [C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/EditTerm.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.EditTerm.xaml
