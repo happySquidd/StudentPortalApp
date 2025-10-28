@@ -91,7 +91,7 @@
                                Margin="0,0,0,10"/>
                     </Grid>
 
-                    <Grid ColumnDefinitions="*,*"
+                    <Grid ColumnDefinitions="*,*,*"
                           VerticalOptions="Center"
                           HorizontalOptions="Fill"
                           ColumnSpacing="5">
@@ -101,6 +101,10 @@
                         <Button Grid.Column="1"
                                 Text="Cancel" 
                                 Clicked="CancelClick"/>
+                        <Button Grid.Column="2"
+                                Text="Delete"
+                                BackgroundColor="DarkRed"
+                                Clicked="DeleteCourse"/>
                     </Grid>
                 </VerticalStackLayout>
 

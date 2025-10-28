@@ -91,7 +91,22 @@ public partial class EditCourse : ContentPage
 		await Navigation.PopAsync();
     }
 
-	private async void CancelClick(object sender, EventArgs e)
+    private async void DeleteCourse(object sender, EventArgs e)
+    {
+        int courseId = course.Id;
+        var answer = await DisplayAlert(
+            title: "Confirm Delete",
+            message: "Are you sure you want to delete this course?",
+            cancel: "Cancel",
+            accept: "Yes");
+        if (answer)
+        {
+            await DatabaseService.RemoveCourse(courseId);
+			await Navigation.PopAsync();
+        }
+    }
+
+    private async void CancelClick(object sender, EventArgs e)
 	{
 		await Navigation.PopAsync();
 	}
