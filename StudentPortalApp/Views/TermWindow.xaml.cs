@@ -88,4 +88,14 @@ public partial class TermWindow : ContentPage
 			await Navigation.PushAsync(new EditCourse(course));
 		}
 	}
+
+	private async void ViewCourse(object sender, EventArgs e)
+	{
+		var button = (Button)sender;
+		var course = button.BindingContext as Course;
+		if (course != null)
+		{
+			await Navigation.PushAsync(new ViewCourse(course));
+		}
+    }
 }

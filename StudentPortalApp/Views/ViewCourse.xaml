@@ -2,11 +2,85 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StudentPortalApp.Views.ViewCourse"
-             Title="ViewCourse">
-    <VerticalStackLayout>
-        <Label 
-            Text="View course info page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="View course">
+    <ScrollView>
+
+        <VerticalStackLayout Padding="40">
+            <Border Stroke="Black"
+                    StrokeThickness="1"
+                    BackgroundColor="LightSteelBlue"
+                    Padding="15"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="6" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Course view"
+                           FontSize="20"
+                           FontAttributes="Bold"/>
+
+                    <Grid ColumnDefinitions=".40*,.60*"
+                          RowDefinitions="*,*,*,*,*,*,*"
+                          RowSpacing="13">
+                        <Label Grid.Column="0"
+                               Grid.Row="0"
+                               Text="Course title:"
+                               VerticalOptions="Center"/>
+                        <Label Grid.Column="1"
+                                Grid.Row="0"
+                                Text="{Binding Name}"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="1"
+                               Text="Start Date:"
+                               VerticalOptions="Center"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="1"
+                               Text="{Binding StartTime, StringFormat='{0:d}'}"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="2"
+                               Text="End Date:"
+                               VerticalOptions="Center"/>
+                        <Label Grid.Column="1" 
+                               Grid.Row="2" 
+                               Text="{Binding EndTime, StringFormat='{0:d}'}"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="3"
+                               Text="Status:"
+                               VerticalOptions="Center"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="3"
+                               Text="{Binding Status}"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="4"
+                               Text="Instructor name:"
+                               VerticalOptions="Center"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="4"
+                               Text="{Binding InstructorName}"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="5"
+                               Text="Instructor's phone:"
+                               VerticalOptions="Center"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="5"
+                               Text="{Binding InstructorPhone}"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="6"
+                               Text="Instructor's email:"
+                               VerticalOptions="Center"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="6"
+                               Text="{Binding InstructorEmail}"
+                               Margin="0,0,0,10"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+
+            </Border>
+        </VerticalStackLayout>
+
+    </ScrollView>
 </ContentPage>

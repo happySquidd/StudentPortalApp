@@ -78,13 +78,17 @@
                                     </Grid>
                                 </Grid>
 
-                                <Grid ColumnDefinitions="*,*"
+                                <Grid ColumnDefinitions="*,*,*"
                                       ColumnSpacing="5">
                                     <Button Grid.Column="0"
+                                            Text="View"
+                                            BackgroundColor="CadetBlue"
+                                            Clicked="ViewCourse"/>
+                                    <Button Grid.Column="1"
                                             Text="Edit"
                                             BackgroundColor="DodgerBlue"
                                             Clicked="EditCourse"/>
-                                    <Button Grid.Column="1" 
+                                    <Button Grid.Column="2" 
                                             Text="Delete course" 
                                             BackgroundColor="DarkRed" 
                                             Clicked="DeleteCourse"/>
