@@ -5,7 +5,8 @@
              Title="View course">
     <ScrollView>
 
-        <VerticalStackLayout Padding="40">
+        <VerticalStackLayout Padding="20"
+                             Spacing="20">
             <Border Stroke="Black"
                     StrokeThickness="1"
                     BackgroundColor="LightSteelBlue"
@@ -23,7 +24,7 @@
                            FontAttributes="Bold"/>
 
                     <Grid ColumnDefinitions=".40*,.60*"
-                          RowDefinitions="*,*,*,*,*,*,*"
+                          RowDefinitions="*,*,*,*,*,*,*,*,*"
                           RowSpacing="13">
                         <Label Grid.Column="0"
                                Grid.Row="0"
@@ -73,13 +74,52 @@
                                VerticalOptions="Center"/>
                         <Label Grid.Column="1"
                                Grid.Row="6"
-                               Text="{Binding InstructorEmail}"
-                               Margin="0,0,0,10"/>
+                               Text="{Binding InstructorEmail}"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="7"
+                               Text="Notes:"
+                               VerticalOptions="Center"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="7"
+                               Text="{Binding Notes}"/>
+                        <Button Grid.Column="1"
+                                Grid.Row="8"
+                                Text="Share notes"
+                                FontSize="12"
+                                Padding="0"
+                                BackgroundColor="LightSlateGray"
+                                Clicked="ShareCourse"
+                                WidthRequest="80"
+                                MinimumHeightRequest="-1"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="9"
+                               VerticalOptions="Center"
+                               x:Name="Notifications"/>
                     </Grid>
 
                 </VerticalStackLayout>
 
             </Border>
+
+            
+            <Label Text="Assessments"
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+            <Border Stroke="Black"
+                    StrokeThickness="1"
+                    BackgroundColor="LightSteelBlue"
+                    Padding="15"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="6" />
+                </Border.StrokeShape>
+                
+            </Border>
+            
         </VerticalStackLayout>
 
     </ScrollView>

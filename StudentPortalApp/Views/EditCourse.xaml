@@ -23,7 +23,7 @@
                            FontAttributes="Bold"/>
 
                     <Grid ColumnDefinitions=".40*,.60*"
-                          RowDefinitions="*,*,*,*,*,*,*">
+                          RowDefinitions="*,*,*,*,*,*,*,*,*">
                         <Label Grid.Column="0"
                                Grid.Row="0"
                                Text="Course title:"
@@ -89,6 +89,27 @@
                                Placeholder="Empty"
                                PlaceholderColor="BlueViolet"
                                Margin="0,0,0,10"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="7"
+                               Text="Notes:"
+                               VerticalOptions="Center"/>
+                        <Editor Grid.Column="1" 
+                                Grid.Row="7" 
+                                x:Name="CourseNotes"
+                                AutoSize="TextChanges"
+                                Placeholder="Additional notes"
+                                PlaceholderColor="BlueViolet"/>
+                        <Button Grid.Column="1"
+                                Grid.Row="8"
+                                Text="Share notes"
+                                FontSize="12"
+                                Padding="0"
+                                BackgroundColor="LightSlateGray"
+                                Clicked="ShareCourse"
+                                WidthRequest="80"
+                                MinimumHeightRequest="-1"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"/>
                     </Grid>
 
                     <Grid ColumnDefinitions="*,*,*"

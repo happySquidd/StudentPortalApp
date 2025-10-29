@@ -23,7 +23,8 @@
                            FontAttributes="Bold"/>
 
                     <Grid ColumnDefinitions=".40*,.60*"
-                          RowDefinitions="*,*,*,*,*,*,*">
+                          RowDefinitions="*,*,*,*,*,*,*,*"
+                          Margin="0,0,0,10">
                         <Label Grid.Column="0"
                                Grid.Row="0"
                                Text="Course title:"
@@ -87,8 +88,17 @@
                                Grid.Row="6"
                                x:Name="InstEmail"
                                Placeholder="Empty"
-                               PlaceholderColor="BlueViolet"
-                               Margin="0,0,0,10"/>
+                               PlaceholderColor="BlueViolet"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="7"
+                               Text="Course notes:"
+                               VerticalOptions="Center"/>
+                        <Editor Grid.Column="1"
+                                Grid.Row="7"
+                                Placeholder="Additional notes"
+                                PlaceholderColor="BlueViolet"
+                                AutoSize="TextChanges"
+                                x:Name="CourseNotes"/>
                     </Grid>
 
                     <Grid ColumnDefinitions="*,*"

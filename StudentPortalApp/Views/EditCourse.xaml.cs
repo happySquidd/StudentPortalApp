@@ -17,6 +17,7 @@ public partial class EditCourse : ContentPage
 		InstName.Text = course.InstructorName;
 		InstPhone.Text = course.InstructorPhone;
 		InstEmail.Text = course.InstructorEmail;
+		CourseNotes.Text = course.Notes;
 
 		this.course = course;
 	}
@@ -73,6 +74,7 @@ public partial class EditCourse : ContentPage
 		string instructorName = InstName.Text;
 		string instructorPhone = InstPhone.Text;
 		string instructorEmail = InstEmail.Text;
+		string notes = CourseNotes.Text;
 
 		await DatabaseService.UpdateCourse(
 			id: course.Id,
@@ -84,7 +86,7 @@ public partial class EditCourse : ContentPage
 			instructorName: instructorName,
 			instructorPhone: instructorPhone,
 			instructorEmail: instructorEmail,
-			notes: course.Notes,
+			notes: notes,
 			startNotification: course.StartNotification,
 			endNotification: course.EndNotification,
 			dueDate: course.DueDate);
@@ -109,5 +111,23 @@ public partial class EditCourse : ContentPage
     private async void CancelClick(object sender, EventArgs e)
 	{
 		await Navigation.PopAsync();
+	}
+
+	private async void ShareCourse(object sender, EventArgs e)
+	{
+		if (string.IsNullOrWhiteSpace(CourseNotes.Text))
+		{
+			await DisplayAlert(
+				title: "Warning",
+				message: "Can't share empty notes",
+				cancel: "OK");
+			return;
+		}
+
+		await Share.Default.RequestAsync(new ShareTextRequest
+		{
+			Text = CourseNotes.Text,
+			Title = "Share Course Notes"
+		});
 	}
 }

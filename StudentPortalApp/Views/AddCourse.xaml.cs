@@ -75,7 +75,7 @@ public partial class AddCourse : ContentPage
             instructorName: instructorName,
             instructorPhone: instructorPhone,
             instructorEmail: instructorEmail,
-            notes: "",
+            notes: CourseNotes.Text,
             startNotification: false,
             endNotification: false,
             dueDate: "");
