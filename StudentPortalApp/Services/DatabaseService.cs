@@ -145,6 +145,60 @@ namespace StudentPortalApp.Services
 
         #endregion
 
+        #region Assessments region
+        public static async Task AddAssessment(int courseId, string type, string name, string start, string end, string status, bool startNotification, bool endNotification)
+        {
+            await Init();
+            var assessment = new Assessment
+            {
+                CourseId = courseId,
+                Type = type,
+                Name = name,
+                StartTime = DateTime.Parse(start),
+                EndTime = DateTime.Parse(end),
+                Status = status,
+                StartNotification = startNotification,
+                EndNotification = endNotification
+            };
+            await _db.InsertAsync(assessment);
+        }
+
+        public static async Task RemoveAssessment(int id)
+        {
+            await Init();
+            var assessment = await _db.Table<Assessment>().Where(a => a.Id == id).FirstOrDefaultAsync();
+            if (assessment != null)
+            {
+                await _db.DeleteAsync(assessment);
+            }
+        }
+
+        public static async Task<List<Assessment>> GetAssessments(int courseId)
+        {
+            await Init();
+            var assessments = await _db.Table<Assessment>().Where(a => a.CourseId == courseId).ToListAsync();
+            return assessments;
+        }
+
+        public static async Task UpdateAssessment(int id, int courseId, string type, string name, string start, string end, string status, bool startTime, bool endTime)
+        {
+            await Init();
+            var assessment = await _db.Table<Assessment>().Where(a => a.Id == id).FirstOrDefaultAsync();
+            if (assessment != null)
+            {
+                assessment.CourseId = courseId;
+                assessment.Type = type;
+                assessment.Name = name;
+                assessment.StartTime = DateTime.Parse(start);
+                assessment.EndTime = DateTime.Parse(end);
+                assessment.Status = status;
+                assessment.StartNotification = startTime;
+                assessment.EndNotification = endTime;
+                await _db.UpdateAsync(assessment);
+            }
+        }
+        #endregion
+
         #region DemoData
         public static async Task LoadSampleData()
         {
