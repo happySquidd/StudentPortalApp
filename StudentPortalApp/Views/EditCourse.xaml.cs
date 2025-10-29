@@ -118,8 +118,8 @@ public partial class EditCourse : ContentPage
 				Description = $"The course '{courseName}' ends today.",
 				Schedule = new NotificationRequestSchedule
 				{
-					NotifyTime = DateTime.Now.AddSeconds(2)
-				}
+					NotifyTime = end
+                }
 			};
 			await LocalNotificationCenter.Current.Show(endRequest);
         }

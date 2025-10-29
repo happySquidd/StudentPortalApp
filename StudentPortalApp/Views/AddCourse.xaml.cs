@@ -1,3 +1,4 @@
+using Plugin.LocalNotification;
 using StudentPortalApp.Models;
 using StudentPortalApp.Services;
 
@@ -81,6 +82,35 @@ public partial class AddCourse : ContentPage
             startNotification: startNotif,
             endNotification: endNotif,
             dueDate: "");
+
+        // notifications
+        if (startNotif)
+        {
+            var startRequest = new NotificationRequest
+            {
+                Title = "Course Starting",
+                Description = $"The course '{courseName}' starts today.",
+                Schedule = new NotificationRequestSchedule
+                {
+                    NotifyTime = start
+                }
+            };
+            await LocalNotificationCenter.Current.Show(startRequest);
+        }
+        if (endNotif)
+        {
+            var endRequest = new NotificationRequest
+            {
+                Title = "Course Ending",
+                Description = $"The course '{courseName}' ends today.",
+                Schedule = new NotificationRequestSchedule
+                {
+                    NotifyTime = end
+                }
+            };
+            await LocalNotificationCenter.Current.Show(endRequest);
+        }
+
         await Navigation.PopAsync();
     }
 
