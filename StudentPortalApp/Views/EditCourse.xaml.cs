@@ -18,8 +18,10 @@ public partial class EditCourse : ContentPage
 		InstPhone.Text = course.InstructorPhone;
 		InstEmail.Text = course.InstructorEmail;
 		CourseNotes.Text = course.Notes;
+		StartNotificationSwitch.IsToggled = course.StartNotification;
+		EndNotificationSwitch.IsToggled = course.EndNotification;
 
-		this.course = course;
+        this.course = course;
 	}
 
 	private async void SaveClick(object sender, EventArgs e)
@@ -75,6 +77,8 @@ public partial class EditCourse : ContentPage
 		string instructorPhone = InstPhone.Text;
 		string instructorEmail = InstEmail.Text;
 		string notes = CourseNotes.Text;
+		bool startNotif = StartNotificationSwitch.IsToggled;
+		bool endNotif = EndNotificationSwitch.IsToggled;
 
 		await DatabaseService.UpdateCourse(
 			id: course.Id,
@@ -87,8 +91,8 @@ public partial class EditCourse : ContentPage
 			instructorPhone: instructorPhone,
 			instructorEmail: instructorEmail,
 			notes: notes,
-			startNotification: course.StartNotification,
-			endNotification: course.EndNotification,
+			startNotification: startNotif,
+			endNotification: endNotif,
 			dueDate: course.DueDate);
 		await Navigation.PopAsync();
     }

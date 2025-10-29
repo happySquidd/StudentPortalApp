@@ -93,11 +93,10 @@
                                 MinimumHeightRequest="-1"
                                 HeightRequest="30"
                                 HorizontalOptions="Start"/>
-                        <Label Grid.Column="0"
-                               Grid.Row="9"
-                               VerticalOptions="Center"
-                               x:Name="Notifications"/>
                     </Grid>
+                    <Label VerticalOptions="End"
+                           HorizontalOptions="Start"
+                           x:Name="Notifications"/>
 
                 </VerticalStackLayout>
 

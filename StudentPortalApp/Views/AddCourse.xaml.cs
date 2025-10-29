@@ -65,6 +65,8 @@ public partial class AddCourse : ContentPage
         string instructorName = InstName.Text;
         string instructorPhone = InstPhone.Text;
         string instructorEmail = InstEmail.Text;
+        bool startNotif = StartNotificationSwitch.IsToggled;
+        bool endNotif = EndNotificationSwitch.IsToggled;
 
         await DatabaseService.AddCourse(
             termId: termId,
@@ -76,8 +78,8 @@ public partial class AddCourse : ContentPage
             instructorPhone: instructorPhone,
             instructorEmail: instructorEmail,
             notes: CourseNotes.Text,
-            startNotification: false,
-            endNotification: false,
+            startNotification: startNotif,
+            endNotification: endNotif,
             dueDate: "");
         await Navigation.PopAsync();
     }

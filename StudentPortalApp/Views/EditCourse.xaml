@@ -23,7 +23,7 @@
                            FontAttributes="Bold"/>
 
                     <Grid ColumnDefinitions=".40*,.60*"
-                          RowDefinitions="*,*,*,*,*,*,*,*,*">
+                          RowDefinitions="*,*,*,*,*,*,*,*,*,*,*">
                         <Label Grid.Column="0"
                                Grid.Row="0"
                                Text="Course title:"
@@ -109,6 +109,22 @@
                                 WidthRequest="80"
                                 MinimumHeightRequest="-1"
                                 HeightRequest="30"
+                                HorizontalOptions="Start"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="9"
+                               Text="Start notification:"
+                               VerticalOptions="Center"/>
+                        <Switch Grid.Column="1"
+                                Grid.Row="9"
+                                x:Name="StartNotificationSwitch"
+                                HorizontalOptions="Start"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="10"
+                               Text="End notification:"
+                               VerticalOptions="Center"/>
+                        <Switch Grid.Column="1"
+                                Grid.Row="10"
+                                x:Name="EndNotificationSwitch"
                                 HorizontalOptions="Start"/>
                     </Grid>
 
