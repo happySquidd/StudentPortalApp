@@ -23,6 +23,7 @@ namespace StudentPortalApp.Services
 
             await _db.CreateTableAsync<Term>();
             await _db.CreateTableAsync<Course>();
+            await _db.CreateTableAsync<Assessment>();
         }
 
         #region Terms region
@@ -178,6 +179,13 @@ namespace StudentPortalApp.Services
             await Init();
             var assessments = await _db.Table<Assessment>().Where(a => a.CourseId == courseId).ToListAsync();
             return assessments;
+        }
+
+        public static async Task<Assessment> GetAssessmentByType(int courseId, string type)
+        {
+            await Init();
+            var assessment = await _db.Table<Assessment>().Where(a => a.CourseId == courseId && a.Type == type).FirstOrDefaultAsync();
+            return assessment;
         }
 
         public static async Task UpdateAssessment(int id, int courseId, string type, string name, string start, string end, string status, bool startTime, bool endTime)

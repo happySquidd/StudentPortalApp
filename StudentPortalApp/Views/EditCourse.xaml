@@ -153,6 +153,32 @@
                 </VerticalStackLayout>
 
             </Border>
+
+            <Grid ColumnDefinitions="*,*"
+                  VerticalOptions="Center"
+                  ColumnSpacing="5"
+                  Padding="0, 10">
+                <Button Grid.Column="0"
+                        Text="Add Objective Assessment"
+                        Pressed="AddObjective"/>
+                <Button Grid.Column="1"
+                        Text="Add Performance assessment"
+                        Pressed="AddPerformance"/>
+            </Grid>
+
+            <Grid ColumnDefinitions="*,*"
+                  VerticalOptions="Center"
+                  ColumnSpacing="5"
+                  Padding="0, 0, 0, 10">
+                <Button Grid.Column="0"
+                        Text="Delete OA"
+                        Pressed="DeleteOa"
+                        BackgroundColor="DarkRed"/>
+                <Button Grid.Column="1"
+                        Text="Delete PA"
+                        Pressed="DeletePa"
+                        BackgroundColor="DarkRed"/>
+            </Grid>
         </VerticalStackLayout>
         
     </ScrollView>

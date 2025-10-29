@@ -7,7 +7,7 @@ namespace StudentPortalApp.Views;
 public partial class EditCourse : ContentPage
 {
 	private readonly Course course;
-    public EditCourse(Course course)
+	public EditCourse(Course course)
 	{
 		InitializeComponent();
 
@@ -23,7 +23,7 @@ public partial class EditCourse : ContentPage
 		EndNotificationSwitch.IsToggled = course.EndNotification;
 		DueDate.Date = course.DueDate;
 
-        this.course = course;
+		this.course = course;
 	}
 
 	private async void SaveClick(object sender, EventArgs e)
@@ -32,11 +32,11 @@ public partial class EditCourse : ContentPage
 		if (string.IsNullOrWhiteSpace(CourseName.Text))
 		{
 			await DisplayAlert(
-				title: "Error", 
-				message: "Course name cannot be empty", 
+				title: "Error",
+				message: "Course name cannot be empty",
 				cancel: "OK");
 			return;
-        }
+		}
 		if (CourseEnd.Date <= CourseStart.Date)
 		{
 			await DisplayAlert(
@@ -44,7 +44,7 @@ public partial class EditCourse : ContentPage
 				message: "The end date cannot be earlier or the same as the start date",
 				cancel: "OK");
 			return;
-        }
+		}
 		if (CourseStatus.SelectedItem == null)
 		{
 			await DisplayAlert(
@@ -52,7 +52,7 @@ public partial class EditCourse : ContentPage
 				message: "Please select a course status",
 				cancel: "OK");
 			return;
-        }
+		}
 		if (string.IsNullOrWhiteSpace(InstName.Text) || string.IsNullOrWhiteSpace(InstPhone.Text))
 		{
 			await DisplayAlert(
@@ -68,10 +68,10 @@ public partial class EditCourse : ContentPage
 				message: "Please enter a valid instructor email",
 				cancel: "OK");
 			return;
-        }
+		}
 
-        // get data from fields
-        string courseName = CourseName.Text;
+		// get data from fields
+		string courseName = CourseName.Text;
 		DateTime start = CourseStart.Date;
 		DateTime end = CourseEnd.Date;
 		string status = CourseStatus.SelectedItem.ToString();
@@ -111,7 +111,7 @@ public partial class EditCourse : ContentPage
 				}
 			};
 			await LocalNotificationCenter.Current.Show(startRequest);
-        }
+		}
 		if (endNotif)
 		{
 			var endRequest = new NotificationRequest
@@ -121,30 +121,30 @@ public partial class EditCourse : ContentPage
 				Schedule = new NotificationRequestSchedule
 				{
 					NotifyTime = end
-                }
+				}
 			};
 			await LocalNotificationCenter.Current.Show(endRequest);
-        }
+		}
 
 		await Navigation.PopAsync();
-    }
+	}
 
-    private async void DeleteCourse(object sender, EventArgs e)
-    {
-        int courseId = course.Id;
-        var answer = await DisplayAlert(
-            title: "Confirm Delete",
-            message: "Are you sure you want to delete this course?",
-            cancel: "Cancel",
-            accept: "Yes");
-        if (answer)
-        {
-            await DatabaseService.RemoveCourse(courseId);
+	private async void DeleteCourse(object sender, EventArgs e)
+	{
+		int courseId = course.Id;
+		var answer = await DisplayAlert(
+			title: "Confirm Delete",
+			message: "Are you sure you want to delete this course?",
+			cancel: "Cancel",
+			accept: "Yes");
+		if (answer)
+		{
+			await DatabaseService.RemoveCourse(courseId);
 			await Navigation.PopAsync();
-        }
-    }
+		}
+	}
 
-    private async void CancelClick(object sender, EventArgs e)
+	private async void CancelClick(object sender, EventArgs e)
 	{
 		await Navigation.PopAsync();
 	}
@@ -166,4 +166,109 @@ public partial class EditCourse : ContentPage
 			Title = "Share Course Notes"
 		});
 	}
+
+	private async void AddObjective(object sender, EventArgs e)
+	{
+		var objective = await DatabaseService.GetAssessmentByType(course.Id, "Objective Assessment");
+		if (objective != null)
+		{
+			await DisplayAlert(
+				title: "Warning",
+				message: "An Objective Assessment already exists for this course.",
+				cancel: "OK");
+			return;
+        }
+		else
+		{
+			await DatabaseService.AddAssessment(
+				courseId: course.Id,
+				type: "Objective Assessment",
+				name: "New objective assessment",
+				start: DateTime.Now.ToString(),
+				end: DateTime.Now.AddDays(7).ToString(),
+				status: "Planned",
+				startNotification: false,
+				endNotification: false);
+
+			await DisplayAlert(
+				title: "Success",
+				message: "Objective Assessment added",
+				cancel: "OK");
+
+        }
+    }
+
+	private async void AddPerformance(object sender, EventArgs e)
+	{
+		var performance = await DatabaseService.GetAssessmentByType(course.Id, "Performance Assessment");
+		if (performance != null)
+		{
+			await DisplayAlert(
+				title: "Warning",
+				message: "A Performance Assessment already exists for this course",
+				cancel: "OK");
+			return;
+		}
+		else
+		{
+			await DatabaseService.AddAssessment(
+				courseId: course.Id,
+				type: "Performance Assessment",
+				name: "New performance assessment",
+				start: DateTime.Now.ToString(),
+				end: DateTime.Now.AddDays(7).ToString(),
+				status: "Planned",
+				startNotification: false,
+				endNotification: false);
+
+			await DisplayAlert(
+				title: "Success",
+				message: "Performance Assessment added",
+				cancel: "OK");
+        }
+	}
+
+	private async void DeleteOa(object sender, EventArgs e)
+	{
+		var objective = await DatabaseService.GetAssessmentByType(course.Id, "Objective Assessment");
+		if (objective != null)
+		{
+			await DatabaseService.RemoveAssessment(objective.Id);
+
+			await DisplayAlert(
+				title: "Success",
+				message: "Objective Assessment deleted",
+				cancel: "OK");
+        }
+		else
+		{
+			await DisplayAlert(
+				title: "Warning",
+				message: "No Objective Assessment exists for this course",
+				cancel: "OK");
+			return;
+        }
+    }
+
+	private async void DeletePa(object sender, EventArgs e)
+	{
+		var performance = await DatabaseService.GetAssessmentByType(course.Id, "Performance Assessment");
+		if (performance != null)
+		{
+			await DatabaseService.RemoveAssessment(performance.Id);
+
+			await DisplayAlert(
+				title: "Success",
+				message: "Performance Assessment deleted",
+				cancel: "OK");
+        }
+        else
+        {
+			await DisplayAlert(
+				title: "Warning",
+				message: "No Performance Assessment exists for this course",
+				cancel: "OK");
+			return;
+        }
+    }
 }

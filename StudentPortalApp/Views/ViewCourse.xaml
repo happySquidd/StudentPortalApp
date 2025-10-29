@@ -115,19 +115,122 @@
             <Label Text="Assessments"
                    FontSize="20"
                    FontAttributes="Bold"/>
+            <Label x:Name="NoAssessmentsLabel"
+                   IsVisible="False"/>
+
             <Border Stroke="Black"
                     StrokeThickness="1"
                     BackgroundColor="LightSteelBlue"
                     Padding="15"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
-                    WidthRequest="350">
+                    WidthRequest="350"
+                    IsVisible="False"
+                    x:Name="OAssessmentBorder">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="6" />
                 </Border.StrokeShape>
+                <Grid ColumnDefinitions="*,*"
+                      RowDefinitions="*,*,*"
+                      RowSpacing="10">
+
+                    <Label Grid.Column="0" 
+                           Grid.Row="0"
+                           x:Name="OAName"
+                           VerticalOptions="Center"
+                           FontSize="16"/>
+                    <Border Grid.Column="1"
+                            Grid.Row="0"
+                            BackgroundColor="PaleGreen"
+                            Padding="10, 5"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="6"/>
+                        </Border.StrokeShape>
+
+                        <Label x:Name="OAStatus"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                               FontSize="16"/>
+                    </Border>
+
+                    <Label Grid.Column="0"
+                           Grid.Row="1"
+                           Text="Start date:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="1"
+                           x:Name="OAStartDate"
+                           HorizontalOptions="End"/>
+
+                    <Label Grid.Column="0"
+                           Grid.Row="2"
+                           Text="End date:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="2"
+                           x:Name="OAEndDate"
+                           HorizontalOptions="End"/>
+                </Grid>
+
+            </Border>
+
+            <Border Stroke="Black"
+                    StrokeThickness="1"
+                    BackgroundColor="LightSteelBlue"
+                    Padding="15"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    IsVisible="False"
+                    x:Name="PAssessmentBorder">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="6" />
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="*,*"
+                      RowDefinitions="*,*,*"
+                      RowSpacing="10">
+
+                    <Label Grid.Column="0" 
+                           Grid.Row="0"
+                           x:Name="PAName"
+                           VerticalOptions="Center"
+                           FontSize="16"/>
+                    <Border Grid.Column="1"
+                            Grid.Row="0"
+                            BackgroundColor="PaleGreen"
+                            Padding="10, 5"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="6"/>
+                        </Border.StrokeShape>
+
+                        <Label x:Name="PAStatus"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                               FontSize="16"/>
+                    </Border>
+
+                    <Label Grid.Column="0" 
+                           Grid.Row="1" 
+                           Text="Start date:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="1"
+                           x:Name="PAStartDate"
+                           HorizontalOptions="End"/>
+
+                    <Label Grid.Column="0"
+                           Grid.Row="2"
+                           Text="End date:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="2"
+                           x:Name="PAEndDate"
+                           HorizontalOptions="End"/>
+
+                </Grid>
                 
             </Border>
-            
+
         </VerticalStackLayout>
 
     </ScrollView>

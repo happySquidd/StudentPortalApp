@@ -1,4 +1,5 @@
 using StudentPortalApp.Models;
+using StudentPortalApp.Services;
 
 namespace StudentPortalApp.Views;
 
@@ -12,8 +13,8 @@ public partial class ViewCourse : ContentPage
 		this.BindingContext = course;
 		this.course = course;
 
-        // Set notification text based on course notification settings
-        if (!course.StartNotification && !course.EndNotification)
+		// Set notification text based on course notification settings
+		if (!course.StartNotification && !course.EndNotification)
 		{
 			Notifications.Text = "All notifcations are disabled for this course";
 		}
@@ -29,9 +30,40 @@ public partial class ViewCourse : ContentPage
 		{
 			Notifications.Text = "You enabled notifications for start and end of this course";
 		}
-	}
 
-	private async void ShareCourse(object sender, EventArgs e)
+		LoadData();
+    }
+
+
+	private async void LoadData()
+	{
+		// get and display assessments for this course
+		var oassessment = await DatabaseService.GetAssessmentByType(course.Id, "Objective Assessment");
+		if (oassessment != null)
+		{
+			OAName.Text = oassessment.Name;
+			OAStatus.Text = oassessment.Status;
+			OAStartDate.Text = oassessment.StartTime.ToString("MM/dd/yyyy");
+			OAEndDate.Text = oassessment.EndTime.ToString("MM/dd/yyyy");
+            OAssessmentBorder.IsVisible = true;
+        }
+		var passessment = await DatabaseService.GetAssessmentByType(course.Id, "Performance Assessment");
+		if (passessment != null)
+		{
+			PAName.Text = passessment.Name;
+			PAStatus.Text = passessment.Status;
+			PAStartDate.Text = passessment.StartTime.ToString("MM/dd/yyyy");
+			PAEndDate.Text = passessment.EndTime.ToString("MM/dd/yyyy");
+            PAssessmentBorder.IsVisible = true;
+        }
+		if (oassessment == null && passessment == null)
+		{
+			NoAssessmentsLabel.Text = "There are no assessments for this course.";
+            NoAssessmentsLabel.IsVisible = true;
+        }
+    }
+
+    private async void ShareCourse(object sender, EventArgs e)
 	{
 		if (string.IsNullOrWhiteSpace(course.Notes))
 		{

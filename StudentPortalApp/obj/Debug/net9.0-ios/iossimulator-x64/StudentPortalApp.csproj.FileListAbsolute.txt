@@ -15,6 +15,7 @@ C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\bin\Debug\net9.0-ios\ios
 C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Maui.dll
 C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Maui.Essentials.dll
 C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Maui.Graphics.dll
+C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\bin\Debug\net9.0-ios\iossimulator-x64\Plugin.LocalNotification.dll
 C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\bin\Debug\net9.0-ios\iossimulator-x64\SQLite-net.dll
 C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\bin\Debug\net9.0-ios\iossimulator-x64\SQLitePCLRaw.batteries_v2.dll
 C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\bin\Debug\net9.0-ios\iossimulator-x64\SQLitePCLRaw.core.dll
