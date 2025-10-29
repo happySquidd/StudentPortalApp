@@ -81,6 +81,10 @@
               "version": "[9.0.9, )",
               "autoReferenced": true
             },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[11.1.4, )"
+            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.9.172, )"
@@ -123,6 +127,10 @@
               "target": "Package",
               "version": "[9.0.9, )",
               "autoReferenced": true
+            },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[11.1.4, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -167,6 +175,10 @@
               "version": "[9.0.9, )",
               "autoReferenced": true
             },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[11.1.4, )"
+            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.9.172, )"
@@ -204,6 +216,10 @@
             "Microsoft.Maui.Controls": {
               "target": "Package",
               "version": "[9.0.82, )"
+            },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[11.1.4, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",

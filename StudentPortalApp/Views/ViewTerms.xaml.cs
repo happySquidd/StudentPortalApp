@@ -2,6 +2,7 @@ using StudentPortalApp.Models;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using StudentPortalApp.Services;
+using Plugin.LocalNotification;
 
 namespace StudentPortalApp.Views;
 
@@ -19,6 +20,11 @@ public partial class TermsPage : ContentPage
 
     protected override async void OnAppearing()
     {
+        if (await LocalNotificationCenter.Current.AreNotificationsEnabled() == false)
+        {
+            await LocalNotificationCenter.Current.RequestNotificationPermission();
+        }
+
         base.OnAppearing();
         await LoadData();
     }
