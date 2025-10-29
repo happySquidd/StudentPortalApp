@@ -97,6 +97,15 @@
                     <Label VerticalOptions="End"
                            HorizontalOptions="Start"
                            x:Name="Notifications"/>
+                    <Grid ColumnDefinitions=".4*,.6*">
+                        
+                        <Label Grid.Column="0" 
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start"
+                               Text="Due Date:"/>
+                        <Label Grid.Column="1"
+                           Text="{Binding DueDate, StringFormat='{0:d}'}"/>
+                    </Grid>
 
                 </VerticalStackLayout>
 

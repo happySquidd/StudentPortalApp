@@ -68,6 +68,7 @@ public partial class AddCourse : ContentPage
         string instructorEmail = InstEmail.Text;
         bool startNotif = StartNotificationSwitch.IsToggled;
         bool endNotif = EndNotificationSwitch.IsToggled;
+        DateTime dueDate = DueDate.Date;
 
         await DatabaseService.AddCourse(
             termId: termId,
@@ -81,7 +82,7 @@ public partial class AddCourse : ContentPage
             notes: CourseNotes.Text,
             startNotification: startNotif,
             endNotification: endNotif,
-            dueDate: "");
+            dueDate: dueDate.ToString());
 
         // notifications
         if (startNotif)

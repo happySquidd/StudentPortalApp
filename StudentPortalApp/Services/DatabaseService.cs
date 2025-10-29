@@ -90,7 +90,7 @@ namespace StudentPortalApp.Services
                 Notes = notes,
                 StartNotification = startNotification,
                 EndNotification = endNotification,
-                DueDate = dueDate
+                DueDate = DateTime.Parse(dueDate)
             };
             await _db.InsertAsync(course);
         }
@@ -138,7 +138,7 @@ namespace StudentPortalApp.Services
                 course.Notes = notes;
                 course.StartNotification = startNotification;
                 course.EndNotification = endNotification;
-                course.DueDate = dueDate;
+                course.DueDate = DateTime.Parse(dueDate);
                 await _db.UpdateAsync(course);
             }
         }
@@ -171,7 +171,7 @@ namespace StudentPortalApp.Services
                 Notes = "Here are my notes",
                 StartNotification = true,
                 EndNotification = false,
-                DueDate = "2025-11-19",
+                DueDate = new DateTime(2026, 11, 19),
                 TermId = term1.Id,
             };
 
@@ -189,7 +189,7 @@ namespace StudentPortalApp.Services
                 Notes = "Sample notes",
                 StartNotification = false,
                 EndNotification = true,
-                DueDate = "2025-12-19",
+                DueDate = new DateTime(2026, 12, 19),
                 TermId = term1.Id,
             };
 
@@ -207,7 +207,7 @@ namespace StudentPortalApp.Services
                 Notes = "Some notes here",
                 StartNotification = true,
                 EndNotification = true,
-                DueDate = "2026-01-19",
+                DueDate = new DateTime(2026, 12, 19),
                 TermId = term1.Id,
             };
             await _db.InsertAsync(course3);
@@ -224,7 +224,7 @@ namespace StudentPortalApp.Services
                 Notes = "Web dev class",
                 StartNotification = false,
                 EndNotification = true,
-                DueDate = "2026-02-19",
+                DueDate = new DateTime(2026, 2, 19),
                 TermId = term1.Id,
             };
             await _db.InsertAsync(course4);
@@ -241,7 +241,7 @@ namespace StudentPortalApp.Services
                 Notes = "Data structures class",
                 StartNotification = true,
                 EndNotification = true,
-                DueDate = "2026-03-19",
+                DueDate = new DateTime(2026, 3, 19),
                 TermId = term1.Id,
             };
             await _db.InsertAsync(course5);
@@ -258,7 +258,7 @@ namespace StudentPortalApp.Services
                 Notes = "OS class notes",
                 StartNotification = false,
                 EndNotification = false,
-                DueDate = "2026-04-19",
+                DueDate = new DateTime(2026, 4, 19),
                 TermId = term1.Id,
             };
             await _db.InsertAsync(course6);

@@ -23,7 +23,7 @@
                            FontAttributes="Bold"/>
 
                     <Grid ColumnDefinitions=".40*,.60*"
-                          RowDefinitions="*,*,*,*,*,*,*,*,*,*"
+                          RowDefinitions="*,*,*,*,*,*,*,*,*,*,*"
                           Margin="0,0,0,10">
                         <Label Grid.Column="0"
                                Grid.Row="0"
@@ -115,6 +115,13 @@
                                 Grid.Row="9"
                                 x:Name="EndNotificationSwitch"
                                 HorizontalOptions="Start"/>
+                        <Label Grid.Column="0"
+                               Grid.Row="10"
+                               Text="Due date:"
+                               VerticalOptions="Center"/>
+                        <DatePicker Grid.Column ="1"
+                                    Grid.Row="10"
+                                    x:Name="DueDate"/>
                     </Grid>
 
                     <Grid ColumnDefinitions="*,*"

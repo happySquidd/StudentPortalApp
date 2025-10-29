@@ -21,6 +21,7 @@ public partial class EditCourse : ContentPage
 		CourseNotes.Text = course.Notes;
 		StartNotificationSwitch.IsToggled = course.StartNotification;
 		EndNotificationSwitch.IsToggled = course.EndNotification;
+		DueDate.Date = course.DueDate;
 
         this.course = course;
 	}
@@ -80,6 +81,7 @@ public partial class EditCourse : ContentPage
 		string notes = CourseNotes.Text;
 		bool startNotif = StartNotificationSwitch.IsToggled;
 		bool endNotif = EndNotificationSwitch.IsToggled;
+		DateTime dueDate = DueDate.Date;
 
 		await DatabaseService.UpdateCourse(
 			id: course.Id,
@@ -94,7 +96,7 @@ public partial class EditCourse : ContentPage
 			notes: notes,
 			startNotification: startNotif,
 			endNotification: endNotif,
-			dueDate: course.DueDate);
+			dueDate: dueDate.ToString());
 
 		// notifications
 		if (startNotif)

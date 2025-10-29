@@ -22,6 +22,6 @@ namespace StudentPortalApp.Models
         public string Notes { get; set; }
         public bool StartNotification { get; set; }
         public bool EndNotification { get; set; }
-        public string DueDate { get; set; }
+        public DateTime DueDate { get; set; }
     }
 }
