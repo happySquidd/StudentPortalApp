@@ -69,7 +69,7 @@ public partial class EditAssessment : ContentPage
 			if (StartDate.Date == DateTime.Today) { soon = true; }
             var request = new NotificationRequest
 				{
-					NotificationId = 0,
+					NotificationId = 6,
 					Title = "Assessment Starting Today",
 					Description = $"Assessment '{Name.Text}' is starting today",
 					Schedule = new NotificationRequestSchedule
@@ -85,7 +85,7 @@ public partial class EditAssessment : ContentPage
 			if (EndDate.Date == DateTime.Today) { soon = true; }
             var request = new NotificationRequest
 			{
-				NotificationId = 1,
+				NotificationId = 7,
                 Title = "Assessment Ending Today",
 				Description = $"Assessment '{Name.Text}' is ending today",
 				Schedule = new NotificationRequestSchedule
@@ -96,7 +96,7 @@ public partial class EditAssessment : ContentPage
 			await LocalNotificationCenter.Current.Show(request);
         }
 
-            string type = Type.SelectedItem.ToString()!;
+        string type = Type.SelectedItem.ToString()!;
 		string name = Name.Text;
 		string start = StartDate.Date.ToString();
 		string end = EndDate.Date.ToString();

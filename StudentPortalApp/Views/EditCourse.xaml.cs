@@ -145,27 +145,33 @@ public partial class EditCourse : ContentPage
 		// notifications
 		if (startNotif)
 		{
-			var startRequest = new NotificationRequest
+			bool soon = false;
+			if (start.Date == DateTime.Today) { soon = true; }
+            var startRequest = new NotificationRequest
 			{
+				NotificationId = 2,
 				Title = "Course Starting",
 				Description = $"The course '{courseName}' starts today.",
 				Schedule = new NotificationRequestSchedule
 				{
-					NotifyTime = start
-				}
+					NotifyTime = soon ? DateTime.Now.AddSeconds(2) : start
+                }
 			};
 			await LocalNotificationCenter.Current.Show(startRequest);
 		}
 		if (endNotif)
 		{
-			var endRequest = new NotificationRequest
+			bool soon = false;
+			if (end.Date == DateTime.Today) { soon = true; }
+            var endRequest = new NotificationRequest
 			{
+				NotificationId = 3,
 				Title = "Course Ending",
 				Description = $"The course '{courseName}' ends today.",
 				Schedule = new NotificationRequestSchedule
 				{
-					NotifyTime = end
-				}
+					NotifyTime = soon ? DateTime.Now.AddSeconds(2) : end
+                }
 			};
 			await LocalNotificationCenter.Current.Show(endRequest);
 		}

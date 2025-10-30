@@ -62,7 +62,7 @@ public partial class AddCourse : ContentPage
         string courseName = CourseName.Text;
         DateTime start = CourseStart.Date;
         DateTime end = CourseEnd.Date;
-        string status = CourseStatus.SelectedItem.ToString();
+        string status = CourseStatus.SelectedItem.ToString()!;
         string instructorName = InstName.Text;
         string instructorPhone = InstPhone.Text;
         string instructorEmail = InstEmail.Text;
@@ -87,26 +87,32 @@ public partial class AddCourse : ContentPage
         // notifications
         if (startNotif)
         {
+            bool soon = false;
+            if (start.Date == DateTime.Today) { soon = true; }
             var startRequest = new NotificationRequest
             {
+                NotificationId = 4,
                 Title = "Course Starting",
                 Description = $"The course '{courseName}' starts today.",
                 Schedule = new NotificationRequestSchedule
                 {
-                    NotifyTime = start
+                    NotifyTime = soon ? DateTime.Now.AddSeconds(2) : start
                 }
             };
             await LocalNotificationCenter.Current.Show(startRequest);
         }
         if (endNotif)
         {
+            bool soon = false;
+            if (end.Date == DateTime.Today) { soon = true; }
             var endRequest = new NotificationRequest
             {
+                NotificationId = 5,
                 Title = "Course Ending",
                 Description = $"The course '{courseName}' ends today.",
                 Schedule = new NotificationRequestSchedule
                 {
-                    NotifyTime = end
+                    NotifyTime = soon ? DateTime.Now.AddSeconds(2) : end
                 }
             };
             await LocalNotificationCenter.Current.Show(endRequest);
