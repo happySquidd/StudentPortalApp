@@ -43,6 +43,7 @@ public partial class TermsPage : ContentPage
         {
             Terms.Add(term);
         }
+        Settings.FirstRun = false;
     }
 
     private async void AddTerm(object sender, EventArgs e)
@@ -71,8 +72,10 @@ public partial class TermsPage : ContentPage
         }
     }
 
-    private async void LoadSampleData(object sender, EventArgs e)
+    private async void ResetSampleData(object sender, EventArgs e)
     {
+        await DatabaseService.ClearSampleData();
+        await LoadData();
         await DatabaseService.LoadSampleData();
         await LoadData();
     }
