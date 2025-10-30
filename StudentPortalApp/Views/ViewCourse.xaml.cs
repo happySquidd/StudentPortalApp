@@ -31,35 +31,50 @@ public partial class ViewCourse : ContentPage
 			Notifications.Text = "You enabled notifications for start and end of this course";
 		}
 
-		LoadData();
+        LoadAssessments();
     }
 
 
-	private async void LoadData()
-	{
-		// get and display assessments for this course
-		var oassessment = await DatabaseService.GetAssessmentByType(course.Id, "Objective Assessment");
-		if (oassessment != null)
-		{
-			OAName.Text = oassessment.Name;
-			OAStatus.Text = oassessment.Status;
-			OAStartDate.Text = oassessment.StartTime.ToString("MM/dd/yyyy");
-			OAEndDate.Text = oassessment.EndTime.ToString("MM/dd/yyyy");
+    private async void LoadAssessments()
+    {
+        var objective = await DatabaseService.GetAssessmentByType(course.Id, "Objective Assessment");
+        if (objective != null)
+        {
             OAssessmentBorder.IsVisible = true;
+            OAName.Text = objective.Name;
+            OAType.Text = objective.Type;
+            OAStartDate.Text = objective.StartTime.ToString("MM/dd/yyyy");
+            OAEndDate.Text = objective.EndTime.ToString("MM/dd/yyyy");
+            OAStatus.Text = objective.Status;
+            OAStartReminder.Text = objective.StartNotification ? "Yes" : "No";
+            OAEndReminder.Text = objective.EndNotification ? "Yes" : "No";
         }
-		var passessment = await DatabaseService.GetAssessmentByType(course.Id, "Performance Assessment");
-		if (passessment != null)
-		{
-			PAName.Text = passessment.Name;
-			PAStatus.Text = passessment.Status;
-			PAStartDate.Text = passessment.StartTime.ToString("MM/dd/yyyy");
-			PAEndDate.Text = passessment.EndTime.ToString("MM/dd/yyyy");
+        else
+        {
+            OAssessmentBorder.IsVisible = false;
+        }
+
+        var performance = await DatabaseService.GetAssessmentByType(course.Id, "Performance Assessment");
+        if (performance != null)
+        {
             PAssessmentBorder.IsVisible = true;
+            PAName.Text = performance.Name;
+            PAType.Text = performance.Type;
+            PAStartDate.Text = performance.StartTime.ToString("MM/dd/yyyy");
+            PAEndDate.Text = performance.EndTime.ToString("MM/dd/yyyy");
+            PAStatus.Text = performance.Status;
+            PAStartReminder.Text = performance.StartNotification ? "Yes" : "No";
+            PAEndReminder.Text = performance.EndNotification ? "Yes" : "No";
         }
-		if (oassessment == null && passessment == null)
+        else
+        {
+            PAssessmentBorder.IsVisible = false;
+        }
+
+		if (performance == null && objective == null)
 		{
-			NoAssessmentsLabel.Text = "There are no assessments for this course.";
-            NoAssessmentsLabel.IsVisible = true;
+			NoAssessmentsLabel.IsVisible = true;
+			NoAssessmentsLabel.Text = "No assessments are associated with this course";
         }
     }
 

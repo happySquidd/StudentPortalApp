@@ -131,47 +131,80 @@
                     <RoundRectangle CornerRadius="6" />
                 </Border.StrokeShape>
                 <Grid ColumnDefinitions="*,*"
-                      RowDefinitions="*,*,*"
+                      RowDefinitions="*,*,*,*,*,*"
                       RowSpacing="10">
 
                     <Label Grid.Column="0" 
                            Grid.Row="0"
                            x:Name="OAName"
                            VerticalOptions="Center"
-                           FontSize="16"/>
-                    <Border Grid.Column="1"
-                            Grid.Row="0"
-                            BackgroundColor="PaleGreen"
-                            Padding="10, 5"
-                            HorizontalOptions="End"
-                            VerticalOptions="Center">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="6"/>
-                        </Border.StrokeShape>
+                           FontSize="16"
+                           FontAttributes="Bold"/>
+                    <Grid ColumnDefinitions="*,Auto"
+                          Grid.Column="1"
+                          Grid.Row="0"
+                          ColumnSpacing="3"
+                          VerticalOptions="Center">
+                        <Border Grid.Column="0"
+                                BackgroundColor="Gold"
+                                Padding="10, 5"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="6"/>
+                            </Border.StrokeShape>
+                            <Label Text="OA"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   FontSize="16"/>
+                        </Border>
+                        <Border Grid.Column="1"
+                                BackgroundColor="PaleGreen"
+                                Padding="10, 5"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="6"/>
+                            </Border.StrokeShape>
 
-                        <Label x:Name="OAStatus"
-                               VerticalOptions="Center"
-                               HorizontalOptions="End"
-                               FontSize="16"/>
-                    </Border>
+                            <Label x:Name="OAStatus"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End"
+                                   FontSize="16"/>
+                        </Border>
+                    </Grid>
 
                     <Label Grid.Column="0"
                            Grid.Row="1"
+                           Text="Type:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="1"
+                           x:Name="OAType"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="2"
                            Text="Start date:"/>
                     <Label Grid.Column="1"
-                           Grid.Row="1"
-                           x:Name="OAStartDate"
-                           HorizontalOptions="End"/>
-
-                    <Label Grid.Column="0"
                            Grid.Row="2"
+                           x:Name="OAStartDate"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="3"
                            Text="End date:"/>
                     <Label Grid.Column="1"
-                           Grid.Row="2"
-                           x:Name="OAEndDate"
-                           HorizontalOptions="End"/>
+                           Grid.Row="3"
+                           x:Name="OAEndDate"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="4"
+                           Text="Start reminder:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="4"
+                           x:Name="OAStartReminder"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="5"
+                           Text="End reminder:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="5"
+                           x:Name="OAEndReminder"/>
                 </Grid>
-
             </Border>
 
             <Border Stroke="Black"
@@ -187,48 +220,80 @@
                     <RoundRectangle CornerRadius="6" />
                 </Border.StrokeShape>
                 <Grid ColumnDefinitions="*,*"
-                      RowDefinitions="*,*,*"
+                      RowDefinitions="*,*,*,*,*,*"
                       RowSpacing="10">
 
                     <Label Grid.Column="0" 
                            Grid.Row="0"
                            x:Name="PAName"
                            VerticalOptions="Center"
-                           FontSize="16"/>
-                    <Border Grid.Column="1"
-                            Grid.Row="0"
-                            BackgroundColor="PaleGreen"
-                            Padding="10, 5"
-                            HorizontalOptions="End"
-                            VerticalOptions="Center">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="6"/>
-                        </Border.StrokeShape>
+                           FontSize="16"
+                           FontAttributes="Bold"/>
+                    <Grid ColumnDefinitions="*,Auto"
+                          Grid.Column="1"
+                          Grid.Row="0"
+                          ColumnSpacing="3"
+                          VerticalOptions="Center">
+                        <Border Grid.Column="0"
+                                BackgroundColor="MediumOrchid"
+                                Padding="10, 5"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="6"/>
+                            </Border.StrokeShape>
+                            <Label Text="PA"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   FontSize="16"/>
+                        </Border>
+                        <Border Grid.Column="1"
+                                BackgroundColor="PaleGreen"
+                                Padding="10, 5"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="6"/>
+                            </Border.StrokeShape>
 
-                        <Label x:Name="PAStatus"
-                               VerticalOptions="Center"
-                               HorizontalOptions="End"
-                               FontSize="16"/>
-                    </Border>
-
-                    <Label Grid.Column="0" 
-                           Grid.Row="1" 
-                           Text="Start date:"/>
-                    <Label Grid.Column="1"
-                           Grid.Row="1"
-                           x:Name="PAStartDate"
-                           HorizontalOptions="End"/>
+                            <Label x:Name="PAStatus"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End"
+                                   FontSize="16"/>
+                        </Border>
+                    </Grid>
 
                     <Label Grid.Column="0"
+                           Grid.Row="1"
+                           Text="Type:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="1"
+                           x:Name="PAType"/>
+                    <Label Grid.Column="0"
                            Grid.Row="2"
-                           Text="End date:"/>
+                           Text="Start date:"/>
                     <Label Grid.Column="1"
                            Grid.Row="2"
-                           x:Name="PAEndDate"
-                           HorizontalOptions="End"/>
-
+                           x:Name="PAStartDate"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="3"
+                           Text="End date:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="3"
+                           x:Name="PAEndDate"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="4"
+                           Text="Start reminder:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="4"
+                           x:Name="PAStartReminder"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="5"
+                           Text="End reminder:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="5"
+                           x:Name="PAEndReminder"/>
                 </Grid>
-                
             </Border>
 
         </VerticalStackLayout>

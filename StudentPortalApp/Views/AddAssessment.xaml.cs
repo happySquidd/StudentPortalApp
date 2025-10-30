@@ -69,10 +69,6 @@ public partial class AddAssessment : ContentPage
                 startNotification: startNotif,
                 endNotification: endNotif);
 
-        await DisplayAlert(
-            title: "Success",
-            message: $"{type.Split()[0]} Assessment added",
-            cancel: "OK");
         await Navigation.PopAsync();
     }
 
