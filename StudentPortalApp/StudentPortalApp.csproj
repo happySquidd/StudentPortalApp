@@ -97,9 +97,6 @@
 	  <MauiXaml Update="Views\ViewTerms.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\ViewAssignements.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\ViewCourse.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

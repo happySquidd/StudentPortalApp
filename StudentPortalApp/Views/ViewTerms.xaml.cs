@@ -25,6 +25,12 @@ public partial class TermsPage : ContentPage
             await LocalNotificationCenter.Current.RequestNotificationPermission();
         }
 
+        if (Settings.FirstRun)
+        {
+            await DatabaseService.LoadSampleData();
+            Settings.FirstRun = false;
+        }
+
         base.OnAppearing();
         await LoadData();
     }

@@ -223,13 +223,13 @@ namespace StudentPortalApp.Services
 
             Course course1 = new Course
             {
-                Name = "Introduction to C#",
+                Name = "Mobile App development in C#",
                 StartTime = new DateTime(2025, 10, 19),
-                EndTime = new DateTime(2026, 11, 19),
+                EndTime = new DateTime(2025, 11, 19),
                 Status = "In Progress",
-                InstructorName = "John Doe",
-                InstructorPhone = "555-1234",
-                InstructorEmail = "email@gmail.com",
+                InstructorName = "Anika Patel",
+                InstructorPhone = "555-123-4567",
+                InstructorEmail = "anika.patel@strimeuniversity.edu",
                 Notes = "Here are my notes",
                 StartNotification = true,
                 EndNotification = false,
@@ -238,6 +238,34 @@ namespace StudentPortalApp.Services
             };
 
             await _db.InsertAsync(course1);
+
+            Assessment assessment1 = new Assessment
+            {
+                CourseId = course1.Id,
+                Type = "Objective Assessment",
+                Name = "Final Test",
+                StartTime = new DateTime(2025, 10, 26),
+                EndTime = new DateTime(2025, 11, 2),
+                Status = "In Progress",
+                StartNotification = false,
+                EndNotification = false,
+            };
+
+            await _db.InsertAsync(assessment1);
+
+            Assessment assessment2 = new Assessment
+            {
+                CourseId = course1.Id,
+                Type = "Performance Assessment",
+                Name = "Project",
+                StartTime = new DateTime(2025, 11, 9),
+                EndTime = new DateTime(2025, 11, 16),
+                Status = "Planned",
+                StartNotification = false,
+                EndNotification = false,
+            };
+
+            await _db.InsertAsync(assessment2);
 
             Course course2 = new Course
             {

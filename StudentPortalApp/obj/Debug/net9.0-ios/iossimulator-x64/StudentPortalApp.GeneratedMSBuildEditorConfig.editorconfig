@@ -78,12 +78,6 @@ build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.Ter
 build_metadata.AdditionalFiles.TargetPath = Views\TermWindow.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\TermWindow.xaml
 
-[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/ViewAssignements.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.ViewAssignements.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\ViewAssignements.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\ViewAssignements.xaml
-
 [C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/ViewCourse.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.ViewCourse.xaml
