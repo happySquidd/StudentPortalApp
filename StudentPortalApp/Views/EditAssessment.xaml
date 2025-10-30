@@ -3,10 +3,107 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StudentPortalApp.Views.EditAssessment"
              Title="EditAssessment">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout VerticalOptions="Center"
+                         HorizontalOptions="Center">
+        <Border Stroke="Black"
+        StrokeThickness="1"
+        BackgroundColor="LightSteelBlue"
+        Padding="15"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="350">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="6" />
+            </Border.StrokeShape>
+
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Edit assessment" 
+               FontAttributes="Bold" 
+               FontSize="20"/>
+                <Grid ColumnDefinitions=".30*,.70*"
+              RowDefinitions="*,*,*,*,*,*,*">
+                    <Label Grid.Column="0"
+                   Grid.Row="0"
+                   Text="Assesment name:"
+                   VerticalOptions="Center"/>
+                    <Entry Grid.Column="1"
+                   Grid.Row="0"
+                   x:Name="Name" 
+                   Placeholder="Assessment name" 
+                   PlaceholderColor="BlueViolet"/>
+                    <Label Grid.Column="0"
+                   Grid.Row="1"
+                   Text="Type:"
+                   VerticalOptions="Center"/>
+                    <Picker Grid.Column="1"
+                    Grid.Row="1"
+                    x:Name="Type">
+                        <Picker.Items>
+                            <x:String>Objective Assessment</x:String>
+                            <x:String>Performance Assessment</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Column="0"
+                   Grid.Row="2"
+                   Text="Start Date:"
+                   VerticalOptions="Center"/>
+                    <DatePicker Grid.Column="1"
+                        Grid.Row="2"
+                        x:Name="StartDate"/>
+                    <Label Grid.Column="0"
+                   Grid.Row="3"
+                   Text="End Date:"
+                   VerticalOptions="Center"/>
+                    <DatePicker Grid.Column="1" 
+                        Grid.Row="3" 
+                        x:Name="EndDate"/>
+                    <Label Grid.Column="0"
+                   Grid.Row="4"
+                   Text="Status:"
+                   VerticalOptions="Center"/>
+                    <Picker Grid.Column="1"
+                    Grid.Row="4"
+                    x:Name="AssessmentStatus">
+                        <Picker.Items>
+                            <x:String>Planned</x:String>
+                            <x:String>In Progress</x:String>
+                            <x:String>Completed</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Column="0"
+                   Grid.Row="5"
+                   Text="Start notification:"
+                   VerticalOptions="Center"/>
+                    <Switch Grid.Column="1"
+                    Grid.Row="5"
+                    x:Name="StartNotificationSwitch"
+                    HorizontalOptions="Start"/>
+                    <Label Grid.Column="0"
+                   Grid.Row="6"
+                   Text="End notification:"
+                   VerticalOptions="Center"/>
+                    <Switch Grid.Column="1"
+                    Grid.Row="6"
+                    x:Name="EndNotificationSwitch"
+                    HorizontalOptions="Start"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="*,*,*"
+                      ColumnSpacing="5"
+                      Margin="0,10,0,0">
+                    <Button Text="Confirm" 
+                            Clicked="ConfirmClicked"
+                            Grid.Column="0"/>
+                    <Button Text="Cancel" 
+                            Clicked="ClosePopup" 
+                            Grid.Column="1"/>
+                    <Button Text="Delete" 
+                            BackgroundColor="DarkRed" 
+                            Clicked="DeleteClicked"
+                            Grid.Column="2"/>
+                </Grid>
+            </VerticalStackLayout>
+        </Border>
+        
     </VerticalStackLayout>
 </ContentPage>

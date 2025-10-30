@@ -360,20 +360,16 @@
                 </Grid>
             </Border>
 
-            <Button Text="Add Assessment"
-                    Clicked="AddAssessment"/>
             <Grid ColumnDefinitions="*,*"
                   VerticalOptions="Center"
                   ColumnSpacing="5"
                   Padding="0, 0, 0, 10">
-                <Button Grid.Column="0"
-                        Text="Delete OA"
-                        Clicked="DeleteOa"
-                        BackgroundColor="DarkRed"/>
+                <Button Text="Add Assessment"
+                        Clicked="AddAssessment"
+                        Grid.Column="0"/>
                 <Button Grid.Column="1"
-                        Text="Delete PA"
-                        Clicked="DeletePa"
-                        BackgroundColor="DarkRed"/>
+                        Text="Refresh"
+                        Clicked="Refresh"/>
             </Grid>
         </VerticalStackLayout>
         

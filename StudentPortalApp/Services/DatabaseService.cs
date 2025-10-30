@@ -188,7 +188,7 @@ namespace StudentPortalApp.Services
             return assessment;
         }
 
-        public static async Task UpdateAssessment(int id, int courseId, string type, string name, string start, string end, string status, bool startTime, bool endTime)
+        public static async Task UpdateAssessment(int id, int courseId, string type, string name, string start, string end, string status, bool startNotification, bool endNotification)
         {
             await Init();
             var assessment = await _db.Table<Assessment>().Where(a => a.Id == id).FirstOrDefaultAsync();
@@ -200,8 +200,8 @@ namespace StudentPortalApp.Services
                 assessment.StartTime = DateTime.Parse(start);
                 assessment.EndTime = DateTime.Parse(end);
                 assessment.Status = status;
-                assessment.StartNotification = startTime;
-                assessment.EndNotification = endTime;
+                assessment.StartNotification = startNotification;
+                assessment.EndNotification = endNotification;
                 await _db.UpdateAsync(assessment);
             }
         }

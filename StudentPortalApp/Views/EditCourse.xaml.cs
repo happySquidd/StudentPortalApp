@@ -42,8 +42,12 @@ public partial class EditCourse : ContentPage
 			OAStartReminder.Text = objective.StartNotification ? "Yes" : "No";
 			OAEndReminder.Text = objective.EndNotification ? "Yes" : "No";
         }
+		else
+		{
+			OAssessmentBorder.IsVisible = false;
+        }
 
-		var performance = await DatabaseService.GetAssessmentByType(course.Id, "Performance Assessment");
+			var performance = await DatabaseService.GetAssessmentByType(course.Id, "Performance Assessment");
 		if (performance != null)
 		{
 			PAssessmentBorder.IsVisible = true;
@@ -55,6 +59,10 @@ public partial class EditCourse : ContentPage
 			PAStartReminder.Text = performance.StartNotification ? "Yes" : "No";
 			PAEndReminder.Text = performance.EndNotification ? "Yes" : "No";
         }
+		else
+		{
+			PAssessmentBorder.IsVisible = false;
+		}
     }
 
 	private async void SaveClick(object sender, EventArgs e)
@@ -234,59 +242,22 @@ public partial class EditCourse : ContentPage
         }
 	}
 
-	private async void DeleteOa(object sender, EventArgs e)
+	private void Refresh(object sender, EventArgs e)
 	{
-		var objective = await DatabaseService.GetAssessmentByType(course.Id, "Objective Assessment");
-		if (objective != null)
-		{
-			await DatabaseService.RemoveAssessment(objective.Id);
-
-			await DisplayAlert(
-				title: "Success",
-				message: "Objective Assessment deleted",
-				cancel: "OK");
-        }
-		else
-		{
-			await DisplayAlert(
-				title: "Warning",
-				message: "No Objective Assessment exists for this course",
-				cancel: "OK");
-			return;
-        }
-    }
-
-	private async void DeletePa(object sender, EventArgs e)
-	{
-		var performance = await DatabaseService.GetAssessmentByType(course.Id, "Performance Assessment");
-		if (performance != null)
-		{
-			await DatabaseService.RemoveAssessment(performance.Id);
-
-			await DisplayAlert(
-				title: "Success",
-				message: "Performance Assessment deleted",
-				cancel: "OK");
-        }
-        else
-        {
-			await DisplayAlert(
-				title: "Warning",
-				message: "No Performance Assessment exists for this course",
-				cancel: "OK");
-			return;
-        }
-    }
+		LoadAssessments();
+	}
 
 	private async void EditAssessmentOA(object sender, EventArgs e)
 	{
 		var objective = await DatabaseService.GetAssessmentByType(course.Id, "Objective Assessment");
         await Navigation.PushAsync(new EditAssessment(objective));
+		LoadAssessments();
 	}
 
 	private async void EditAssessmentPA(object sender, EventArgs e)
 	{
 		var performance = await DatabaseService.GetAssessmentByType(course.Id, "Performance Assessment");
 		await Navigation.PushAsync(new EditAssessment(performance));
+		LoadAssessments();
     }
 }
