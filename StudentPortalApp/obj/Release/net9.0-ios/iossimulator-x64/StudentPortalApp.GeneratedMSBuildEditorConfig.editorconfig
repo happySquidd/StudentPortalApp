@@ -1,0 +1,91 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net9.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = StudentPortalApp
+build_property.ProjectDir = C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/AddAssessment.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.AddAssessment.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddAssessment.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddAssessment.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/AddCourse.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.AddCourse.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddCourse.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddCourse.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/AddTerm.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.AddTerm.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddTerm.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddTerm.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/EditAssessment.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.EditAssessment.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EditAssessment.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EditAssessment.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/EditCourse.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.EditCourse.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EditCourse.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EditCourse.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/EditTerm.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.EditTerm.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EditTerm.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EditTerm.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/TermWindow.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.TermWindow.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\TermWindow.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\TermWindow.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/ViewCourse.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.ViewCourse.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ViewCourse.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ViewCourse.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/ViewTerms.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.ViewTerms.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ViewTerms.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ViewTerms.xaml
