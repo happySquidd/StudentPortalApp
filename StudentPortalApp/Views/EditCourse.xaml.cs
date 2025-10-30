@@ -24,7 +24,38 @@ public partial class EditCourse : ContentPage
 		DueDate.Date = course.DueDate;
 
 		this.course = course;
+
+		LoadAssessments();
 	}
+
+	private async void LoadAssessments()
+	{
+		var objective = await DatabaseService.GetAssessmentByType(course.Id, "Objective Assessment");
+		if (objective != null)
+		{
+			OAssessmentBorder.IsVisible = true;
+			OAName.Text = objective.Name;
+			OAType.Text = objective.Type;
+			OAStartDate.Text = objective.StartTime.ToString("MM/dd/yyyy");
+			OAEndDate.Text = objective.EndTime.ToString("MM/dd/yyyy");
+			OAStatus.Text = objective.Status;
+			OAStartReminder.Text = objective.StartNotification ? "Yes" : "No";
+			OAEndReminder.Text = objective.EndNotification ? "Yes" : "No";
+        }
+
+		var performance = await DatabaseService.GetAssessmentByType(course.Id, "Performance Assessment");
+		if (performance != null)
+		{
+			PAssessmentBorder.IsVisible = true;
+			PAName.Text = performance.Name;
+			PAType.Text = performance.Type;
+			PAStartDate.Text = performance.StartTime.ToString("MM/dd/yyyy");
+			PAEndDate.Text = performance.EndTime.ToString("MM/dd/yyyy");
+			PAStatus.Text = performance.Status;
+			PAStartReminder.Text = performance.StartNotification ? "Yes" : "No";
+			PAEndReminder.Text = performance.EndNotification ? "Yes" : "No";
+        }
+    }
 
 	private async void SaveClick(object sender, EventArgs e)
 	{
@@ -74,7 +105,7 @@ public partial class EditCourse : ContentPage
 		string courseName = CourseName.Text;
 		DateTime start = CourseStart.Date;
 		DateTime end = CourseEnd.Date;
-		string status = CourseStatus.SelectedItem.ToString();
+		string status = CourseStatus.SelectedItem.ToString()!;
 		string instructorName = InstName.Text;
 		string instructorPhone = InstPhone.Text;
 		string instructorEmail = InstEmail.Text;
@@ -167,35 +198,10 @@ public partial class EditCourse : ContentPage
 		});
 	}
 
-	private async void AddObjective(object sender, EventArgs e)
+	private async void AddAssessment(object sender, EventArgs e)
 	{
-		var objective = await DatabaseService.GetAssessmentByType(course.Id, "Objective Assessment");
-		if (objective != null)
-		{
-			await DisplayAlert(
-				title: "Warning",
-				message: "An Objective Assessment already exists for this course.",
-				cancel: "OK");
-			return;
-        }
-		else
-		{
-			await DatabaseService.AddAssessment(
-				courseId: course.Id,
-				type: "Objective Assessment",
-				name: "New objective assessment",
-				start: DateTime.Now.ToString(),
-				end: DateTime.Now.AddDays(7).ToString(),
-				status: "Planned",
-				startNotification: false,
-				endNotification: false);
+		await Navigation.PushAsync(new AddAssessment(course.Id));
 
-			await DisplayAlert(
-				title: "Success",
-				message: "Objective Assessment added",
-				cancel: "OK");
-
-        }
     }
 
 	private async void AddPerformance(object sender, EventArgs e)
@@ -270,5 +276,17 @@ public partial class EditCourse : ContentPage
 				cancel: "OK");
 			return;
         }
+    }
+
+	private async void EditAssessmentOA(object sender, EventArgs e)
+	{
+		var objective = await DatabaseService.GetAssessmentByType(course.Id, "Objective Assessment");
+        await Navigation.PushAsync(new EditAssessment(objective));
+	}
+
+	private async void EditAssessmentPA(object sender, EventArgs e)
+	{
+		var performance = await DatabaseService.GetAssessmentByType(course.Id, "Performance Assessment");
+		await Navigation.PushAsync(new EditAssessment(performance));
     }
 }

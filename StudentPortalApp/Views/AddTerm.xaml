@@ -6,13 +6,13 @@
     <VerticalStackLayout VerticalOptions="Center"
                              HorizontalOptions="Center">
         <Border x:Name="AddTermPopup"
-                    Stroke="Black"
-                    StrokeThickness="1"
-                    BackgroundColor="LightSteelBlue"
-                    Padding="15"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="350">
+                Stroke="Black"
+                StrokeThickness="1"
+                BackgroundColor="LightSteelBlue"
+                Padding="15"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="350">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="6" />
             </Border.StrokeShape>

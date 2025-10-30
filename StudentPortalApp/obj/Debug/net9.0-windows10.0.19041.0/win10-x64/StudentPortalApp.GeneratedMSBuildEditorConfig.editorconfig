@@ -40,11 +40,11 @@ build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Resources
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/AddAssignment.xaml]
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/AddAssessment.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.AddAssignment.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\AddAssignment.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\AddAssignment.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.AddAssessment.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddAssessment.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddAssessment.xaml
 
 [C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/AddCourse.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -57,6 +57,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.AddTerm.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\AddTerm.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AddTerm.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/EditAssessment.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.EditAssessment.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EditAssessment.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EditAssessment.xaml
 
 [C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/EditCourse.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

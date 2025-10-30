@@ -5,7 +5,8 @@
              Title="Edit course">
     <ScrollView>
 
-        <VerticalStackLayout Padding="40">
+        <VerticalStackLayout Padding="40"
+                             Spacing="10">
             <Border Stroke="Black"
                     StrokeThickness="1"
                     BackgroundColor="LightSteelBlue"
@@ -154,29 +155,224 @@
 
             </Border>
 
-            <Grid ColumnDefinitions="*,*"
-                  VerticalOptions="Center"
-                  ColumnSpacing="5"
-                  Padding="0, 10">
-                <Button Grid.Column="0"
-                        Text="Add Objective Assessment"
-                        Pressed="AddObjective"/>
-                <Button Grid.Column="1"
-                        Text="Add Performance assessment"
-                        Pressed="AddPerformance"/>
-            </Grid>
 
+            <Label Text="Assessments"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+
+            <Border Stroke="Black"
+                    StrokeThickness="1"
+                    BackgroundColor="LightSteelBlue"
+                    Padding="15"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    IsVisible="False"
+                    x:Name="OAssessmentBorder">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="6" />
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="*,*"
+                      RowDefinitions="*,*,*,*,*,*,*"
+                      RowSpacing="10">
+
+                    <Label Grid.Column="0" 
+                           Grid.Row="0"
+                           x:Name="OAName"
+                           VerticalOptions="Center"
+                           FontSize="16"
+                           FontAttributes="Bold"/>
+                    <Grid ColumnDefinitions="*,Auto"
+                          Grid.Column="1"
+                          Grid.Row="0"
+                          ColumnSpacing="3"
+                          VerticalOptions="Center">
+                        <Border Grid.Column="0"
+                                BackgroundColor="Gold"
+                                Padding="10, 5"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="6"/>
+                            </Border.StrokeShape>
+                            <Label Text="OA"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   FontSize="16"/>
+                        </Border>
+                        <Border Grid.Column="1"
+                                BackgroundColor="PaleGreen"
+                                Padding="10, 5"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="6"/>
+                            </Border.StrokeShape>
+
+                            <Label x:Name="OAStatus"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                               FontSize="16"/>
+                        </Border>
+                    </Grid>
+
+                    <Label Grid.Column="0"
+                           Grid.Row="1"
+                           Text="Type:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="1"
+                           x:Name="OAType"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="2"
+                           Text="Start date:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="2"
+                           x:Name="OAStartDate"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="3"
+                           Text="End date:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="3"
+                           x:Name="OAEndDate"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="4"
+                           Text="Start reminder:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="4"
+                           x:Name="OAStartReminder"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="5"
+                           Text="End reminder:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="5"
+                           x:Name="OAEndReminder"/>
+                    <Button Grid.Column="1"
+                            Grid.Row="6"
+                            Text="Edit"
+                            FontSize="12"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End"
+                            MinimumHeightRequest="-1"
+                            HeightRequest="35"
+                            BackgroundColor="DodgerBlue"
+                            Clicked="EditAssessmentOA"/>
+                </Grid>
+            </Border>
+
+            <Border Stroke="Black"
+                    StrokeThickness="1"
+                    BackgroundColor="LightSteelBlue"
+                    Padding="15"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    IsVisible="False"
+                    x:Name="PAssessmentBorder">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="6" />
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="*,*"
+                      RowDefinitions="*,*,*,*,*,*,*"
+                      RowSpacing="10">
+
+                    <Label Grid.Column="0" 
+                           Grid.Row="0"
+                           x:Name="PAName"
+                           VerticalOptions="Center"
+                           FontSize="16"
+                           FontAttributes="Bold"/>
+                    <Grid ColumnDefinitions="*,Auto"
+                          Grid.Column="1"
+                          Grid.Row="0"
+                          ColumnSpacing="3"
+                          VerticalOptions="Center">
+                        <Border Grid.Column="0"
+                                BackgroundColor="MediumOrchid"
+                                Padding="10, 5"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="6"/>
+                            </Border.StrokeShape>
+                            <Label Text="PA"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   FontSize="16"/>
+                        </Border>
+                        <Border Grid.Column="1"
+                                BackgroundColor="PaleGreen"
+                                Padding="10, 5"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="6"/>
+                            </Border.StrokeShape>
+
+                            <Label x:Name="PAStatus"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End"
+                                   FontSize="16"/>
+                        </Border>
+                    </Grid>
+
+                    <Label Grid.Column="0"
+                           Grid.Row="1"
+                           Text="Type:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="1"
+                           x:Name="PAType"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="2"
+                           Text="Start date:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="2"
+                           x:Name="PAStartDate"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="3"
+                           Text="End date:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="3"
+                           x:Name="PAEndDate"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="4"
+                           Text="Start reminder:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="4"
+                           x:Name="PAStartReminder"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="5"
+                           Text="End reminder:"/>
+                    <Label Grid.Column="1"
+                           Grid.Row="5"
+                           x:Name="PAEndReminder"/>
+                    <Button Grid.Column="1"
+                            Grid.Row="6"
+                            Text="Edit"
+                            FontSize="12"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End"
+                            MinimumHeightRequest="-1"
+                            HeightRequest="35"
+                            BackgroundColor="DodgerBlue"
+                            Clicked="EditAssessmentPA"/>
+                </Grid>
+            </Border>
+
+            <Button Text="Add Assessment"
+                    Clicked="AddAssessment"/>
             <Grid ColumnDefinitions="*,*"
                   VerticalOptions="Center"
                   ColumnSpacing="5"
                   Padding="0, 0, 0, 10">
                 <Button Grid.Column="0"
                         Text="Delete OA"
-                        Pressed="DeleteOa"
+                        Clicked="DeleteOa"
                         BackgroundColor="DarkRed"/>
                 <Button Grid.Column="1"
                         Text="Delete PA"
-                        Pressed="DeletePa"
+                        Clicked="DeletePa"
                         BackgroundColor="DarkRed"/>
             </Grid>
         </VerticalStackLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentPortalApp.Views.AddAssessment"
+             Title="Add Assessment">
+    <VerticalStackLayout VerticalOptions="Center"
+                         HorizontalOptions="Center">
+        <Border Stroke="Black"
+                StrokeThickness="1"
+                BackgroundColor="LightSteelBlue"
+                Padding="15"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="350">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="6" />
+            </Border.StrokeShape>
+
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Add a new assessment" 
+                       FontAttributes="Bold" 
+                       FontSize="20"/>
+                <Grid ColumnDefinitions=".30*,.70*"
+                      RowDefinitions="*,*,*,*,*,*,*">
+                    <Label Grid.Column="0"
+                           Grid.Row="0"
+                           Text="Assesment name:"
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Column="1"
+                           Grid.Row="0"
+                           x:Name="NewName" 
+                           Placeholder="Assessment name" 
+                           PlaceholderColor="BlueViolet"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="1"
+                           Text="Type:"
+                           VerticalOptions="Center"/>
+                    <Picker Grid.Column="1"
+                            Grid.Row="1"
+                            x:Name="NewType">
+                        <Picker.Items>
+                            <x:String>Objective Assessment</x:String>
+                            <x:String>Performance Assessment</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Column="0"
+                           Grid.Row="2"
+                           Text="Start Date:"
+                           VerticalOptions="Center"/>
+                    <DatePicker Grid.Column="1"
+                                Grid.Row="2"
+                                x:Name="NewStartDate"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="3"
+                           Text="End Date:"
+                           VerticalOptions="Center"/>
+                    <DatePicker Grid.Column="1" 
+                                Grid.Row="3" 
+                                x:Name="NewEndDate"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="4"
+                           Text="Status:"
+                           VerticalOptions="Center"/>
+                    <Picker Grid.Column="1"
+                            Grid.Row="4"
+                            x:Name="AssessmentStatus">
+                        <Picker.Items>
+                            <x:String>Planned</x:String>
+                            <x:String>In Progress</x:String>
+                            <x:String>Completed</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Column="0"
+                           Grid.Row="5"
+                           Text="Start notification:"
+                           VerticalOptions="Center"/>
+                    <Switch Grid.Column="1"
+                            Grid.Row="5"
+                            x:Name="StartNotificationSwitch"
+                            HorizontalOptions="Start"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="6"
+                           Text="End notification:"
+                           VerticalOptions="Center"/>
+                    <Switch Grid.Column="1"
+                            Grid.Row="6"
+                            x:Name="EndNotificationSwitch"
+                            HorizontalOptions="Start"/>
+                </Grid>
+
+                <Button Text="Add Assessment" Clicked="ConfirmAddAssessment"/>
+                <Button Text="Cancel" Clicked="ClosePopup" />
+            </VerticalStackLayout>
+        </Border>
+        
+    </VerticalStackLayout>
+</ContentPage>

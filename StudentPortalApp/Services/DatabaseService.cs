@@ -348,6 +348,7 @@ namespace StudentPortalApp.Services
             await Init();
             await _db.DropTableAsync<Term>();
             await _db.DropTableAsync<Course>();
+            await _db.DropTableAsync<Assessment>();
             _db = null;
 
             Settings.ClearSettings();
