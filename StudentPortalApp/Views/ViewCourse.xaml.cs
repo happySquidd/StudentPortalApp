@@ -31,11 +31,15 @@ public partial class ViewCourse : ContentPage
 			Notifications.Text = "You enabled notifications for start and end of this course";
 		}
 
-        LoadAssessments();
     }
 
+	protected override async void OnAppearing()
+	{
+		base.OnAppearing();
+		await LoadAssessments();
+    }
 
-    private async void LoadAssessments()
+    private async Task LoadAssessments()
     {
         var objective = await DatabaseService.GetAssessmentByType(course.Id, "Objective Assessment");
         if (objective != null)

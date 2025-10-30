@@ -1,3 +1,4 @@
+using Plugin.LocalNotification;
 using StudentPortalApp.Models;
 using StudentPortalApp.Services;
 
@@ -61,7 +62,41 @@ public partial class EditAssessment : ContentPage
 			return;
         }
 
-        string type = Type.SelectedItem.ToString()!;
+        // set up notifications
+		if (StartNotificationSwitch.IsToggled)
+		{
+			bool soon = false;
+			if (StartDate.Date == DateTime.Today) { soon = true; }
+            var request = new NotificationRequest
+				{
+					NotificationId = 0,
+					Title = "Assessment Starting Today",
+					Description = $"Assessment '{Name.Text}' is starting today",
+					Schedule = new NotificationRequestSchedule
+					{
+						NotifyTime = soon ? DateTime.Now.AddSeconds(2) : StartDate.Date
+					}
+				};
+			await LocalNotificationCenter.Current.Show(request);
+        }
+		if (EndNotificationSwitch.IsToggled)
+		{
+			bool soon = false;
+			if (EndDate.Date == DateTime.Today) { soon = true; }
+            var request = new NotificationRequest
+			{
+				NotificationId = 1,
+                Title = "Assessment Ending Today",
+				Description = $"Assessment '{Name.Text}' is ending today",
+				Schedule = new NotificationRequestSchedule
+				{
+					NotifyTime = soon ? DateTime.Now.AddSeconds(2) : EndDate.Date
+				}
+			};
+			await LocalNotificationCenter.Current.Show(request);
+        }
+
+            string type = Type.SelectedItem.ToString()!;
 		string name = Name.Text;
 		string start = StartDate.Date.ToString();
 		string end = EndDate.Date.ToString();

@@ -25,10 +25,15 @@ public partial class EditCourse : ContentPage
 
 		this.course = course;
 
-		LoadAssessments();
 	}
 
-	private async void LoadAssessments()
+	protected override async void OnAppearing()
+	{
+		base.OnAppearing();
+		await LoadAssessments();
+    }
+
+    private async Task LoadAssessments()
 	{
 		var objective = await DatabaseService.GetAssessmentByType(course.Id, "Objective Assessment");
 		if (objective != null)

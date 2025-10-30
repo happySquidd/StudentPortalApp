@@ -31,7 +31,7 @@ public partial class TermWindow : ContentPage
 		foreach (var course in coursesList)
 		{
 			Courses.Add(course);
-		}
+        }
 
 		if (coursesList.Count == 0)
 		{
