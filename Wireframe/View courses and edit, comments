@@ -1,0 +1,7 @@
+The second page of this app is to view a list of courses per term, 
+and edit any fields about the course. This page had minimal changes to the final result.
+Some changes that took place are: changed the layout of each course in the list of courses,
+the status is now on top right instead of bottom, and due dates are listed right beneath the title,
+this is a minor change and doesn't affect the usability of the app. Another minor change is the addition
+of buttons that take the user to view and edit the term, this was done to help the user accomplish 
+the desired task, whether editing or just viewing about the course.
