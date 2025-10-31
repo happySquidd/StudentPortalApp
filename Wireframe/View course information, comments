@@ -1,0 +1,6 @@
+The third wireframe is displaying the course view and assessments view that is tied to each course. 
+There were slight changes done to this part of the app. The view of assessments was moved into the course editor, 
+to increase simplicity. Buttons such as "add assessment" and "edit assessment" were added into the 
+course editor so the user can easily add or modify assessments. The user interface to edit assessments 
+remained mostly the same, all the functionalities remained, there was only a slight interface change that 
+made the view look nicer.
