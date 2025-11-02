@@ -1,4 +1,4 @@
-﻿using SQLite;
+using SQLite;
 using StudentPortalApp.Models;
 using System;
 using System.Collections.Generic;
@@ -267,108 +267,7 @@ namespace StudentPortalApp.Services
 
             await _db.InsertAsync(assessment2);
 
-            Course course2 = new Course
-            {
-                Name = "Database Systems",
-                StartTime = new DateTime(2025, 11, 19),
-                EndTime = new DateTime(2026, 12, 19),
-                Status = "Planned",
-                InstructorName = "Jane Smith",
-                InstructorPhone = "555-5678",
-                InstructorEmail = "email@gmail.com",
-                Notes = "Sample notes",
-                StartNotification = false,
-                EndNotification = true,
-                DueDate = new DateTime(2026, 12, 19),
-                TermId = term1.Id,
-            };
-
-            await _db.InsertAsync(course2);
-
-            Course course3 = new Course
-            {
-                Name = "Mobile App Development",
-                StartTime = new DateTime(2025, 12, 19),
-                EndTime = new DateTime(2026, 1, 19),
-                Status = "Planned",
-                InstructorName = "Alice Johnson",
-                InstructorPhone = "555-9012",
-                InstructorEmail = "gmail@gmail.com",
-                Notes = "Some notes here",
-                StartNotification = true,
-                EndNotification = true,
-                DueDate = new DateTime(2026, 12, 19),
-                TermId = term1.Id,
-            };
-            await _db.InsertAsync(course3);
-
-            Course course4 = new Course
-            {
-                Name = "Web Development",
-                StartTime = new DateTime(2026, 1, 19),
-                EndTime = new DateTime(2026, 2, 19),
-                Status = "Planned",
-                InstructorName = "Bob Brown",
-                InstructorPhone = "555-3456",
-                InstructorEmail = "email@gmail.com",
-                Notes = "Web dev class",
-                StartNotification = false,
-                EndNotification = true,
-                DueDate = new DateTime(2026, 2, 19),
-                TermId = term1.Id,
-            };
-            await _db.InsertAsync(course4);
-
-            Course course5 = new Course
-            {
-                Name = "Data Structures",
-                StartTime = new DateTime(2026, 2, 19),
-                EndTime = new DateTime(2026, 3, 19),
-                Status = "Planned",
-                InstructorName = "Charlie Davis",
-                InstructorPhone = "555-7890",
-                InstructorEmail = "email@gmal.com",
-                Notes = "Data structures class",
-                StartNotification = true,
-                EndNotification = true,
-                DueDate = new DateTime(2026, 3, 19),
-                TermId = term1.Id,
-            };
-            await _db.InsertAsync(course5);
-
-            Course course6 = new Course
-            {
-                Name = "Operating Systems",
-                StartTime = new DateTime(2026, 3, 19),
-                EndTime = new DateTime(2026, 4, 19),
-                Status = "Planned",
-                InstructorName = "Diana Evans",
-                InstructorPhone = "555-2345",
-                InstructorEmail = "gmail@gmail.com",
-                Notes = "OS class notes",
-                StartNotification = false,
-                EndNotification = false,
-                DueDate = new DateTime(2026, 4, 19),
-                TermId = term1.Id,
-            };
-            await _db.InsertAsync(course6);
-
-            Term term2 = new Term
-            {
-                Name = "Spring 2026",
-                StartTime = new DateTime(2026, 4, 19),
-                EndTime = new DateTime(2026, 10, 19),
-            };
-            await _db.InsertAsync(term2);
-
-            Term term3 = new Term
-            {
-                Name = "Fall 2026",
-                StartTime = new DateTime(2026, 10, 19),
-                EndTime = new DateTime(2027, 4, 19),
-            };
-            await _db.InsertAsync(term3);
-
+            
         }
 
         public static async Task ClearSampleData()
