@@ -76,6 +76,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.Edi
 build_metadata.AdditionalFiles.TargetPath = Views\EditTerm.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\EditTerm.xaml
 
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/Login.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.Login.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Login.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Login.xaml
+
 [C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/TermWindow.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.TermWindow.xaml

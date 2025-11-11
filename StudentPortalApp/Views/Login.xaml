@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentPortalApp.Views.Login">
+    <VerticalStackLayout VerticalOptions="Center"
+                         HorizontalOptions="Center">
+        <Border x:Name="AddTermPopup"
+                Stroke="Black"
+                StrokeThickness="1"
+                BackgroundColor="LightSteelBlue"
+                Padding="15"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="250">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="6" />
+            </Border.StrokeShape>
+
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Login" 
+                       FontAttributes="Bold" 
+                       FontSize="24"/>
+                <Grid ColumnDefinitions=".5*,*"
+                      RowDefinitions="*,*">
+                    <Label Grid.Column="0"
+                           Grid.Row="0"
+                           Text="Username: "
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Column="1"
+                           Grid.Row="0"
+                           x:Name="username" 
+                           Placeholder="username" 
+                           PlaceholderColor="BlueViolet"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="1"
+                           Text="Password: "
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Column="1"
+                           Grid.Row="1"
+                           x:Name="password"
+                           IsPassword="True"
+                           Placeholder="password" 
+                           PlaceholderColor="BlueViolet"
+                           VerticalOptions="Center"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="*,*"
+                      VerticalOptions="Center"
+                      HorizontalOptions="Fill"
+                      ColumnSpacing="5">
+                    <Button Grid.Column="1"
+                            Text="Login" 
+                            Clicked="LoginClicked"/>
+                </Grid>
+            </VerticalStackLayout>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>
