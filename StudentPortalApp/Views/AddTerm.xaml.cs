@@ -27,7 +27,7 @@ public partial class AddTerm : ContentPage
             await DisplayAlert(title: "Error", message:"The end date cannot be earlier or the same as the start date", cancel:"OK");
             return;
         }
-        await DatabaseService.AddTerm(termName, startDate, endDate);
+        await DatabaseService.AddTerm(1, termName, startDate, endDate);
         await Navigation.PopAsync();
     }
 

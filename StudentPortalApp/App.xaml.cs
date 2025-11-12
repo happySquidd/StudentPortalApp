@@ -12,9 +12,11 @@ namespace StudentPortalApp
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            var TermsPage = new TermsPage(); // new name is ViewTerms
-            var TermPage = new NavigationPage(TermsPage);
-            return new Window(TermPage);
+            //var TermsPage = new TermsPage(); // new name is ViewTerms
+            //var TermPage = new NavigationPage(TermsPage);
+            var login = new Login();
+            var LoginPage = new NavigationPage(login);
+            return new Window(LoginPage);
         }
     }
 }
