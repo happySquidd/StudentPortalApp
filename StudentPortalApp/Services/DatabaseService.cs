@@ -21,17 +21,33 @@ namespace StudentPortalApp.Services
             var dbPath = Path.Combine(FileSystem.AppDataDirectory, "studentPortal.db");
             _db = new SQLiteAsyncConnection(dbPath);
 
+            await _db.CreateTableAsync<User>();
             await _db.CreateTableAsync<Term>();
             await _db.CreateTableAsync<Course>();
             await _db.CreateTableAsync<Assessment>();
         }
 
+        #region Users
+        public static async Task AddUser(string username, string password)
+        {
+            await Init();
+            var user = new User
+            {
+                UserName = username,
+                Password = password
+            };
+            await _db.InsertAsync(user);
+        }
+
+        #endregion Users
+
         #region Terms region
-        public static async Task AddTerm(string name, DateTime startTime, DateTime endTime)
+        public static async Task AddTerm(int userId, string name, DateTime startTime, DateTime endTime)
         {
             await Init();
             var term = new Term
             {
+                UserId = userId,
                 Name = name,
                 StartTime = startTime,
                 EndTime = endTime
@@ -212,8 +228,17 @@ namespace StudentPortalApp.Services
         {
             await Init();
 
+            User user1 = new User
+            {
+                UserName = "user",
+                Password = "password",
+            };
+
+            await _db.InsertAsync(user1);
+
             Term term1 = new Term
             {
+                UserId = user1.Id,
                 Name = "Fall 2025",
                 StartTime = new DateTime(2025, 10, 19),
                 EndTime = new DateTime(2026, 4, 19),

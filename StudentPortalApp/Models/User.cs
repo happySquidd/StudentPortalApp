@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace StudentPortalApp.Models
 {
-    public class Term
+    internal class User
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public int UserId { get; set; } // foreign key to user
-        public string Name { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+
     }
 }
