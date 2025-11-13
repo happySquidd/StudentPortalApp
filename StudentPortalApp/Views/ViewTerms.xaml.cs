@@ -10,11 +10,13 @@ public partial class TermsPage : ContentPage
 {
     public ObservableCollection<Term> Terms { get; set; }
     public static int UserId { get; set; }
-    public TermsPage(int userId)
+    private static string? Username { get; set; }
+    public TermsPage(int userId, string username)
 	{
 		InitializeComponent();
 
         UserId = userId;
+        Username = username;
         Terms = new ObservableCollection<Term>();
         this.BindingContext = this;
 
@@ -72,16 +74,8 @@ public partial class TermsPage : ContentPage
         }
     }
 
-    private void LogoutClicked(object sender, EventArgs e)
-    {
-        Terms.Clear();
-        var login = new Login();
-        var LoginPage = new NavigationPage(login);
-        Application.Current.Windows[0].Page = LoginPage;
-    }
-
     private async void SettingsClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new EditUser());
+        await Navigation.PushAsync(new EditUser(Username));
     }
 }

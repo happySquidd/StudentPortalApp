@@ -10,8 +10,6 @@
                FontSize="24"/>
     </NavigationPage.TitleView>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Logout"
-                     Clicked="LogoutClicked"/>
         <ToolbarItem Text="Settings"
                      IconImageSource="settings_icon.png"
                      Order="Primary"

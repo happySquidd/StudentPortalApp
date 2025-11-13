@@ -46,7 +46,7 @@ public partial class Register : ContentPage
 			user = await DatabaseService.GetUser(username.Text);
 		}
 		// assign Id
-		var terms = new TermsPage(user.Id);
+		var terms = new TermsPage(user.Id, user.UserName);
         var TermsPage = new NavigationPage(terms);
         Application.Current.Windows[0].Page = TermsPage;
     }

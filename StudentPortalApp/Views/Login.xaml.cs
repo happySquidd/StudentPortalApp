@@ -67,7 +67,7 @@ public partial class Login : ContentPage
         
         passwordIncorrect.IsVisible = false;
         // create a new root window which is the terms view page
-        var terms = new TermsPage(user.Id);
+        var terms = new TermsPage(user.Id, user.UserName);
 		var TermsPage = new NavigationPage(terms);
 		Application.Current.Windows[0].Page = TermsPage;
 	}
