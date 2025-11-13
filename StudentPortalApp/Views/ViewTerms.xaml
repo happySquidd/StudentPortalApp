@@ -12,6 +12,11 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Logout"
                      Clicked="LogoutClicked"/>
+        <ToolbarItem Text="Settings"
+                     IconImageSource="settings_icon.png"
+                     Order="Primary"
+                     Priority="1"
+                     Clicked="SettingsClicked"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>

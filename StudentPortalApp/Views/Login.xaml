@@ -14,7 +14,7 @@
                          Spacing="15">
         <Label Text="Sign in"
                Padding="10, 0"
-               FontSize="Large"/>
+               FontSize="23"/>
 
         <Grid RowDefinitions="*,*">
             <Border Grid.Row="0"
@@ -100,7 +100,7 @@
                TextDecorations="Underline"
                HorizontalOptions="Center">
             <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="RegisterClicked" />
+                <TapGestureRecognizer Tapped="ForgotClicked" />
             </Label.GestureRecognizers>
         </Label>
         

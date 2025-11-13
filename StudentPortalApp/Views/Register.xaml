@@ -8,7 +8,7 @@
                          Spacing="15">
         <Label Text="Register"
                Padding="10, 0"
-               FontSize="Large"/>
+               FontSize="23"/>
         <Grid RowDefinitions="*,*"
               RowSpacing="0">
             <Border Grid.Row="0"

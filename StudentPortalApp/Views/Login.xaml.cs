@@ -79,6 +79,11 @@ public partial class Login : ContentPage
 		Application.Current.Windows[0].Page = RegPage;
 	}
 
+	private async void ForgotClicked(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new ForgotPassword());
+	}
+
     private async void ResetSampleData(object sender, EventArgs e)
     {
         await DatabaseService.ClearSampleData();

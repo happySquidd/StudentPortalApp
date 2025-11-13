@@ -79,4 +79,9 @@ public partial class TermsPage : ContentPage
         var LoginPage = new NavigationPage(login);
         Application.Current.Windows[0].Page = LoginPage;
     }
+
+    private async void SettingsClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new EditUser());
+    }
 }

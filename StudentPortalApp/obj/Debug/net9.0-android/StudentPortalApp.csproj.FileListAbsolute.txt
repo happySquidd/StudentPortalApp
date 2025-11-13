@@ -996,3 +996,4 @@ C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\obj\Debug\net9.0-android
 C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\obj\Debug\net9.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\obj\Debug\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\obj\Debug\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\rafae\source\repos\StudentApp\StudentPortalApp\obj\Debug\net9.0-android\resizetizer\r\drawable\settings_icon.png
