@@ -38,7 +38,7 @@ public partial class TermsPage : ContentPage
     private async Task LoadData()
     {
         Terms.Clear();
-        var terms = await DatabaseService.GetTerms();
+        var terms = await DatabaseService.GetTerms(1);
         foreach (var term in terms)
         {
             Terms.Add(term);

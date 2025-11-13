@@ -39,6 +39,25 @@ namespace StudentPortalApp.Services
             await _db.InsertAsync(user);
         }
 
+        public static async Task<User> GetUser(string username)
+        {
+            await Init();
+            var user = await _db.Table<User>().Where(u => u.UserName == username).FirstOrDefaultAsync();
+            // will return null if user doesn't exist
+            return user;
+        }
+
+        public static async Task<bool> VerifyPassword(User user, string password)
+        {
+            await Init();
+            if (user.Password == password)
+            {
+                // passwords match
+                return true;
+            }
+            return false;
+        }
+
         #endregion Users
 
         #region Terms region
@@ -65,10 +84,10 @@ namespace StudentPortalApp.Services
             }
         }
 
-        public static async Task<List<Term>> GetTerms()
+        public static async Task<List<Term>> GetTerms(int uid)
         {
             await Init();
-            var terms = await _db.Table<Term>().ToListAsync();
+            var terms = await _db.Table<Term>().Where(u => u.Id == uid).ToListAsync();
             return terms;
         }
 

@@ -29,7 +29,7 @@
                     <Entry Grid.Column="1"
                            Grid.Row="0"
                            x:Name="username" 
-                           Placeholder="username" 
+                           Placeholder="" 
                            PlaceholderColor="BlueViolet"/>
                     <Label Grid.Column="0"
                            Grid.Row="1"
@@ -39,18 +39,29 @@
                            Grid.Row="1"
                            x:Name="password"
                            IsPassword="True"
-                           Placeholder="password" 
+                           Placeholder="" 
                            PlaceholderColor="BlueViolet"
                            VerticalOptions="Center"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,*"
+                      RowDefinitions="*,*"
                       VerticalOptions="Center"
                       HorizontalOptions="Fill"
                       ColumnSpacing="5">
                     <Button Grid.Column="1"
+                            Grid.Row="0"
                             Text="Login" 
                             Clicked="LoginClicked"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="1"
+                           Text="Don't have an account? Click here to Register"
+                           VerticalOptions="Center"/>
+                    <Button Grid.Column="1"
+                            Grid.Row="1"
+                            Text="Register"
+                            Clicked="RegisterClicked"
+                            VerticalOptions="Center"/>
                 </Grid>
             </VerticalStackLayout>
         </Border>
