@@ -53,6 +53,8 @@ public partial class Login : ContentPage
 
 	private void RegisterClicked(object sender, EventArgs e)
 	{
-
+		var register = new Register();
+		var RegPage = new NavigationPage(register);
+		Application.Current.Windows[0].Page = RegPage;
 	}
 }
