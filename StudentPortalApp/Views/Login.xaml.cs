@@ -8,12 +8,23 @@ public partial class Login : ContentPage
 	public Login()
 	{
 		InitializeComponent();
-	}
+    }
+
+	//protected override async void OnAppearing()
+	//{
+	//if (Settings.FirstRun)
+	//{
+	//    await DatabaseService.LoadSampleData();
+	//    Settings.FirstRun = false;
+	//}
+
+	//       base.OnAppearing();
+	//}
 
 	private async void LoginClicked(object sender, EventArgs e)
 	{
 		User user = new User();
-        if (username != null && password != null)
+        if (!string.IsNullOrWhiteSpace(username.Text) && !string.IsNullOrWhiteSpace(password.Text))
         {
             user = await DatabaseService.GetUser(username.Text);
         }
@@ -43,10 +54,10 @@ public partial class Login : ContentPage
 				cancel: "OK");
 			return;
 		}
-
+		// successfull login
 
         // create a new root window which is the terms view page
-        var terms = new TermsPage();
+        var terms = new TermsPage(user.Id);
 		var TermsPage = new NavigationPage(terms);
 		Application.Current.Windows[0].Page = TermsPage;
 	}
@@ -57,4 +68,15 @@ public partial class Login : ContentPage
 		var RegPage = new NavigationPage(register);
 		Application.Current.Windows[0].Page = RegPage;
 	}
+
+    private async void ResetSampleData(object sender, EventArgs e)
+    {
+        await DatabaseService.ClearSampleData();
+        await DatabaseService.LoadSampleData();
+    }
+
+    private async void ClearSampleData(object sender, EventArgs e)
+    {
+        await DatabaseService.ClearSampleData();
+    }
 }

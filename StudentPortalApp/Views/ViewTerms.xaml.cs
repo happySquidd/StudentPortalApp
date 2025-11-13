@@ -9,10 +9,12 @@ namespace StudentPortalApp.Views;
 public partial class TermsPage : ContentPage
 {
     public ObservableCollection<Term> Terms { get; set; }
-    public TermsPage()
+    public static int UserId { get; set; }
+    public TermsPage(int userId)
 	{
 		InitializeComponent();
 
+        UserId = userId;
         Terms = new ObservableCollection<Term>();
         this.BindingContext = this;
 
@@ -25,12 +27,6 @@ public partial class TermsPage : ContentPage
             await LocalNotificationCenter.Current.RequestNotificationPermission();
         }
 
-        if (Settings.FirstRun)
-        {
-            await DatabaseService.LoadSampleData();
-            Settings.FirstRun = false;
-        }
-
         base.OnAppearing();
         await LoadData();
     }
@@ -38,7 +34,11 @@ public partial class TermsPage : ContentPage
     private async Task LoadData()
     {
         Terms.Clear();
-        var terms = await DatabaseService.GetTerms(1);
+        var terms = await DatabaseService.GetTerms(UserId);
+        if (terms == null || terms.Count == 0)
+        {
+            return;
+        }
         foreach (var term in terms)
         {
             Terms.Add(term);
@@ -72,17 +72,11 @@ public partial class TermsPage : ContentPage
         }
     }
 
-    private async void ResetSampleData(object sender, EventArgs e)
+    private void LogoutClicked(object sender, EventArgs e)
     {
-        await DatabaseService.ClearSampleData();
-        await LoadData();
-        await DatabaseService.LoadSampleData();
-        await LoadData();
-    }
-
-    private async void ClearSampleData(object sender, EventArgs e)
-    {
-        await DatabaseService.ClearSampleData();
-        await LoadData();
+        Terms.Clear();
+        var login = new Login();
+        var LoginPage = new NavigationPage(login);
+        Application.Current.Windows[0].Page = LoginPage;
     }
 }

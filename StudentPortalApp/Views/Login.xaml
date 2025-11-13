@@ -2,6 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StudentPortalApp.Views.Login">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Reset sample data"
+                 Clicked="ResetSampleData"/>
+        <ToolbarItem Text="Clear all data"
+                 Clicked="ClearSampleData"/>
+    </ContentPage.ToolbarItems>
     <VerticalStackLayout VerticalOptions="Center"
                          HorizontalOptions="Center">
         <Border x:Name="LoginBorder"

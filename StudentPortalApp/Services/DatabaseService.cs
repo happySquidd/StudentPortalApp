@@ -28,15 +28,23 @@ namespace StudentPortalApp.Services
         }
 
         #region Users
-        public static async Task AddUser(string username, string password)
+        public static async Task<bool> AddUser(string username, string password)
         {
             await Init();
-            var user = new User
+            // see if user exists
+            var user = await _db.Table<User>().Where(u => u.UserName == username).FirstOrDefaultAsync();
+            if (user != null)
+            {
+                // user exists
+                return false;
+            }
+            var newUser = new User
             {
                 UserName = username,
                 Password = password
             };
-            await _db.InsertAsync(user);
+            await _db.InsertAsync(newUser);
+            return true;
         }
 
         public static async Task<User> GetUser(string username)
@@ -317,6 +325,7 @@ namespace StudentPortalApp.Services
         public static async Task ClearSampleData()
         {
             await Init();
+            await _db.DropTableAsync<User>();
             await _db.DropTableAsync<Term>();
             await _db.DropTableAsync<Course>();
             await _db.DropTableAsync<Assessment>();

@@ -10,10 +10,8 @@
                FontSize="24"/>
     </NavigationPage.TitleView>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Reset sample data"
-                     Clicked="ResetSampleData"/>
-        <ToolbarItem Text="Clear all data"
-                     Clicked="ClearSampleData"/>
+        <ToolbarItem Text="Logout"
+                     Clicked="LogoutClicked"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>
