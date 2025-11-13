@@ -24,38 +24,48 @@ public partial class Login : ContentPage
 	private async void LoginClicked(object sender, EventArgs e)
 	{
 		User user = new User();
-        if (!string.IsNullOrWhiteSpace(username.Text) && !string.IsNullOrWhiteSpace(password.Text))
-        {
-            user = await DatabaseService.GetUser(username.Text);
-        }
+
+		// input validation
+		if (string.IsNullOrWhiteSpace(username.Text))
+		{
+			userEmpty.IsVisible = true;
+			return;
+		}
 		else
 		{
-			await DisplayAlert(
-				title: "Error",
-				message: "Please enter your username and password",
-				cancel: "OK");
-			return;
+			userEmpty.IsVisible = false;
 		}
-		// user not found
-		if (user == null)
+		if (string.IsNullOrWhiteSpace(password.Text))
 		{
-			await DisplayAlert(
-				title: "Error",
-				message: "User not found",
-				cancel: "OK");
+			passwordEmpty.IsVisible = true;
 			return;
 		}
+		else
+		{
+			passwordEmpty.IsVisible = false;
+		}
+
+        // fetch user
+        user = await DatabaseService.GetUser(username.Text);
+        // user not found
+        if (user == null)
+		{
+			userNotFound.IsVisible = true;
+			return;
+		}
+        else
+        {
+			userNotFound.IsVisible = false;
+        }
 		// passwords don't match
 		if (!await DatabaseService.VerifyPassword(user, password.Text))
 		{
-			await DisplayAlert(
-				title: "Error",
-				message: "Password is incorrect",
-				cancel: "OK");
+			passwordIncorrect.IsVisible = true;
 			return;
 		}
-		// successfull login
-		Console.WriteLine($"id: {user.Id}, username: {user.UserName}");
+        // successfull login
+        
+        passwordIncorrect.IsVisible = false;
         // create a new root window which is the terms view page
         var terms = new TermsPage(user.Id);
 		var TermsPage = new NavigationPage(terms);

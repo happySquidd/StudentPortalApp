@@ -13,28 +13,37 @@ public partial class Register : ContentPage
 	private async void RegisterClicked(object sender, EventArgs e)
 	{
 		User user = new User();
-		if (string.IsNullOrWhiteSpace(username.Text) || string.IsNullOrWhiteSpace(password.Text))
+		
+		// input validation
+		if (string.IsNullOrWhiteSpace(username.Text))
 		{
-			await DisplayAlert(
-				title: "Error",
-				message: "Please enter your username and password",
-				cancel: "OK");
-			return;
-		}
-		if (!await DatabaseService.AddUser(username.Text, password.Text))
-		{
-			await DisplayAlert(
-				title: "Error",
-				message: "This username is taken please try another",
-				cancel: "OK");
+			usernameEmpty.IsVisible = true;
 			return;
 		}
 		else
 		{
-			Console.WriteLine("Getting user ID");
+			usernameEmpty.IsVisible = false;
+		}
+		if (string.IsNullOrWhiteSpace(password.Text))
+		{
+			passwordEmpty.IsVisible = true;
+			return;
+		}
+		else
+		{
+			passwordEmpty.IsVisible = false;
+		}
+		if (!await DatabaseService.AddUser(username.Text, password.Text))
+		{
+			usernameTaken.IsVisible = true;
+			return;
+		}
+		else
+		{
+			// created user successfully
+			usernameTaken.IsVisible = false;
 			// get the new user to assign id
 			user = await DatabaseService.GetUser(username.Text);
-			Console.WriteLine($"username and password = {user.UserName}:{user.Password}");
 		}
 		// assign Id
 		var terms = new TermsPage(user.Id);

@@ -9,67 +9,100 @@
                  Clicked="ClearSampleData"/>
     </ContentPage.ToolbarItems>
     <VerticalStackLayout VerticalOptions="Center"
-                         HorizontalOptions="Center">
-        <Border x:Name="LoginBorder"
-                Stroke="Black"
-                StrokeThickness="1"
-                BackgroundColor="LightSteelBlue"
-                Padding="15"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                WidthRequest="250">
-            <Border.StrokeShape>
-                <RoundRectangle CornerRadius="6" />
-            </Border.StrokeShape>
+                         HorizontalOptions="Center"
+                         Padding="30"
+                         Spacing="15">
+        <Label Text="Sign in"
+               Padding="10, 0"
+               FontSize="Large"/>
 
-            <VerticalStackLayout Spacing="15">
-                <Label Text="Login" 
-                       FontAttributes="Bold" 
-                       FontSize="24"/>
-                <Grid ColumnDefinitions=".5*,*"
-                      RowDefinitions="*,*">
-                    <Label Grid.Column="0"
-                           Grid.Row="0"
-                           Text="Username: "
-                           VerticalOptions="Center"/>
-                    <Entry Grid.Column="1"
-                           Grid.Row="0"
-                           x:Name="username" 
-                           Placeholder="" 
-                           PlaceholderColor="BlueViolet"/>
-                    <Label Grid.Column="0"
-                           Grid.Row="1"
-                           Text="Password: "
-                           VerticalOptions="Center"/>
-                    <Entry Grid.Column="1"
-                           Grid.Row="1"
-                           x:Name="password"
-                           IsPassword="True"
-                           Placeholder="" 
-                           PlaceholderColor="BlueViolet"
-                           VerticalOptions="Center"/>
-                </Grid>
+        <Grid RowDefinitions="*,*">
+            <Border Grid.Row="0"
+                    StrokeShape="RoundRectangle 20"
+                    BackgroundColor="White"
+                    Padding="8,0"
+                    HeightRequest="40"
+                    WidthRequest="250">
+            <Border.Shadow>
+                <Shadow Brush="Black"
+                        Offset="5,5"
+                        Radius="10"
+                        Opacity="0.3" />
+            </Border.Shadow>
 
-                <Grid ColumnDefinitions="*,*"
-                      RowDefinitions="*,*"
-                      VerticalOptions="Center"
-                      HorizontalOptions="Fill"
-                      ColumnSpacing="5">
-                    <Button Grid.Column="1"
-                            Grid.Row="0"
-                            Text="Login" 
-                            Clicked="LoginClicked"/>
-                    <Label Grid.Column="0"
-                           Grid.Row="1"
-                           Text="Don't have an account? Click here to Register"
-                           VerticalOptions="Center"/>
-                    <Button Grid.Column="1"
-                            Grid.Row="1"
-                            Text="Register"
-                            Clicked="RegisterClicked"
-                            VerticalOptions="Center"/>
-                </Grid>
-            </VerticalStackLayout>
-        </Border>
+                <Entry Placeholder="Username" 
+                       VerticalOptions="Center"
+                       x:Name="username"/>
+            </Border>
+            <Label Grid.Row="1"
+                   Text="Username not found"
+                   TextColor="Red"
+                   Padding="10,5,0,0"
+                   x:Name="userNotFound"
+                   IsVisible="False"/>
+            <Label Grid.Row="1"
+                   Text="Please enter your username"
+                   TextColor="Red"
+                   Padding="10,5,0,0"
+                   x:Name="userEmpty"
+                   IsVisible="False"/>
+        </Grid>
+        
+
+        <Grid RowDefinitions="*,*">
+            <Border Grid.Row="0"
+                    StrokeShape="RoundRectangle 20"
+                    BackgroundColor="White"
+                    Padding="8,0"
+                    HeightRequest="40"
+                    WidthRequest="250">
+            <Border.Shadow>
+                <Shadow Brush="Black"
+                        Offset="5,5"
+                        Radius="10"
+                        Opacity="0.3" />
+            </Border.Shadow>
+
+                <Entry Placeholder="Password"
+                       IsPassword="True"
+                       VerticalOptions="Center"
+                       x:Name="password"/>
+            </Border>
+            <Label Grid.Row="1"
+                   Text="Incorrect password"
+                   TextColor="Red"
+                   Padding="10,5,0,0"
+                   x:Name="passwordIncorrect"
+                   IsVisible="False"/>
+            <Label Grid.Row="1"
+                   Text="Please enter your password"
+                   TextColor="Red"
+                   Padding="10,5,0,0"
+                   x:Name="passwordEmpty"
+                   IsVisible="False"/>
+        </Grid>
+        
+
+        <Button Text="Sign in"
+                Clicked="LoginClicked"/>
+
+        <Label Text="Don't have an account? Register here"
+               TextColor="Blue"
+               TextDecorations="Underline"
+               HorizontalOptions="Center"
+               Margin="0,10,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="RegisterClicked" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Text="Forgot your password?"
+               TextColor="Blue"
+               TextDecorations="Underline"
+               HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="RegisterClicked" />
+            </Label.GestureRecognizers>
+        </Label>
+        
     </VerticalStackLayout>
 </ContentPage>
