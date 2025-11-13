@@ -55,7 +55,7 @@ public partial class Login : ContentPage
 			return;
 		}
 		// successfull login
-
+		Console.WriteLine($"id: {user.Id}, username: {user.UserName}");
         // create a new root window which is the terms view page
         var terms = new TermsPage(user.Id);
 		var TermsPage = new NavigationPage(terms);

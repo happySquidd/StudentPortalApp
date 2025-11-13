@@ -95,7 +95,7 @@ namespace StudentPortalApp.Services
         public static async Task<List<Term>> GetTerms(int uid)
         {
             await Init();
-            var terms = await _db.Table<Term>().Where(u => u.Id == uid).ToListAsync();
+            var terms = await _db.Table<Term>().Where(u => u.UserId == uid).ToListAsync();
             return terms;
         }
 
