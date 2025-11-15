@@ -32,8 +32,8 @@ namespace StudentPortalApp.Services
         {
             await Init();
             // see if user exists
-            var user = await _db.Table<User>().Where(u => u.UserName == username).FirstOrDefaultAsync();
-            if (user != null)
+            var exists = await GetUser(username);
+            if (exists != null)
             {
                 // user exists
                 return false;
@@ -66,10 +66,17 @@ namespace StudentPortalApp.Services
             return false;
         }
 
-        public static async Task UpdateUser(User user)
+        public static async Task<bool> UpdateUser(User user)
         {
             await Init();
-            await _db.UpdateAsync(user);
+            // see if username exists, if not return false
+            var exists = await GetUser(user.UserName);
+            if (exists == null)
+            {
+                await _db.UpdateAsync(user);
+                return true;
+            }
+            return false;
         }
 
 

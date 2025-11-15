@@ -27,7 +27,15 @@ public partial class ChangeName : ContentPage
 			user.UserName = username.Text;
 		}
 
-		await DatabaseService.UpdateUser(user);
+		// if username is taken this will return false
+		bool success = await DatabaseService.UpdateUser(user);
+        if (!success)
+		{
+			usernameTaken.IsVisible = true;
+			return;
+		}
+
+		usernameTaken.IsVisible = false;
 		await DisplayAlert(
 			title: "Success",
 			message: "Successfully updated username",
