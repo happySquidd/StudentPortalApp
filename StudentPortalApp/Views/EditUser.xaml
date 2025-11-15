@@ -9,18 +9,18 @@
                VerticalOptions="Center"
                FontSize="24"
                Margin="0,0,0,50"/>
-        <Button Grid.Row="0"
-                Text="Change username"
+        <Button Text="Change username"
                 Margin="0,5"
                 Clicked="ChangeUsernameClicked"/>
-        <Button Grid.Row="1"
-                Text="Change password"
+        <Button Text="Change password"
                 Margin="0,5"
                 Clicked="ChangePasswordClicked"/>
-        <Button Grid.Row="2"
-                Text="Sign out"
-                Margin="0,40"
-                Clicked="SignOutClicked"
+        <Button Text="Sign out"
+                Margin="0,5"
+                Clicked="SignOutClicked"/>
+        <Button Text="Delete account"
+                Margin="0,40,0,0"
+                Clicked="DeleteAccountClicked"
                 BackgroundColor="DarkRed"/>
 
     </VerticalStackLayout>

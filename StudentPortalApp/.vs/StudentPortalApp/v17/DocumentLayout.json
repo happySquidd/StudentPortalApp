@@ -7,32 +7,32 @@
       "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\register.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:views\\register.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\changename.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:views\\changename.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\changename.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:views\\changename.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\changepassword.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:views\\changepassword.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\changepassword.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:views\\changepassword.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\edituser.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:views\\edituser.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\edituser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:views\\edituser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\changename.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:views\\changename.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\changepassword.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:views\\changepassword.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\changepassword.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:views\\changepassword.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\register.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:views\\register.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\changename.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:views\\changename.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\viewterms.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -106,20 +106,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "ChangePassword.xaml.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\ChangePassword.xaml.cs",
               "RelativeDocumentMoniker": "Views\\ChangePassword.xaml.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\ChangePassword.xaml.cs",
               "RelativeToolTip": "Views\\ChangePassword.xaml.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBMAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBoAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T22:29:35.012Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ChangePassword.xaml",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\ChangePassword.xaml",
               "RelativeDocumentMoniker": "Views\\ChangePassword.xaml",
@@ -132,20 +132,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ChangeName.xaml.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\ChangeName.xaml.cs",
               "RelativeDocumentMoniker": "Views\\ChangeName.xaml.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\ChangeName.xaml.cs",
               "RelativeToolTip": "Views\\ChangeName.xaml.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCMAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwB4AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T22:29:19.727Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ChangeName.xaml",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\ChangeName.xaml",
               "RelativeDocumentMoniker": "Views\\ChangeName.xaml",
@@ -158,26 +158,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "EditUser.xaml",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\EditUser.xaml",
               "RelativeDocumentMoniker": "Views\\EditUser.xaml",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\EditUser.xaml",
               "RelativeToolTip": "Views\\EditUser.xaml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-11-13T04:52:08.927Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "EditUser.xaml.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\EditUser.xaml.cs",
               "RelativeDocumentMoniker": "Views\\EditUser.xaml.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\EditUser.xaml.cs",
               "RelativeToolTip": "Views\\EditUser.xaml.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAADwvy8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-13T07:49:38.318Z",
               "EditorCaption": ""
@@ -209,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Register.xaml.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\Register.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Register.xaml.cs",
@@ -274,9 +274,9 @@
               "Title": "DatabaseService.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Services\\DatabaseService.cs",
               "RelativeDocumentMoniker": "Services\\DatabaseService.cs",
-              "ToolTip": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Services\\DatabaseService.cs*",
-              "RelativeToolTip": "Services\\DatabaseService.cs*",
-              "ViewState": "AgIAADAAAAAAAAAAAAAowDUAAAA1AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Services\\DatabaseService.cs",
+              "RelativeToolTip": "Services\\DatabaseService.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAIwFQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-12T02:58:19.505Z",
               "EditorCaption": ""

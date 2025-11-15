@@ -32,4 +32,21 @@ public partial class EditUser : ContentPage
         var LoginPage = new NavigationPage(login);
         Application.Current.Windows[0].Page = LoginPage;
     }
+
+	private async void DeleteAccountClicked(object sender, EventArgs e)
+	{
+		var confirm = await DisplayAlert(
+			title: "Warning",
+			message: "Are you sure you want to permanently delete this account?",
+			accept: "Yes",
+			cancel: "Cancel");
+
+		if (confirm)
+		{
+            User user = await DatabaseService.GetUser(Username);
+			await DatabaseService.DeleteUser(user);
+			SignOutClicked(sender, e);
+		}
+			
+	}
 }

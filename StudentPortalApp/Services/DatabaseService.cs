@@ -79,6 +79,11 @@ namespace StudentPortalApp.Services
             return false;
         }
 
+        public static async Task DeleteUser(User user)
+        {
+            await Init();
+            await _db.DeleteAsync(user);
+        }
 
         #endregion Users
 
