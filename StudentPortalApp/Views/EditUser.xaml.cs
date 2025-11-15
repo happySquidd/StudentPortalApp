@@ -6,24 +6,27 @@ namespace StudentPortalApp.Views;
 
 public partial class EditUser : ContentPage
 {
+	private string Username { get; set; }
 	public EditUser(string userName)
 	{
 		InitializeComponent();
 
-		username.Text = userName;
+		Username = userName;
 	}
 
 	private async void ChangeUsernameClicked(object sender, EventArgs e)
 	{
-
+		User user = await DatabaseService.GetUser(Username);
+		await Navigation.PushAsync(new ChangeName(user));
 	}
 
 	private async void ChangePasswordClicked(object sender, EventArgs e)
 	{
-
+        User user = await DatabaseService.GetUser(Username);
+        await Navigation.PushAsync(new ChangePassword(user));
 	}
 
-	private async void SignOutClicked(object sender, EventArgs e)
+	private void SignOutClicked(object sender, EventArgs e)
 	{
         var login = new Login();
         var LoginPage = new NavigationPage(login);

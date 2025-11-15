@@ -66,6 +66,13 @@ namespace StudentPortalApp.Services
             return false;
         }
 
+        public static async Task UpdateUser(User user)
+        {
+            await Init();
+            await _db.UpdateAsync(user);
+        }
+
+
         #endregion Users
 
         #region Terms region

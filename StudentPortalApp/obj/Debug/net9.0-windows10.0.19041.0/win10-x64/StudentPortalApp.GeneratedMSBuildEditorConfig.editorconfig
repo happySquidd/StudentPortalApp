@@ -58,6 +58,18 @@ build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.Add
 build_metadata.AdditionalFiles.TargetPath = Views\AddTerm.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AddTerm.xaml
 
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/ChangeName.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.ChangeName.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ChangeName.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ChangeName.xaml
+
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/ChangePassword.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.ChangePassword.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ChangePassword.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ChangePassword.xaml
+
 [C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/EditAssessment.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.EditAssessment.xaml

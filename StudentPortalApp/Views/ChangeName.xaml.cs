@@ -1,0 +1,42 @@
+using StudentPortalApp.Models;
+using StudentPortalApp.Services;
+
+namespace StudentPortalApp.Views;
+
+public partial class ChangeName : ContentPage
+{
+	private User user;
+	public ChangeName(User user)
+	{
+		InitializeComponent();
+
+		username.Text = user.UserName;
+		this.user = user;
+	}
+
+	private async void ConfirmClicked(object sender, EventArgs e)
+	{
+		if (string.IsNullOrWhiteSpace(username.Text))
+		{
+			usernameLabel.IsVisible = true;
+			return;
+		}
+		else
+		{
+			usernameLabel.IsVisible = false;
+			user.UserName = username.Text;
+		}
+
+		await DatabaseService.UpdateUser(user);
+		await DisplayAlert(
+			title: "Success",
+			message: "Successfully updated username",
+			cancel: "OK");
+		await Navigation.PopAsync();
+	}
+
+	private async void CancelClicked(object sender, EventArgs e)
+	{
+		await Navigation.PopAsync();
+	}
+}

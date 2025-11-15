@@ -82,6 +82,12 @@
 	  <MauiXaml Update="Views\AddTerm.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\ChangeName.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ChangePassword.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\EditAssessment.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
