@@ -15,6 +15,7 @@ public partial class ChangePassword : ContentPage
 
 	private async void ConfirmClicked(object sender, EventArgs e)
 	{
+		// input validation
 		if (string.IsNullOrWhiteSpace(newPassword.Text))
 		{
 			passwordLabel.IsVisible = true;
@@ -23,9 +24,11 @@ public partial class ChangePassword : ContentPage
 		else
 		{
 			passwordLabel.IsVisible = false;
+			// change the password in the user
 			user.Password = newPassword.Text;
 		}
 
+		// update the user in the database
 		await DatabaseService.UpdateUser(user);
 		await DisplayAlert(
 			title: "Success",

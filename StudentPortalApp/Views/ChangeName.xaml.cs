@@ -24,10 +24,11 @@ public partial class ChangeName : ContentPage
 		else
 		{
 			usernameLabel.IsVisible = false;
+			// change the name
 			user.UserName = username.Text;
 		}
 
-		// if username is taken this will return false
+		// if username is taken this will return false, updates if true
 		bool success = await DatabaseService.UpdateUser(user);
         if (!success)
 		{
