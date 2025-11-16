@@ -6,4 +6,9 @@ public partial class Reports : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private async void SearchClicked(object sender, EventArgs e)
+	{
+
+	}
 }
