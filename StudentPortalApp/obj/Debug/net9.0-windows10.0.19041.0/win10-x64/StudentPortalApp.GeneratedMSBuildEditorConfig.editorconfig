@@ -112,6 +112,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.Reg
 build_metadata.AdditionalFiles.TargetPath = Views\Register.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Register.xaml
 
+[C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/Reports.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.Reports.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Reports.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Reports.xaml
+
 [C:/Users/rafae/source/repos/StudentApp/StudentPortalApp/Views/TermWindow.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = StudentPortalApp.Views.TermWindow.xaml
