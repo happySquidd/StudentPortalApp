@@ -9,7 +9,8 @@
 
         <Grid ColumnDefinitions=".8*,.2*">
             <Entry Grid.Column="0"
-                   Placeholder="Course name"/>
+                   Placeholder="Course name"
+                   x:Name="searchBar"/>
             <Button Grid.Column="1"
                     Text="Search"
                     MinimumHeightRequest="-1"
@@ -17,6 +18,10 @@
                     Padding="10,0"
                     Clicked="SearchClicked"/>
         </Grid>
+        <Label Text="Please enter course name"
+               TextColor="Red"
+               IsVisible="False"
+               x:Name="emptySearchBar"/>
 
         <Label Text="Results:"
                FontSize="18"

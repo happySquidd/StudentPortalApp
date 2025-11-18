@@ -18,6 +18,12 @@ public partial class Reports : ContentPage
 
 	private async void SearchClicked(object sender, EventArgs e)
 	{
+		if (string.IsNullOrWhiteSpace(searchBar.Text))
+		{
+			emptySearchBar.IsVisible = true;
+			return;
+		}
+		emptySearchBar.IsVisible = false;
 		Courses.Clear();
 		// find all terms tied to the user to then find all user courses
 		var user = await DatabaseService.GetUser(_username);
@@ -27,7 +33,11 @@ public partial class Reports : ContentPage
 			var courses = await DatabaseService.GetCoursesByTerm(term.Id);
 			foreach(var course in courses)
 			{
-				Courses.Add(course);
+				// see if the keyword is in the name, add if yes
+				if (course.Name.ToLower().Contains(searchBar.Text.ToLower()))
+				{
+					Courses.Add(course);
+				}
 			}
 		}
 
