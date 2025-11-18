@@ -21,7 +21,7 @@
         <Label Text="Results:"
                FontSize="18"
                Padding="0,10,0,0"/>
-        <CollectionView ItemsSource="{Binding _courses}">
+        <CollectionView ItemsSource="{Binding Courses}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
 

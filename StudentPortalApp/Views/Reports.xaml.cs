@@ -6,18 +6,18 @@ namespace StudentPortalApp.Views;
 
 public partial class Reports : ContentPage
 {
-	private ObservableCollection<Course> _courses;
+	public ObservableCollection<Course> Courses;
 	private static string _username;
 	public Reports(string username)
 	{
 		InitializeComponent();
-		_courses = new ObservableCollection<Course>();
+		Courses = new ObservableCollection<Course>();
 		_username = username;
 	}
 
 	private async void SearchClicked(object sender, EventArgs e)
 	{
-		_courses.Clear();
+		Courses.Clear();
 		// find all terms tied to the user to then find all user courses
 		var user = await DatabaseService.GetUser(_username);
         var terms = await DatabaseService.GetTerms(user.Id);
@@ -26,7 +26,7 @@ public partial class Reports : ContentPage
 			var courses = await DatabaseService.GetCoursesByTerm(term.Id);
 			foreach(var course in courses)
 			{
-				_courses.Add(course);
+				Courses.Add(course);
 			}
 		}
 
