@@ -6,13 +6,14 @@ namespace StudentPortalApp.Views;
 
 public partial class Reports : ContentPage
 {
-	public ObservableCollection<Course> Courses;
+	public ObservableCollection<Course> Courses { get; set; }
 	private static string _username;
 	public Reports(string username)
 	{
 		InitializeComponent();
 		Courses = new ObservableCollection<Course>();
 		_username = username;
+		this.BindingContext = this;
 	}
 
 	private async void SearchClicked(object sender, EventArgs e)
@@ -28,6 +29,17 @@ public partial class Reports : ContentPage
 			{
 				Courses.Add(course);
 			}
+		}
+
+		if(Courses.Count > 0)
+		{
+			NoCoursesLabel.IsVisible = false;
+			CourseView.IsVisible = true;
+		}
+		else
+		{
+			NoCoursesLabel.IsVisible = true;
+			CourseView.IsVisible = false;
 		}
 
     }
