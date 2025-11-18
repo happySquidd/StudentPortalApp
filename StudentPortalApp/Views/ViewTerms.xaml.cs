@@ -78,4 +78,9 @@ public partial class TermsPage : ContentPage
     {
         await Navigation.PushAsync(new EditUser(Username));
     }
+
+    private async void ReportsClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Reports(Username));
+    }
 }

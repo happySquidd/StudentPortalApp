@@ -5,17 +5,31 @@
              Title="Reports">
     <VerticalStackLayout Padding="20">
         
-        <Label Text="Search for terms that end or start on a given month"/>
+        <Label Text="Search your courses"/>
 
         <Grid ColumnDefinitions=".8*,.2*">
             <Entry Grid.Column="0"
-                   Placeholder="Month/Year"/>
+                   Placeholder="Course name"/>
             <Button Grid.Column="1"
                     Text="Search"
+                    MinimumHeightRequest="-1"
+                    HeightRequest="35"
+                    Padding="10,0"
                     Clicked="SearchClicked"/>
         </Grid>
 
-        <Label Text="Results:"/>
+        <Label Text="Results:"
+               FontSize="18"
+               Padding="0,10,0,0"/>
+        <CollectionView ItemsSource="{Binding _courses}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <Label Text="{Binding Name}"/>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
     </VerticalStackLayout>
 </ContentPage>

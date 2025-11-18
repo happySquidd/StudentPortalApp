@@ -10,6 +10,9 @@
                FontSize="24"/>
     </NavigationPage.TitleView>
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Reports"
+                     Priority="1"
+                     Clicked="ReportsClicked"/>
         <ToolbarItem Text="Settings"
                      IconImageSource="settings_icon.png"
                      Order="Primary"
