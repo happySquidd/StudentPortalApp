@@ -18,7 +18,7 @@
                 </Border.StrokeShape>
 
                 <VerticalStackLayout Spacing="10">
-                    <Label Text="Edit course"
+                    <Label Text="Add course"
                            FontSize="20"
                            FontAttributes="Bold"/>
 

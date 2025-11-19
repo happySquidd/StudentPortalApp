@@ -20,12 +20,11 @@ public partial class EditAssessment : ContentPage
 		Name.Text = assessment.Name;
 		StartDate.Date = assessment.StartTime;
 		EndDate.Date = assessment.EndTime;
-        AssessmentStatus.SelectedItem = assessment.Status;
 		StartNotificationSwitch.IsToggled = assessment.StartNotification;
 		EndNotificationSwitch.IsToggled = assessment.EndNotification;
 
-		this.BindingContext = this;
         StatusOptions = new ObservableCollection<string>();
+		this.BindingContext = this;
     }
 
 	protected override async void OnAppearing()
@@ -35,8 +34,9 @@ public partial class EditAssessment : ContentPage
 		foreach (var statusType in statusList)
 		{
             StatusOptions.Add(statusType.Status);
-		}
-	}
+        }
+        AssessmentStatus.SelectedItem = assessment.Status;
+    }
 
 	private async void ConfirmClicked(object sender, EventArgs e)
 	{

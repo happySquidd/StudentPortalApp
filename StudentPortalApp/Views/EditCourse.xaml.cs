@@ -17,7 +17,6 @@ public partial class EditCourse : ContentPage
 		CourseName.Text = course.Name;
 		CourseStart.Date = course.StartTime;
 		CourseEnd.Date = course.EndTime;
-		CourseStatus.SelectedItem = course.Status;
 		InstName.Text = course.InstructorName;
 		InstPhone.Text = course.InstructorPhone;
 		InstEmail.Text = course.InstructorEmail;
@@ -28,21 +27,22 @@ public partial class EditCourse : ContentPage
 
 		this.course = course;
 
-		this.BindingContext = this;
 		StatusOptions = new ObservableCollection<string>();
+		this.BindingContext = this;
 	}
 
 
 	protected override async void OnAppearing()
 	{
 		base.OnAppearing();
-		await LoadAssessments();
 		// load status types from database
         var statusList = await DatabaseService.GetStatusTypes();
         foreach (var statusType in statusList)
         {
             StatusOptions.Add(statusType.Status);
         }
+        CourseStatus.SelectedItem = course.Status;
+        await LoadAssessments();
     }
 
     private async Task LoadAssessments()
@@ -126,6 +126,14 @@ public partial class EditCourse : ContentPage
 			return;
 		}
 
+		// notes sanitization
+		string notes = string.Empty;
+		if (!string.IsNullOrWhiteSpace(CourseNotes.Text))
+		{
+			// only trim if the notes aren't empty or it's an error
+			notes = CourseNotes.Text.Trim();
+		}
+
 		// get data from fields & input sanitization
 		string courseName = CourseName.Text.Trim();
 		DateTime start = CourseStart.Date;
@@ -134,7 +142,6 @@ public partial class EditCourse : ContentPage
 		string instructorName = InstName.Text.Trim();
 		string instructorPhone = InstPhone.Text.Trim();
 		string instructorEmail = InstEmail.Text.Trim();
-		string notes = CourseNotes.Text.Trim();
 		bool startNotif = StartNotificationSwitch.IsToggled;
 		bool endNotif = EndNotificationSwitch.IsToggled;
 		DateTime dueDate = DueDate.Date;
