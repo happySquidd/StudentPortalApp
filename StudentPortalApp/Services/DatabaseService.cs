@@ -2,6 +2,7 @@ using SQLite;
 using StudentPortalApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace StudentPortalApp.Services
             await _db.CreateTableAsync<Term>();
             await _db.CreateTableAsync<Course>();
             await _db.CreateTableAsync<Assessment>();
+            await _db.CreateTableAsync<StatusTypes>();
         }
 
         #region Users
@@ -133,6 +135,13 @@ namespace StudentPortalApp.Services
 
         #endregion
 
+        #region Status
+        public static async Task<List<StatusTypes>> GetStatusTypes()
+        {
+            await Init();
+            return await _db.Table<StatusTypes>().ToListAsync();
+        }
+        #endregion
 
         #region Courses region
         public static async Task AddCourse(int termId, string name, string startTime, string endTime, string status,
@@ -338,7 +347,33 @@ namespace StudentPortalApp.Services
 
             await _db.InsertAsync(assessment2);
 
-            
+            StatusTypes Planned = new StatusTypes
+            {
+                Status = "Planned"
+            };
+
+            await _db.InsertAsync(Planned);
+
+            StatusTypes InProgress = new StatusTypes
+            {
+                Status = "In Progress"
+            };
+
+            await _db.InsertAsync(InProgress);
+
+            StatusTypes Completed = new StatusTypes
+            {
+                Status = "Completed"
+            };
+
+            await _db.InsertAsync(Completed);
+
+            StatusTypes Dropped = new StatusTypes
+            {
+                Status = "Dropped"
+            };
+
+            await _db.InsertAsync(Dropped);
         }
 
         public static async Task ClearSampleData()

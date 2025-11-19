@@ -63,13 +63,9 @@
                            VerticalOptions="Center"/>
                     <Picker Grid.Column="1"
                             Grid.Row="4"
-                            x:Name="AssessmentStatus">
-                        <Picker.Items>
-                            <x:String>Planned</x:String>
-                            <x:String>In Progress</x:String>
-                            <x:String>Completed</x:String>
-                        </Picker.Items>
-                    </Picker>
+                            x:Name="AssessmentStatus"
+                            ItemsSource="{Binding StatusOptions}"/>
+
                     <Label Grid.Column="0"
                            Grid.Row="5"
                            Text="Start notification:"

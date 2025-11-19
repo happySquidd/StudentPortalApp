@@ -1,16 +1,33 @@
 using Plugin.LocalNotification;
+using StudentPortalApp.Models;
 using StudentPortalApp.Services;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace StudentPortalApp.Views;
 
 public partial class AddAssessment : ContentPage
 {
     private readonly int courseId;
+    public ObservableCollection<string> StatusOptions {get; set;}
 	public AddAssessment(int courseId)
 	{
 		InitializeComponent();
 
         this.courseId = courseId;
+
+        StatusOptions = new ObservableCollection<string>();
+        this.BindingContext = this;
+    }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        var options = await DatabaseService.GetStatusTypes();
+        foreach (var statusType in options)
+        {
+            StatusOptions.Add(statusType.Status);
+        };
     }
 
 	private async void ConfirmAddAssessment(object sender, EventArgs e)
