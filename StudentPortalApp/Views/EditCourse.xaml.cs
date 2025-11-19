@@ -1,13 +1,16 @@
 using Plugin.LocalNotification;
 using StudentPortalApp.Models;
 using StudentPortalApp.Services;
+using System.Collections.ObjectModel;
 
 namespace StudentPortalApp.Views;
 
 public partial class EditCourse : ContentPage
 {
 	private readonly Course course;
-	public EditCourse(Course course)
+	public ObservableCollection<string> StatusOptions { get; set; }
+
+    public EditCourse(Course course)
 	{
 		InitializeComponent();
 
@@ -25,12 +28,21 @@ public partial class EditCourse : ContentPage
 
 		this.course = course;
 
+		this.BindingContext = this;
+		StatusOptions = new ObservableCollection<string>();
 	}
+
 
 	protected override async void OnAppearing()
 	{
 		base.OnAppearing();
 		await LoadAssessments();
+		// load status types from database
+        var statusList = await DatabaseService.GetStatusTypes();
+        foreach (var statusType in statusList)
+        {
+            StatusOptions.Add(statusType.Status);
+        }
     }
 
     private async Task LoadAssessments()

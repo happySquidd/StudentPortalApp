@@ -1,18 +1,33 @@
 using Plugin.LocalNotification;
 using StudentPortalApp.Models;
 using StudentPortalApp.Services;
+using System.Collections.ObjectModel;
 
 namespace StudentPortalApp.Views;
 
 public partial class AddCourse : ContentPage
 {
 	private readonly int termId;
+    public ObservableCollection<string> StatusOptions { get; set; }
     public AddCourse(int termId)
 	{
 		InitializeComponent();
 
 		this.termId = termId;
+
+        StatusOptions = new ObservableCollection<string>();
+        this.BindingContext = this;
 	}
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        var statusList = await DatabaseService.GetStatusTypes();
+        foreach (var statusType in statusList)
+        {
+            StatusOptions.Add(statusType.Status);
+        };
+    }
 
 	private async void SaveClick(object sender, EventArgs e)
 	{

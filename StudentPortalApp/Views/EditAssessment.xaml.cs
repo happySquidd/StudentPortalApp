@@ -1,12 +1,14 @@
 using Plugin.LocalNotification;
 using StudentPortalApp.Models;
 using StudentPortalApp.Services;
+using System.Collections.ObjectModel;
 
 namespace StudentPortalApp.Views;
 
 public partial class EditAssessment : ContentPage
 {
 	private readonly Assessment assessment;
+	public ObservableCollection<string> StatusOptions { get; set; }
     public EditAssessment(Assessment assessment)
 	{
 		InitializeComponent();
@@ -21,7 +23,20 @@ public partial class EditAssessment : ContentPage
         AssessmentStatus.SelectedItem = assessment.Status;
 		StartNotificationSwitch.IsToggled = assessment.StartNotification;
 		EndNotificationSwitch.IsToggled = assessment.EndNotification;
+
+		this.BindingContext = this;
+        StatusOptions = new ObservableCollection<string>();
     }
+
+	protected override async void OnAppearing()
+	{
+		base.OnAppearing();
+		var statusList = await DatabaseService.GetStatusTypes();
+		foreach (var statusType in statusList)
+		{
+            StatusOptions.Add(statusType.Status);
+		}
+	}
 
 	private async void ConfirmClicked(object sender, EventArgs e)
 	{

@@ -54,14 +54,9 @@
                                VerticalOptions="Center"/>
                         <Picker Grid.Column="1"
                                 Grid.Row="3"
-                                x:Name="CourseStatus">
-                            <Picker.Items>
-                                <x:String>Planned</x:String>
-                                <x:String>In Progress</x:String>
-                                <x:String>Completed</x:String>
-                                <x:String>Dropped</x:String>
-                            </Picker.Items>
-                        </Picker>
+                                x:Name="CourseStatus"
+                                ItemsSource="{Binding StatusOptions}"/>
+
                         <Label Grid.Column="0"
                                Grid.Row="4"
                                Text="Instructor name:"
