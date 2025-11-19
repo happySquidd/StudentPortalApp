@@ -21,8 +21,8 @@ public partial class EditTerm : ContentPage
 
 	private async void ConfirmEdit(object sender, EventArgs e)
 	{
-        // get data from fields
-        string termName = TermName.Text;
+        // get data from fields & input sanitization
+        string termName = TermName.Text.Trim();
         DateTime startDate = TermStart.Date;
         DateTime endDate = TermEnd.Date;
 

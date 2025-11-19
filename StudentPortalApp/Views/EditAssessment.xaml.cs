@@ -96,8 +96,9 @@ public partial class EditAssessment : ContentPage
 			await LocalNotificationCenter.Current.Show(request);
         }
 
+		// variable assignment & input sanitization
         string type = Type.SelectedItem.ToString()!;
-		string name = Name.Text;
+		string name = Name.Text.Trim();
 		string start = StartDate.Date.ToString();
 		string end = EndDate.Date.ToString();
 		string status = AssessmentStatus.SelectedItem.ToString()!;

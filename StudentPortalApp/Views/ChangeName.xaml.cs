@@ -24,8 +24,10 @@ public partial class ChangeName : ContentPage
 		else
 		{
 			usernameLabel.IsVisible = false;
+			// input sanitization
+			string _username = username.Text.Trim();
 			// change the name
-			user.UserName = username.Text;
+			user.UserName = _username;
 		}
 
 		// if username is taken this will return false, updates if true

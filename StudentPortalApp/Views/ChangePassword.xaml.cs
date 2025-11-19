@@ -24,8 +24,10 @@ public partial class ChangePassword : ContentPage
 		else
 		{
 			passwordLabel.IsVisible = false;
+			// input sanitization
+			string _newPassword = newPassword.Text.Trim();
 			// change the password in the user
-			user.Password = newPassword.Text;
+			user.Password = _newPassword;
 		}
 
 		// update the user in the database

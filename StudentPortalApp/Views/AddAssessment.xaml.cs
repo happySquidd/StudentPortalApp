@@ -41,6 +41,9 @@ public partial class AddAssessment : ContentPage
             return;
         }
 
+        // input sanitization
+        string newName = NewName.Text.Trim();
+
         // see if assessment of this type already exists for this course
         var existingAssessment = await DatabaseService.GetAssessmentByType(courseId, NewType.SelectedItem.ToString()!);
         if (existingAssessment != null)
@@ -64,7 +67,7 @@ public partial class AddAssessment : ContentPage
                 {
                     NotificationId = 0,
                     Title = "Assessment Starting",
-                    Description = $"The assessment '{NewName.Text}' starts today",
+                    Description = $"The assessment '{newName}' starts today",
                     Schedule = new NotificationRequestSchedule
                     {
                         NotifyTime = soon ? DateTime.Now.AddSeconds(2) : NewStartDate.Date,
@@ -83,7 +86,7 @@ public partial class AddAssessment : ContentPage
             {
                 NotificationId = 1,
                 Title = "Assessment Ending",
-                Description = $"The assessment '{NewName.Text}' ends today",
+                Description = $"The assessment '{newName}' ends today",
                 Schedule = new NotificationRequestSchedule
                 {
                     NotifyTime = soon ? DateTime.Now.AddSeconds(2) : NewEndDate.Date,
@@ -94,7 +97,7 @@ public partial class AddAssessment : ContentPage
 
         // update database
         string type = NewType.SelectedItem.ToString()!;
-        string name = NewName.Text;
+        string name = newName;
         string start = NewStartDate.Date.ToString();
         string end = NewEndDate.Date.ToString();
         string status = AssessmentStatus.SelectedItem.ToString()!;

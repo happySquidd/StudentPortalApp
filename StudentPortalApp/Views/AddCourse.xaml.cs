@@ -59,13 +59,14 @@ public partial class AddCourse : ContentPage
         }
 
         // get data from fields
-        string courseName = CourseName.Text;
+        // input sanitization
+        string courseName = CourseName.Text.Trim();
         DateTime start = CourseStart.Date;
         DateTime end = CourseEnd.Date;
         string status = CourseStatus.SelectedItem.ToString()!;
-        string instructorName = InstName.Text;
-        string instructorPhone = InstPhone.Text;
-        string instructorEmail = InstEmail.Text;
+        string instructorName = InstName.Text.Trim();
+        string instructorPhone = InstPhone.Text.Trim();
+        string instructorEmail = InstEmail.Text.Trim();
         bool startNotif = StartNotificationSwitch.IsToggled;
         bool endNotif = EndNotificationSwitch.IsToggled;
         DateTime dueDate = DueDate.Date;

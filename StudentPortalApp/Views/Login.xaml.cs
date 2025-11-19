@@ -45,8 +45,11 @@ public partial class Login : ContentPage
 			passwordEmpty.IsVisible = false;
 		}
 
+		// input sanitization
+		string _username = username.Text.Trim();
+		string _password = password.Text.Trim();
         // fetch user
-        user = await DatabaseService.GetUser(username.Text);
+        user = await DatabaseService.GetUser(_username);
         // user not found
         if (user == null)
 		{
@@ -58,7 +61,7 @@ public partial class Login : ContentPage
 			userNotFound.IsVisible = false;
         }
 		// passwords don't match
-		if (!await DatabaseService.VerifyPassword(user, password.Text))
+		if (!await DatabaseService.VerifyPassword(user, _password))
 		{
 			passwordIncorrect.IsVisible = true;
 			return;

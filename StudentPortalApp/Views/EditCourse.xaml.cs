@@ -114,15 +114,15 @@ public partial class EditCourse : ContentPage
 			return;
 		}
 
-		// get data from fields
-		string courseName = CourseName.Text;
+		// get data from fields & input sanitization
+		string courseName = CourseName.Text.Trim();
 		DateTime start = CourseStart.Date;
 		DateTime end = CourseEnd.Date;
 		string status = CourseStatus.SelectedItem.ToString()!;
-		string instructorName = InstName.Text;
-		string instructorPhone = InstPhone.Text;
-		string instructorEmail = InstEmail.Text;
-		string notes = CourseNotes.Text;
+		string instructorName = InstName.Text.Trim();
+		string instructorPhone = InstPhone.Text.Trim();
+		string instructorEmail = InstEmail.Text.Trim();
+		string notes = CourseNotes.Text.Trim();
 		bool startNotif = StartNotificationSwitch.IsToggled;
 		bool endNotif = EndNotificationSwitch.IsToggled;
 		DateTime dueDate = DueDate.Date;

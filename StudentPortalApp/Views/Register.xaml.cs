@@ -33,7 +33,11 @@ public partial class Register : ContentPage
 		{
 			passwordEmpty.IsVisible = false;
 		}
-		if (!await DatabaseService.AddUser(username.Text, password.Text))
+		// input sanitization
+		string _username = username.Text.Trim();
+		string _password = password.Text.Trim();
+
+		if (!await DatabaseService.AddUser(_username, _password))
 		{
 			usernameTaken.IsVisible = true;
 			return;

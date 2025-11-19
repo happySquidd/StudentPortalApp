@@ -13,7 +13,8 @@ public partial class AddTerm : ContentPage
 
     private async void ConfirmAddTerm(object sender, EventArgs e)
     {
-        string termName = NewTermName.Text;
+        // input sanitization
+        string termName = NewTermName.Text.Trim();
         DateTime startDate = NewTermStartDate.Date;
         DateTime endDate = NewTermEndDate.Date;
 

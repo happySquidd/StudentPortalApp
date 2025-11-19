@@ -25,6 +25,9 @@ public partial class Reports : ContentPage
 		}
 		emptySearchBar.IsVisible = false;
 		Courses.Clear();
+		// input sanitization 
+		string _searchParam = searchBar.Text.Trim();
+
 		// find all terms tied to the user to then find all user courses
 		var user = await DatabaseService.GetUser(_username);
         var terms = await DatabaseService.GetTerms(user.Id);
@@ -34,7 +37,7 @@ public partial class Reports : ContentPage
 			foreach(var course in courses)
 			{
 				// see if the keyword is in the name, add if yes
-				if (course.Name.ToLower().Contains(searchBar.Text.ToLower()))
+				if (course.Name.ToLower().Contains(_searchParam.ToLower()))
 				{
 					Courses.Add(course);
 				}

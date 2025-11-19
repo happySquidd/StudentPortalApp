@@ -30,8 +30,10 @@ public partial class ForgotPassword : ContentPage
 			userEmpty.IsVisible = false;
 		}
 
-		// get user
-		user = await DatabaseService.GetUser(username.Text);
+		// input sanitization
+		string _username = username.Text.Trim();
+        // get user
+        user = await DatabaseService.GetUser(_username);
 		// check if user is null
         if (user == null)
 		{
