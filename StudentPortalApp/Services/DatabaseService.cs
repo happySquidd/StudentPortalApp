@@ -303,14 +303,14 @@ namespace StudentPortalApp.Services
 
             Course course1 = new Course
             {
-                Name = "Mobile App development in C#",
+                Name = "Test course",
                 StartTime = new DateTime(2025, 10, 19),
                 EndTime = new DateTime(2025, 11, 19),
                 Status = "In Progress",
                 InstructorName = "Anika Patel",
                 InstructorPhone = "555-123-4567",
-                InstructorEmail = "anika.patel@strimeuniversity.edu",
-                Notes = "Here are my notes",
+                InstructorEmail = "anika.patel@school.edu",
+                Notes = "Some notes",
                 StartNotification = true,
                 EndNotification = false,
                 DueDate = new DateTime(2026, 11, 19),
