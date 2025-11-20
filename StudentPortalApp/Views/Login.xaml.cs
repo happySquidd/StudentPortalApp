@@ -10,16 +10,16 @@ public partial class Login : ContentPage
 		InitializeComponent();
     }
 
-	//protected override async void OnAppearing()
-	//{
-	//if (Settings.FirstRun)
-	//{
-	//    await DatabaseService.LoadSampleData();
-	//    Settings.FirstRun = false;
-	//}
+	protected override async void OnAppearing()
+	{
+		if (Settings.FirstRun)
+		{
+			await DatabaseService.LoadSampleData();
+			Settings.FirstRun = false;
+		}
 
-	//       base.OnAppearing();
-	//}
+		base.OnAppearing();
+	}
 
 	private async void LoginClicked(object sender, EventArgs e)
 	{
@@ -97,4 +97,11 @@ public partial class Login : ContentPage
     {
         await DatabaseService.ClearSampleData();
     }
+	// last 2 functions are for debug purposes, add this code back into the xaml to use them
+	//<ContentPage.ToolbarItems>
+    //    <ToolbarItem Text = "Reset sample data"
+    //             Clicked="ResetSampleData"/>
+    //    <ToolbarItem Text = "Clear all data"
+    //             Clicked="ClearSampleData"/>
+    //</ContentPage.ToolbarItems>
 }
