@@ -12,6 +12,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Reports"
                      Priority="1"
+                     Order="Secondary"
                      Clicked="ReportsClicked"/>
         <ToolbarItem Text="Settings"
                      IconImageSource="settings_icon.png"
