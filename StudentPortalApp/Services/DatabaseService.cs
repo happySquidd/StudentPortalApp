@@ -303,7 +303,7 @@ namespace StudentPortalApp.Services
 
             Course course1 = new Course
             {
-                Name = "Test course",
+                Name = "C# intro course",
                 StartTime = new DateTime(2025, 10, 19),
                 EndTime = new DateTime(2025, 11, 19),
                 Status = "In Progress",
@@ -346,6 +346,42 @@ namespace StudentPortalApp.Services
             };
 
             await _db.InsertAsync(assessment2);
+
+            Course course2 = new Course
+            {
+                Name = "Git course",
+                StartTime = new DateTime(2025, 11, 19),
+                EndTime = new DateTime(2025, 12, 19),
+                Status = "Planned",
+                InstructorName = "Joe",
+                InstructorPhone = "555-123-4567",
+                InstructorEmail = "joe@school.edu",
+                Notes = "Some notes",
+                StartNotification = false,
+                EndNotification = false,
+                DueDate = new DateTime(2026, 12, 19),
+                TermId = term1.Id,
+            };
+
+            await _db.InsertAsync(course2);
+
+            Course course3 = new Course
+            {
+                Name = "Web course",
+                StartTime = new DateTime(2025, 12, 19),
+                EndTime = new DateTime(2026, 1, 19),
+                Status = "Planned",
+                InstructorName = "Moe",
+                InstructorPhone = "555-123-4567",
+                InstructorEmail = "moe@school.edu",
+                Notes = "Some notes",
+                StartNotification = false,
+                EndNotification = false,
+                DueDate = new DateTime(2026, 1, 19),
+                TermId = term1.Id,
+            };
+
+            await _db.InsertAsync(course3);
 
             StatusTypes Planned = new StatusTypes
             {
