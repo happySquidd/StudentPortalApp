@@ -23,57 +23,84 @@ public partial class Login : ContentPage
 
 	private async void LoginClicked(object sender, EventArgs e)
 	{
-		User user = new User();
-
-		// input validation
-		if (string.IsNullOrWhiteSpace(username.Text))
-		{
-			userEmpty.IsVisible = true;
-			return;
-		}
-		else
-		{
-			userEmpty.IsVisible = false;
-		}
-		if (string.IsNullOrWhiteSpace(password.Text))
-		{
-			passwordEmpty.IsVisible = true;
-			return;
-		}
-		else
-		{
-			passwordEmpty.IsVisible = false;
-		}
-
-		// input sanitization
-		string _username = username.Text.Trim();
-		string _password = password.Text.Trim();
-        // fetch user
-        user = await DatabaseService.GetUser(_username);
-        // user not found
-        if (user == null)
-		{
-			userNotFound.IsVisible = true;
-			return;
-		}
+        // input validation
+        if (string.IsNullOrWhiteSpace(username.Text))
+        {
+            userEmpty.IsVisible = true;
+            return;
+        }
         else
         {
-			userNotFound.IsVisible = false;
+            userEmpty.IsVisible = false;
         }
-		// passwords don't match
-		if (!await DatabaseService.VerifyPassword(user, _password))
-		{
-			passwordIncorrect.IsVisible = true;
-			return;
-		}
-        // successfull login
+        if (string.IsNullOrWhiteSpace(password.Text))
+        {
+            passwordEmpty.IsVisible = true;
+            return;
+        }
+        else
+        {
+            passwordEmpty.IsVisible = false;
+        }
+
+
+        // verify username and password
+        User loginUser = await VerifyUsername(username.Text);
+        if (loginUser != null)
+        {
+            userNotFound.IsVisible = false;
+        }
+        else
+        {
+            // user not found
+            userNotFound.IsVisible = true;
+            return;
+        }
         
-        passwordIncorrect.IsVisible = false;
+        if (await VerifyPassword(loginUser, password.Text))
+        {
+            passwordIncorrect.IsVisible = false;
+        }
+        else
+        {
+            passwordIncorrect.IsVisible = true;
+            return;
+        }
+
+        // successfull login
+
         // create a new root window which is the terms view page
-        var terms = new TermsPage(user.Id, user.UserName);
-		var TermsPage = new NavigationPage(terms);
-		Application.Current.Windows[0].Page = TermsPage;
+        var terms = new TermsPage(loginUser.Id, loginUser.UserName);
+        var TermsPage = new NavigationPage(terms);
+        Application.Current.Windows[0].Page = TermsPage;
+
 	}
+
+	public static async Task<User> VerifyUsername(string username)
+	{
+        // input sanitization
+        string _username = username.Trim();
+        // fetch user
+        User user = await DatabaseService.GetUser(_username);
+        if (user == null)
+        {
+            // user not found
+            return null;
+        }
+        
+        return user;
+    }
+
+    public static async Task<bool> VerifyPassword(User user, string password)
+    {
+        string _password = password.Trim();
+        if (!await DatabaseService.VerifyPassword(user, _password))
+        {
+            // passwords don't match
+            return false;
+        }
+        return true;
+    }
 
 	private void RegisterClicked(object sender, EventArgs e)
 	{
