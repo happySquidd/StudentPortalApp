@@ -3,4 +3,6 @@
 ################################################################################
 
 .vs/
+bin/
+obj/
 /StudentPortalApp/.vs/StudentPortalApp/FileContentIndex
