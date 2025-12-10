@@ -10,16 +10,16 @@
       "AbsoluteMoniker": "D:0:0:{97559DF6-9A62-42F9-910C-7DF69E8DED83}|..\\UnitTests\\UnitTests.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\unittests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\studentportalapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:studentportalapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\studentportalapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|solutionrelative:studentportalapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E85FAAB6-F62E-4D9A-AADF-2AF5A7BD2928}|StudentPortalApp.csproj|c:\\users\\rafae\\source\\repos\\studentapp\\studentportalapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -95,27 +95,25 @@
               "RelativeDocumentMoniker": "..\\UnitTests\\UnitTest1.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\StudentApp\\UnitTests\\UnitTest1.cs",
               "RelativeToolTip": "..\\UnitTests\\UnitTest1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T01:41:58.867Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T01:41:58.867Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StudentPortalApp",
+              "DocumentIndex": 2,
+              "Title": "StudentPortalApp.csproj",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\StudentPortalApp.csproj",
               "RelativeDocumentMoniker": "StudentPortalApp.csproj",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\StudentPortalApp.csproj",
               "RelativeToolTip": "StudentPortalApp.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-04T01:27:48.59Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T01:27:48.59Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Login.xaml",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\Login.xaml",
               "RelativeDocumentMoniker": "Views\\Login.xaml",
@@ -123,8 +121,7 @@
               "RelativeToolTip": "Views\\Login.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-20T01:37:18.366Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T01:37:18.366Z"
             },
             {
               "$type": "Document",
@@ -134,7 +131,7 @@
               "RelativeDocumentMoniker": "Views\\Login.xaml.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\Login.xaml.cs",
               "RelativeToolTip": "Views\\Login.xaml.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAwwFYAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAIwFwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-20T01:36:37.255Z",
               "EditorCaption": ""
@@ -149,8 +146,7 @@
               "RelativeToolTip": "App.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T01:36:07.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T01:36:07.887Z"
             },
             {
               "$type": "Document",
@@ -160,7 +156,7 @@
               "RelativeDocumentMoniker": "Views\\EditCourse.xaml.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\EditCourse.xaml.cs",
               "RelativeToolTip": "Views\\EditCourse.xaml.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAIBJwFsAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAIBZwFsAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-19T03:22:20.919Z"
             },
@@ -172,7 +168,7 @@
               "RelativeDocumentMoniker": "Views\\EditCourse.xaml",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\EditCourse.xaml",
               "RelativeToolTip": "Views\\EditCourse.xaml",
-              "ViewState": "AgIAACQAAAAAAAAAAIBJwDkAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAIBZwDkAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-11-19T03:21:41.69Z"
             },
@@ -196,7 +192,7 @@
               "RelativeDocumentMoniker": "Views\\EditAssessment.xaml",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\EditAssessment.xaml",
               "RelativeToolTip": "Views\\EditAssessment.xaml",
-              "ViewState": "AgIAACoAAAAAAAAAAIBJwEIAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAIBZwEIAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-11-19T03:18:40.018Z"
             },
@@ -232,13 +228,13 @@
               "RelativeDocumentMoniker": "Views\\TermWindow.xaml",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Views\\TermWindow.xaml",
               "RelativeToolTip": "Views\\TermWindow.xaml",
-              "ViewState": "AgIAAAYAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBZwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-11-19T03:13:24.283Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DatabaseService.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\StudentApp\\StudentPortalApp\\Services\\DatabaseService.cs",
               "RelativeDocumentMoniker": "Services\\DatabaseService.cs",
@@ -246,8 +242,7 @@
               "RelativeToolTip": "Services\\DatabaseService.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAmwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T01:35:11.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T01:35:11.478Z"
             },
             {
               "$type": "Document",
